@@ -2,6 +2,7 @@
 package gov.sba.utils.integration;
 
 import gov.sba.automation.TestHelpers;
+import junit.framework.TestCase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
@@ -19,11 +20,10 @@ import static gov.sba.pageObjetcs.Contributor8aDisadvantagedIndAppPage.*;
 import static gov.sba.pageObjetcs.MasterApplication8a.*;
 import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
 import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_Return;
-import static org.junit.Assert.assertNotNull;
 
 // Still in progress
 @Category({gov.sba.utils.integration.UnstableTests.class})
-public class TestWorkFlowxx8aInProgress {
+public class TestWorkFlowxx8aInProgress extends TestCase {
     // Set The variabl.es/Define
     Logger logger = LogManager.getLogger(TestWorkFlowxx8aInProgress.class.getName());
     private static WebDriver webDriver;
@@ -32,6 +32,7 @@ public class TestWorkFlowxx8aInProgress {
     @Before public void setUp() throws Exception {
         if (get_Stop_Execution_Flag()) return;
         clear_Env_Chrome();
+        TestHelpers.set_Headless();
         webDriver = TestHelpers.getDefaultWebDriver();
         webDriver.get(TestHelpers.getBaseUrl());
         /*get_The_Row_From_Login_Data = 43;*/
