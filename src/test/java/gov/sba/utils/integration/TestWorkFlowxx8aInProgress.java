@@ -32,6 +32,7 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
     @Before public void setUp() throws Exception {
         if (get_Stop_Execution_Flag()) return;
         clear_Env_Chrome();
+        logger.info("Set as head");
         TestHelpers.set_Headless();
         webDriver = TestHelpers.getDefaultWebDriver();
         webDriver.get(TestHelpers.getBaseUrl());
