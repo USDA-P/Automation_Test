@@ -32,7 +32,7 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
     @Before public void setUp() throws Exception {
         if (get_Stop_Execution_Flag()) return;
         clear_Env_Chrome();
-        TestHelpers.set_Headless();
+//        TestHelpers.set_Headless();
         webDriver = TestHelpers.getDefaultWebDriver();
         webDriver.get(TestHelpers.getBaseUrl());
         /*get_The_Row_From_Login_Data = 43;*/
@@ -63,7 +63,8 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
             BasicEligiblity_Business_Size_Page(webDriver, "Yes", "Yes");
             BasicEligiblity_Size_Determination_Page(webDriver);
             /*Basic ownership Page*/
-            logger.info(webDriver.getPageSource());
+            /*logger.info(webDriver.getPageSource());*/
+
             masterApp_8a_Page_Click(webDriver,"page_business_ownership");
             Business_Ownership_Entity_Ownership_Page(webDriver,"yes");
             Business_Ownership_Ownership_Details_Page(webDriver,"yes","no","no","no");
