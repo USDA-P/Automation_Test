@@ -15,19 +15,19 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static gov.sba.automation.CommonApplicationMethods.*;
-import static gov.sba.automation.DatabaseUtils.findUnusedDunsNumber;
 import static gov.sba.pageObjetcs.Contributor8aDisadvantagedIndAppPage.*;
 import static gov.sba.pageObjetcs.MasterApplication8a.*;
+import static gov.sba.pageObjetcs.ProgramsPage.contributor_login;
 import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
 import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_Return;
 
 // Still in progress
-@Category({gov.sba.utils.integration.UnstableTests.class})
-public class TestWorkFlowxx8aInProgress extends TestCase {
+@Category({gov.sba.utils.integration.StableTests.class})
+public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
     // Set The variabl.es/Define
-    Logger logger = LogManager.getLogger(TestWorkFlowxx8aInProgress.class.getName());
+    Logger logger = LogManager.getLogger(TestWorkflow8aInitalSelectingNoAllSections.class.getName());
     private static WebDriver webDriver;
-    /*int get_The_Row_From_Login_Data;*/
+    int get_The_Row_From_Login_Data;
     String duns_Number, email, password;
     @Before public void setUp() throws Exception {
         if (get_Stop_Execution_Flag()) return;
@@ -36,64 +36,64 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
         TestHelpers.set_Headless();
         webDriver = TestHelpers.getDefaultWebDriver();
         webDriver.get(TestHelpers.getBaseUrl());
-        /*get_The_Row_From_Login_Data = 43;*/
-        String[] details = findUnusedDunsNumber("");
+        get_The_Row_From_Login_Data =43;
+       /* String[] details = findUnusedDunsNumber("");
         email = details[0];
         password = details[1];
         duns_Number = details[2];
+       */
     }
 
     @Test public void testMainTest() throws Exception {
         try {
 
             /*return_All_Applications(webDriver, 11, "165324125");*/
-            /*delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125");*/
             /*delete_All_Application_Draft(webDriver, email, password, duns_Number);*/
             /*Login to Dashboard.*/
-             /*new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data)   .Login_With_Reference();*/
-            new LoginPageWithDetails(webDriver, email, password).Login_With_Details();
+ //           delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125");
+            new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data).Login_With_Reference();
 
-            /* new programs_Page().select_MyCertifications_Table(webDriver, "Delete_8a_Initial_Draft");*/
+          /*  new LoginPageWithDetails(webDriver, email, password).Login_With_Details(); */
+
             webDriver.navigate().to("https://certify.qa.sba-one.net/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
             click_Element(webDriver, "Application_Common_Accept_Button");
-            /* masterApp_8a_Page_Click(webDriver,"page_basiceligibility");*/
-            /*Basic Eligibility Page*/
-            BasicEligiblity_General_Assessment_Page(webDriver, "Yes", "no", "Yes", "Yes", "Yes");
-            BasicEligiblity_Prior_8a_Involvement_Page(webDriver, "no", "Yes", "Yes");
-            BasicEligiblity_Outside_Assistance_Page(webDriver, "Yes");
-            BasicEligiblity_Business_Size_Page(webDriver, "Yes", "Yes");
+            masterApp_8a_Page_Click(webDriver,"page_basiceligibility");
+         /*   Basic Eligibility Page selecting all no  */
+            BasicEligiblity_General_Assessment_Page(webDriver, "no", "no", "no", "no", "no");
+            BasicEligiblity_Prior_8a_Involvement_Page(webDriver, "no", "no", "no");
+            BasicEligiblity_Outside_Assistance_Page(webDriver, "no");
+            BasicEligiblity_Business_Size_Page(webDriver, "no", "no");
+            Thread.sleep(5000);
+            click_Element(webDriver, "Application_Common_Submit_Button");
+            accept_Alert(webDriver, 8);
             BasicEligiblity_Size_Determination_Page(webDriver);
-            /*Basic ownership Page*/
-            /*logger.info(webDriver.getPageSource());*/
-
+           /* Basic ownership Page selecting all no  */
             masterApp_8a_Page_Click(webDriver,"page_business_ownership");
-            Business_Ownership_Entity_Ownership_Page(webDriver,"yes");
-            Business_Ownership_Ownership_Details_Page(webDriver,"yes","no","no","no");
+            Business_Ownership_Entity_Ownership_Page(webDriver,"no");
+            Business_Ownership_Ownership_Details_Page(webDriver,"no","no","no","no");
+            generic_file_Upld(webDriver);
             Business_Ownership_Corporations_Page(webDriver);
-            /*generic_file_Upld(webDriver);*/
-            /*generic_file_Upld(webDriver);*/
-            /*generic_file_Upld(webDriver);*/
             click_Element(webDriver,"Application_Common_Submit_Button");
             accept_Alert(webDriver, 10);
-           /*Character Page*/
+          /* Character Page selecting all no */
             masterApp_8a_Page_Click(webDriver,"page_character_link");
-            character_Page(webDriver,"yes","no","no","no");
+            character_Page(webDriver,"no","no","no","no");
             click_Element(webDriver,"Application_Common_Submit_Button");
             accept_Alert(webDriver, 10);
-            /*Potential for success page*/
+            /*Potential for success page selectinh all no */
             masterApp_8a_Page_Click(webDriver,"page_potential_for_Success_link");
             generic_file_Upld(webDriver);
             click_Element(webDriver,"Application_Common_Submit_Button");
-            potential_For_Sucess_Revenue_Page(webDriver, "Yes", "Yes", "5", "Yes - Add it");
-            potential_For_Sucess_Page_Sucesss(webDriver, "No", "No", "na");
+            potential_For_Sucess_Revenue_Page(webDriver, "no", "no", "5", "Yes - Add it");
+            potential_For_Sucess_Page_Sucesss(webDriver, "no", "no", "no");
             potential_For_Sucess_Page_Review(webDriver);
             masterApp_8a_Page_Click(webDriver, "page_control_link");
             control_Page_Firm_Control(webDriver, "no","no","no","na","no","yes");
             control_Page_Leased_Facility(webDriver, "yes");
             firm_Control_Page_Review(webDriver);
-           /*Contributor Page- Vendor Admin Sub application*/
-            masterApp_8a_Page_Click(webDriver, "page_contributors_Start_Indv_Cont");
-            disAdvApp_Gender_Info_Page(webDriver, "Male");
+           /*Contributor Page- Vendor Admin Sub application  */
+           masterApp_8a_Page_Click(webDriver, "page_contributors_Start_Indv_Cont");
+           disAdvApp_Gender_Info_Page(webDriver, "Male");
             disAdvApp_MaritalStatus_Page(webDriver, "Married");
             disAdvApp_SocialSecNum_Page(webDriver, "12345678");
             disAdvApp_ContactInfo_Page(webDriver, "12345678");
@@ -103,7 +103,7 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
             disAdvApp_Us_Citizenship_Page(webDriver, "yes");
             generic_file_Upld(webDriver);
             click_Element(webDriver, "Application_Common_Continue_Button");
-            /*disAdvApp_UploadResume_Page(webDriver);*/
+            disAdvApp_UploadResume_Page(webDriver);
             disAdvApp_Appl_Firm_Ownership_Page(webDriver, "80", "Anything");
             disAdvApp_Bank_Acct_Access_Page(webDriver, "yes", "Anything");
             disAdvApp_Full_Time_Devotion_Page(webDriver, "yes");
@@ -136,7 +136,11 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
             disAdvApp_financial_PrivacyStatements_Page(webDriver);
             disAdvApp_financial_Review_Page(webDriver);
             disAdvApp_Signature_Page(webDriver);
-            /* To complete 8a Master Application.*/
+           /*TO Do :: Contributor Page- 8a DisAdvantaged Individual Sub application*/
+           masterApp_8a_Page_Click(webDriver, "page_contributors");
+           Contributor_Page(webDriver, "8a_DisAdvInd_contributor");
+           contributor_login(webDriver, "norole9", "norole9@mailinator.com");
+           /* To complete 8a Master Application.*/
             master8aApp_final_ReviewSign(webDriver);
             navigationMenuClick(webDriver, "DASHBOARD");
             List<WebElement> all_Cells = verify_Row_In_A_Table_And_Return(webDriver,
@@ -151,11 +155,7 @@ public class TestWorkFlowxx8aInProgress extends TestCase {
             setText_Element(webDriver, "SBA_Login_Pwd", "password");
             click_Element(webDriver, "SBA_Login_Sign_in");
             /*For Demo End - July 6*/
-
-            /*TO Do :: Contributor Page- 8a DisAdvantaged Individual Sub application*/
-            /* Contributor_Page(webDriver, "8a_DisAdvInd_contributor");
-            ProgramsPage.contributor_login(webDriver, "norole9", "norole9@mailinator.com");
-            Contributor_Page(webDriver, "8a_AddSpouse_contributor");
+            /*Contributor_Page(webDriver, "8a_AddSpouse_contributor");
             ProgramsPage.contributor_login(webDriver, "norole10", "norole10@mailinator.com");
             Contributor_Page(webDriver, "8a_AddSpouse_contributor");
             ProgramsPage.contributor_login(webDriver, "norole11", "norole11@mailinator.com");*/

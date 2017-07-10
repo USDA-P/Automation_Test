@@ -58,6 +58,7 @@ public class MasterApplication8a {
                     break;
                 case "no":
                     click_Element(webDriver, "Potential_Sucess_Revenue_NAICS_No");
+                    setText_Element(webDriver,"Potential_Sucess_Revenue_NAICS_Comment","QA Testing");
                     break;
 
             }
@@ -69,6 +70,7 @@ public class MasterApplication8a {
                     break;
                 case "no":
                     click_Element(webDriver, "Potential_Sucess_Revenue_Primary_No");
+                    generic_file_Upld(webDriver);
                     break;
 
             }
@@ -157,13 +159,13 @@ public class MasterApplication8a {
         // Elements tag: @8a_Initial_Program- Contributor
         if (!link_To_Click.equals(null) && !link_To_Click.equals("")) {
             switch (link_To_Click.toLowerCase()) {
-                case "8a_DisAdvInd_contributor":
+                case "8a_disadvind_contributor":
                     click_Element(webDriver, "Contributor_Add_DisAdv_Ind_Link");
                     break;
-                case "8a_AddSpouse_contributor":
+                case "8a_addspouse_contributor":
                     click_Element(webDriver, "Contributor_Add_Spouse_Ind_Link");
                     break;
-                case "8a_AddBusPart_contributor":
+                case "8a_addbuspart_contributor":
                     click_Element(webDriver, "Contributor_Add_Business_Ind_Link");
                     break;
             }

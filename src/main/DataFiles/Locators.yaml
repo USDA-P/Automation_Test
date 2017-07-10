@@ -1,7 +1,23 @@
 #Login
-SBA_Login_Email: {Locator: 'name', Value: "user[email]"}
-SBA_Login_Pwd: {Locator: 'name', Value: "user[password]"}
-
+SBA_Login_Email:        {Locator: 'name', Value: "user[email]"}
+SBA_Login_Pwd:          {Locator: 'name', Value: "user[password]"}
+SBA_GetStarted_Login:   {Locator: 'xpath', Value: "//button[contains(@class,'usa-color-gold')]"}
+SBA_First_Name:         {Locator: 'name', Value: "user[first_name]"}
+SBA_Last_Name:          {Locator: 'name', Value: "user[last_name]"}
+SBA_Email_Address:      {Locator: 'name', Value: "user[email]"}
+SBA_Confirm_Email:      {Locator: 'name', Value: "user[confirm_email]"}
+SBA_Confirm_Password:   {Locator: 'name', Value: "user[password_confirmation]"}
+SBA_Accept_CheckBox:    {Locator: 'id', Value: "accept_terms"}
+SBA_Recaptcha:          {Locator: 'xpath', Value: "//div[ contains(@class,'checkmark') ]"}
+#SBA_Recaptcha:          {Locator: 'id', Value: "recaptcha-anchor"}
+SBA_Create_Account:     {Locator: 'id', Value: "form_submit"}
+SBA_verify_Account:     {Locator: 'xpath', Value: "//p[ contains(@class,'usa-font-lead')]"}
+SBA_Create_Continue:    {Locator: 'id', Value: "submit"}
+Mailinator_Input_ID:    {Locator: 'id', Value: "inboxfield"}
+Mailinator_Search:      {Locator: 'xpath', Value: "//button[contains(@class,'btn btn-sm')]"}
+Malinator_Activate:     {Locator: 'xpath', Value: "//div[contains(@class,'innermail') and contains (text(),'Certify.sba.gov Account Signup')]"}
+Activate_Account:       {Locator: 'xpath', Value: "//a[contains(@href,'confirmation')]"}
+#Activate_Account:       {Locator: 'xpath', Value: "//a[contains(text(),'Activate Account')]"}
 # Case Page
 Apllication_Case_Search_Text:            {Locator: 'xpath', Value: '//input[ contains(@id, "search-field-small") ]'}
 Apllication_Case_Search_Button:          {Locator: 'xpath', Value: '//div[@role="search"]/div/button[@type="submit"]'}
@@ -315,9 +331,9 @@ SBA_Table_Search:       {Locator: 'xpath', Value: "//div[@id='table-search']/tab
 # @8a_Initial_Program  Start
 8a_Application_Page_Contributers_Link:                 {Locator: 'xpath', Value: "//table[@class='eight_a_sections']/tbody/tr[ td[2]/a[ contains(text(),'Contributors') ] ]/td/a "}
 8a_Application_Page_Contributers_Link_Start_Indv:      {Locator: 'xpath', Value: "//a[ contains (@href, 'eight_a_disadvantaged_individual/contributor_sections/vendor_admin/sba_applications/new' ) ]"}
-Contributor_Add_DisAdv_Ind_Link:                              {Locator: 'xpath', Value: "//a[ contains (@href, 'Add another Disadvantaged Individual, if applicable' ) ]"}
-Contributor_Add_Spouse_Ind_Link:                             {Locator: 'xpath', Value: "//a[ contains (@href, 'Add a spouse of a Disadvantaged Individual ) ]"}
-Contributor_Add_Business_Ind_Link:                           {Locator: 'xpath', Value: "//a[ contains (@href, 'Add other individuals' ) ]"}
+Contributor_Add_DisAdv_Ind_Link:                       {Locator: 'xpath', Value: "//a[ contains (@id,'add_link') and contains ( text() , 'Add another Disadvantaged Individual, if applicable' ) ]"}
+Contributor_Add_Spouse_Ind_Link:                       {Locator: 'xpath', Value: "//a[ contains ( text(), 'Add a spouse of a Disadvantaged Individual ) ]"}
+Contributor_Add_Business_Ind_Link:                     {Locator: 'xpath', Value: "//a[ contains ( text(), 'Add other individuals' ) ]"}
 
 #Contributor Page Start
 Contributor_Login_FullName:       {Locator: "id",  Value: "contributor_full_name"}
@@ -342,10 +358,10 @@ BasicEligibility_General_Assessment_a_broker_No:         {Locator: "id", Value: 
 BasicEligibility_General_Assessment_any_revenue_Yes:     {Locator: "id", Value: "answers_351_value_yes"}
 BasicEligibility_General_Assessment_any_revenue_No:      {Locator: "id", Value: "answers_351_value_no"}
 BasicEligibility_General_Assessment_U.S._citizens_Yes:    {Locator: "id", Value: "answers_352_value_yes"}
-BasicEligibility_General_Assessment_U.S._citizens_No:    {Locator: "id", Value: "answers_352_value_yes"}
+BasicEligibility_General_Assessment_U.S._citizens_No:    {Locator: "id", Value: "answers_352_value_no"}
 BasicEligibility_General_Assessment_DBA_Name_Yes:         {Locator: "id", Value: "answers_353_value_yes"}
 BasicEligibility_General_Assessment_DBA_Name_Yes_Comment:  {Locator: "id", Value: "answers_353_comment"}
-BasicEligibility_General_Assessment_DBA_Name_No:         {Locator: "id", Value: "answers_353_value_yes"}
+BasicEligibility_General_Assessment_DBA_Name_No:         {Locator: "id", Value: "answers_353_value_no"}
 # @8a_Initial_Program Basic Eligiblity End
 
 # @8a_Initial_Program Basic Eligiblity Outside Assistance Start
@@ -424,6 +440,7 @@ Character_bankruptcy_No:                {Locator: "id", Value: "answers_172_valu
 # @8a_Initial_Program- Potential Sucess Start
 Potential_Sucess_Revenue_NAICS_Yes:                 {Locator: "id", Value: "answers_630_value_yes"}
 Potential_Sucess_Revenue_NAICS_No:                  {Locator: "id", Value: "answers_630_value_no"}
+Potential_Sucess_Revenue_NAICS_Comment:             {Locator: "id", Value: "answers_630_comment"}
 Potential_Sucess_Revenue_Primary_Yes:               {Locator: "id", Value: "answers_631_value_yes"}
 Potential_Sucess_Revenue_Primary_No:                {Locator: "id", Value: "answers_631_value_no"}
 Potential_Sucess_Revenue_Precentage:                {Locator: "id", Value: "answers_632_value"}
