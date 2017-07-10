@@ -36,7 +36,6 @@ public class TestNewVendoradminAccount extends TestCase {
             /*Create New Vendor*/
             Email = "Deepa.test." + get_currentTimestamp() +"@mailinator.com";
             createVendorUser(webDriver,"Deepa","test1", Email,"Deepa.test2@mailinator.com");
-
             /*Activate the Account*/
             activateEmail(TestHelpers.getDefaultWebDriver(), Email);
 
