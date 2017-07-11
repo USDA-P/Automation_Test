@@ -20,7 +20,12 @@ import static gov.sba.pageObjetcs.Contributor8aDisadvantagedIndAppPage.*;
 import static gov.sba.pageObjetcs.MasterApplication8a.*;
 import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
 import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_Return;
-
+/*
+ * Documentation for Workflow WorkFlows for 8a Initial program - Accommodating best minimal Workflow Tests
+ * TestWorkFlow8aInitialWithOnlyVendorSubApp---Vendor Create 8a Initial Program: select yes to all questionnaires on all sub sections +
+ * With Vendor admin sub application only in Contributor section.
+ * login with SBA 8a Cod supervisor and verify the newly submitted cases in Unassigned table and assign to BOS Analyst.
+ */
 // Still in progress
 @Category({gov.sba.utils.integration.UnstableTests.class})
 public class TestWorkFlow8aInitialWithOnlyVendorSubApp extends TestCase {
@@ -71,9 +76,6 @@ public class TestWorkFlow8aInitialWithOnlyVendorSubApp extends TestCase {
             Business_Ownership_Entity_Ownership_Page(webDriver,"yes");
             Business_Ownership_Ownership_Details_Page(webDriver,"yes","no","no","no");
             Business_Ownership_Corporations_Page(webDriver);
-            /*generic_file_Upld(webDriver);*/
-            /*generic_file_Upld(webDriver);*/
-            /*generic_file_Upld(webDriver);*/
             click_Element(webDriver,"Application_Common_Submit_Button");
             accept_Alert(webDriver, 10);
            /*Character Page*/

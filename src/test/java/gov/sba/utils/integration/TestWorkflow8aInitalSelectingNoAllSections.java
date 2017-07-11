@@ -10,17 +10,23 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
+import static gov.sba.automation.AssertionUtils.delete_All_Application_Draft;
 import static gov.sba.automation.CommonApplicationMethods.*;
 import static gov.sba.pageObjetcs.Contributor8aDisadvantagedIndAppPage.*;
 import static gov.sba.pageObjetcs.MasterApplication8a.*;
 import static gov.sba.pageObjetcs.ProgramsPage.contributor_login;
 import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
-import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_Return;
+import static gov.sba.pageObjetcs.TestCreateVendorUser.activateEmail;
+import static gov.sba.pageObjetcs.TestCreateVendorUser.createVendorUser;
+import static gov.sba.pageObjetcs.VendorDashboardPage.click_On_App_In_Vend_Dash;
 
+/*
+ * Documentation for Workflow WorkFlows for 8a Initial program - Accommodating best minimal Workflow Tests
+ * TestWorkflow8aInital SelectingNoAllSections---Vendor Create 8a Initial Program: select no to all questionnaires on all sub sections +
+ * With  Vendor admin sub application and 8a disadvantage individual sub application in Contributor section.
+ * login with SBA 8a Cod supervisor and verify the newly submitted cases in Unassigned table and assign to BOS Analyst.
+ */
 // Still in progress
 @Category({gov.sba.utils.integration.StableTests.class})
 public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
@@ -36,7 +42,7 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
         TestHelpers.set_Headless();
         webDriver = TestHelpers.getDefaultWebDriver();
         webDriver.get(TestHelpers.getBaseUrl());
-        get_The_Row_From_Login_Data =43;
+        get_The_Row_From_Login_Data =42;
        /* String[] details = findUnusedDunsNumber("");
         email = details[0];
         password = details[1];
@@ -50,14 +56,14 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
             /*return_All_Applications(webDriver, 11, "165324125");*/
             /*delete_All_Application_Draft(webDriver, email, password, duns_Number);*/
             /*Login to Dashboard.*/
- //           delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125");
+            delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "144754156");
             new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data).Login_With_Reference();
 
           /*  new LoginPageWithDetails(webDriver, email, password).Login_With_Details(); */
 
             webDriver.navigate().to("https://certify.qa.sba-one.net/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
             click_Element(webDriver, "Application_Common_Accept_Button");
-            masterApp_8a_Page_Click(webDriver,"page_basiceligibility");
+            /*asterApp_8a_Page_Click(webDriver,"page_basiceligibility");*/
          /*   Basic Eligibility Page selecting all no  */
             BasicEligiblity_General_Assessment_Page(webDriver, "no", "no", "no", "no", "no");
             BasicEligiblity_Prior_8a_Involvement_Page(webDriver, "no", "no", "no");
@@ -66,7 +72,7 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
             Thread.sleep(5000);
             click_Element(webDriver, "Application_Common_Submit_Button");
             accept_Alert(webDriver, 8);
-            BasicEligiblity_Size_Determination_Page(webDriver);
+            /*BasicEligiblity_Size_Determination_Page(webDriver);*/
            /* Basic ownership Page selecting all no  */
             masterApp_8a_Page_Click(webDriver,"page_business_ownership");
             Business_Ownership_Entity_Ownership_Page(webDriver,"no");
@@ -137,23 +143,32 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
             disAdvApp_financial_Review_Page(webDriver);
             disAdvApp_Signature_Page(webDriver);
            /*TO Do :: Contributor Page- 8a DisAdvantaged Individual Sub application*/
-           masterApp_8a_Page_Click(webDriver, "page_contributors");
-           Contributor_Page(webDriver, "8a_DisAdvInd_contributor");
-           contributor_login(webDriver, "norole9", "norole9@mailinator.com");
-           /* To complete 8a Master Application.*/
-            master8aApp_final_ReviewSign(webDriver);
-            navigationMenuClick(webDriver, "DASHBOARD");
-            List<WebElement> all_Cells = verify_Row_In_A_Table_And_Return(webDriver,
-                new String[] {"8(a) Initial Application", "", "Pending", "", "", "", ""});
-            assertNotNull(all_Cells);
-            /*For Demo Start - July 6*/
-            Thread.sleep(4000);
-            navigationMenuClick(webDriver, "Logout");
-            webDriver.get(TestHelpers.getBaseUrl());
-            click_Element(webDriver, "SBA_Login_Button");
-            setText_Element(webDriver, "SBA_Login_Email", "sba_supervisor_8a_cods_5@mailinator.com");
-            setText_Element(webDriver, "SBA_Login_Pwd", "password");
-            click_Element(webDriver, "SBA_Login_Sign_in");
+           navigationMenuClick(webDriver,"LOGOUT");
+           /* Create new Contributor user to submit their individual sub application*/
+             /*Create New Vendor*/
+            String Email = "Deepa.test." + get_currentTimestamp() +"@mailinator.com";
+            createVendorUser(webDriver,"Deepa","test1", Email,"Deepa.test2@mailinator.com");
+            /*Activate the Account*/
+            activateEmail(TestHelpers.getDefaultWebDriver(), Email);
+          /* Log in back ith vendor admin and click on 8a Inital Progam draft application and click on contributor section */
+            click_On_App_In_Vend_Dash(webDriver, "8aInitial");
+            Contributor_Page(webDriver, "8a_DisAdvInd_contributor");
+            contributor_login(webDriver, "Deepa", Email);
+                   /* To complete 8a Master Application.*/
+                    /*master8aApp_final_ReviewSign(webDriver);
+                    navigationMenuClick(webDriver, "DASHBOARD");
+                    List<WebElement> all_Cells = verify_Row_In_A_Table_And_Return(webDriver,
+                        new String[] {"8(a) Initial Application", "", "Pending", "", "", "", ""});
+                    assertNotNull(all_Cells);
+                    /*For Demo Start - July 6*/
+                   /* Thread.sleep(4000);
+                    navigationMenuClick(webDriver, "Logout");
+                    webDriver.get(TestHelpers.getBaseUrl());
+                    click_Element(webDriver, "SBA_Login_Button");
+                    setText_Element(webDriver, "SBA_Login_Email", "sba_supervisor_8a_cods_5@mailinator.com");
+                    setText_Element(webDriver, "SBA_Login_Pwd", "password");
+                    click_Element(webDriver, "SBA_Login_Sign_in");
+            */
             /*For Demo End - July 6*/
             /*Contributor_Page(webDriver, "8a_AddSpouse_contributor");
             ProgramsPage.contributor_login(webDriver, "norole10", "norole10@mailinator.com");

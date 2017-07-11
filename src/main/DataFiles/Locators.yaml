@@ -1,6 +1,8 @@
 #Login
 SBA_Login_Email:        {Locator: 'name', Value: "user[email]"}
 SBA_Login_Pwd:          {Locator: 'name', Value: "user[password]"}
+SBA_Login_Button:       {Locator:  'xpath', Value: "//button[contains(@class,'button-full')]"}
+SBA_Login_Sign_in:      {Locator:  'id', Value: "business_signin"}
 SBA_GetStarted_Login:   {Locator: 'xpath', Value: "//button[contains(@class,'usa-color-gold')]"}
 SBA_First_Name:         {Locator: 'name', Value: "user[first_name]"}
 SBA_Last_Name:          {Locator: 'name', Value: "user[last_name]"}
@@ -274,6 +276,7 @@ SBA_EDWOSB_Table_Renew_Link:      {Locator: 'linktext', Value: "Renew"}
 SBA_WOSB_Table_Link:              {Locator: 'linktext', Value: "WOSB Self-Certification"}
 SBA_WOSB_Table_Renew_Link:        {Locator: 'linktext', Value: "Renew"}
 SBA_MPP_Table_Link:               {Locator: 'linktext', Value: "MPP Application"}
+SBA_8aInitial_Table_Link:         {Locator: 'linktext', Value: "8(a) Initial Program"}
 
 #Dashboard
 OppSup_Dashboard_Business_Signin: {Locator: 'id', Value: "business_signin"}

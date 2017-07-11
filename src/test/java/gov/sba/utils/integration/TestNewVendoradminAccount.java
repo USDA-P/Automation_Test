@@ -38,6 +38,7 @@ public class TestNewVendoradminAccount extends TestCase {
             createVendorUser(webDriver,"Deepa","test1", Email,"Deepa.test2@mailinator.com");
             /*Activate the Account*/
             activateEmail(TestHelpers.getDefaultWebDriver(), Email);
+            /* Re login with the account to verify its activated */
 
         }catch (Exception e){
             take_ScreenShot_TestCaseName(webDriver, new String[] {name, "Exception"});

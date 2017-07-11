@@ -58,6 +58,10 @@ public class VendorDashboardPage {
         click_Element(webDriver, "SBA_MPP_Table_Link");
         // find_Elements(webDriver, "SBA_MPP_Table_Link").get(0).click();
         break;
+      case "8aInitial":
+        click_Element(webDriver, "SBA_8aInitial_Table_Link");
+        // find_Elements(webDriver, "SBA_MPP_Table_Link").get(0).click();
+       break;
     }
   }
 
