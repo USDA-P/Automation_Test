@@ -1,16 +1,16 @@
-/**
+/*
  * Created by deepa on 5/15/2017.
  */
 package gov.sba.pageObjetcs;
 
-import static gov.sba.automation.CommonApplicationMethods.click_Element;
-import static gov.sba.automation.CommonApplicationMethods.find_Elements;
-
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
+import static gov.sba.automation.CommonApplicationMethods.click_Element;
+import static gov.sba.automation.CommonApplicationMethods.find_Elements;
 
 public class VendorDashboardPage {
 
@@ -58,7 +58,7 @@ public class VendorDashboardPage {
         click_Element(webDriver, "SBA_MPP_Table_Link");
         // find_Elements(webDriver, "SBA_MPP_Table_Link").get(0).click();
         break;
-      case "8aInitial":
+      case "8ainitial":
         click_Element(webDriver, "SBA_8aInitial_Table_Link");
         // find_Elements(webDriver, "SBA_MPP_Table_Link").get(0).click();
        break;
