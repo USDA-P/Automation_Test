@@ -1,24 +1,20 @@
 // Ts Created by Deepa Patri
 package gov.sba.pageObjetcs;
 
-import static gov.sba.automation.CommonApplicationMethods.accept_Alert;
-import static gov.sba.automation.CommonApplicationMethods.click_Element;
-import static gov.sba.automation.CommonApplicationMethods.find_Element;
-import static gov.sba.automation.CommonApplicationMethods.setText_Element;
-import static gov.sba.automation.FixtureUtils.fixturesDir;
-import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
-
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
+import static gov.sba.automation.CommonApplicationMethods.*;
+import static gov.sba.automation.FixtureUtils.fixturesDir;
+import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
 
 public class Contributor8aDisadvantagedIndAppPage {
 
@@ -131,16 +127,13 @@ public class Contributor8aDisadvantagedIndAppPage {
         case "yes":
           click_Element(webDriver, "8a_DisAdv_US_Citizenship_yes");
           generic_file_Upld(webDriver);
-          /*
-           * new newMppUploadDocumentPageDeepa(webDriver).deepaUploadMppDocument(fixturesDir() +
-           * "Upload.pdf");
-           */
+          /* new newMppUploadDocumentPageDeepa(webDriver).deepaUploadMppDocument(fixturesDir() + "Upload.pdf"); */
           break;
         case "no":
-          click_Element(webDriver, "8a_DisAdv_US_citizenship_no");
-          break;
+            click_Element(webDriver, "8a_DisAdv_US_citizenship_no");
+            click_Element(webDriver, "Application_Common_Continue_Button");
+            break;
       }
-      click_Element(webDriver, "Application_Common_Continue_Button");
     }
   }
 
@@ -154,8 +147,8 @@ public class Contributor8aDisadvantagedIndAppPage {
        * click_Element(webDriver, "8a_DisAdv_UpdResume_Up1_Add_Req_Upload"); Thread.sleep(1500);
        * click_Element(webDriver, "8a_DisAdv_UpdResume_Up1_Add_Req_Choose"); Thread.sleep(1500);
        * doUpload_Action();
+       * click_Element(webDriver, "Application_Common_Continue_Button");
        */
-      click_Element(webDriver, "Application_Common_Continue_Button");
     } catch (Exception e) {
       logger.info(e.toString());
       throw e;

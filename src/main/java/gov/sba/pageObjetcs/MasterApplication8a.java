@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 import static gov.sba.automation.CommonApplicationMethods.*;
+import static gov.sba.pageObjetcs.Contributor8aDisadvantagedIndAppPage.*;
+import static gov.sba.pageObjetcs.Contributor8aSpouseSubapplicationPage.*;
 import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
 
 public class MasterApplication8a {
@@ -646,6 +648,107 @@ public class MasterApplication8a {
             click_Element(webDriver,"8a_MasterApp_ReviewSign_Button");
             click_Element(webDriver, "8a_AllApp_Signature_id");
             click_Element(webDriver,"Application_Common_Submit_Button");
+
+        } catch (Exception e) {
+            logger.info(e.toString());
+            throw e;
+        }
+    }
+    public static void contributorsubApp_8aDisAdvInd(WebDriver webDriver) throws Exception  {
+        try {
+            disAdvApp_Gender_Info_Page(webDriver, "Male");
+            disAdvApp_MaritalStatus_Page(webDriver, "Married");
+            disAdvApp_SocialSecNum_Page(webDriver, "12345678");
+            disAdvApp_ContactInfo_Page(webDriver, "12345678");
+            disAdvApp_CuurentHomeAddress_Page(webDriver, "mclean", "mclean", "AL", "10002", "US", "01/01/2019");
+            disAdvApp_LengthofResidency_Page(webDriver, "yes");
+            disAdvApp_DateandPlaceofBirth_Page(webDriver, "01/01/2019", "Mclean", "India");
+            disAdvApp_Us_Citizenship_Page(webDriver, "yes");
+            /*generic_file_Upld(webDriver);*/
+            /*click_Element(webDriver, "Application_Common_Continue_Button");*/
+            disAdvApp_UploadResume_Page(webDriver);
+            disAdvApp_Appl_Firm_Ownership_Page(webDriver, "80", "Anything");
+           disAdvApp_Bank_Acct_Access_Page(webDriver, "yes", "Anything");
+            disAdvApp_Full_Time_Devotion_Page(webDriver, "yes");
+            disAdvApp_Business_Affiliations_Page(webDriver, "yes", "yes", "something To Test");
+            disAdvApp_8a_Prior_Involvement_Page(webDriver, "yes", "yes", "yes");
+            disAdvApp_8a_Federal_Employment_Page(webDriver, "yes");
+            disAdvApp_8a_Household_Federal_Employment_Page(webDriver, "yes");
+            disAdvApp_8a_Financial_Page(webDriver, "yes", "yes", "yes", "yes");
+            disAdvApp_8a_Criminal_History_Page(webDriver, "yes", "Anything", "yes", "yes", "yes");
+            disAdvApp_criminal_Hist_Doc_Page(webDriver);
+            disAdvApp_Basic_Of_Disadvantage_Page(webDriver, "Black American", "Anything");
+            disAdvApp_Social_Narrative_Page(webDriver);
+            disAdvApp_Transfer_Assets_Page(webDriver, "Yes", "Anything");
+           disAdvApp_Tax_Returns_Page(webDriver);
+            disAdvApp_financial_CashOnHand_Page(webDriver, "01/01/2019", "111", "111", "111");
+            disAdvApp_financial_OtherSource_Page(webDriver, "111", "111", "Anything", "111", "111");
+            disAdvApp_financial_Notes_Receivable_Page(webDriver, "Yes");
+            disAdvApp_financial_Retirement_Account_Page(webDriver, "Yes", "Yes");
+           disAdvApp_financial_Life_Insurance_Page(webDriver,"Yes","Yes");
+            disAdvApp_financial_StocksAndBonds_Page(webDriver,"Yes");
+            disAdvApp_financial_RealEstate_Page(webDriver, "Yes", "Yes", "Yes", "Yes", "Yes",
+                "Yes");
+            disAdvApp_financial_RealEstateOther_Page(webDriver, "Yes", "Yes", "Yes", "Yes", "Yes",
+                "Yes");
+            disAdvApp_financial_Personal_Property_Page(webDriver, "Yes", "Yes");
+            disAdvApp_financial_NotesPayableandOther_Page(webDriver, "Yes");
+            disAdvApp_financial_Assessed_Taxes_Page(webDriver, "Yes");
+            // Personal summary Report
+           disAdvApp_financial_PersonalSummary_Page(webDriver);
+            disAdvApp_financial_PrivacyStatements_Page(webDriver);
+            disAdvApp_financial_Review_Page(webDriver);
+           disAdvApp_Signature_Page(webDriver);
+
+        } catch (Exception e) {
+            logger.info(e.toString());
+            throw e;
+        }
+    }
+    public static void contributorsubApp_8aSpouse(WebDriver webDriver) throws Exception  {
+        try {
+            spousesubapp_Gender_Info_Page(webDriver, "Male");
+            spousesubapp_MaritalStatus_Page(webDriver, "Married");
+            spousesubapp_SocialSecNum_Page(webDriver, "12345678");
+            spousesubapp_ContactInfo_Page(webDriver, "12345678");
+            spousesubapp_CuurentHomeAddress_Page(webDriver, "mclean", "mclean", "AL", "10002", "US", "01/01/2019");
+            spousesubapp_Role_Appl_firm_Page(webDriver,"yes");
+            spousesubapp_LengthofResidency_Page(webDriver,"no");
+            spousesubapp_PreviousHomeAddress_Page(webDriver,"yes","11220","mclean","DC","10002","US");
+            spousesubapp_DateandPlaceofBirth_Page(webDriver, "01/01/2019", "Mclean", "India");
+            spousesubapp_Us_Citizenship_Page(webDriver, "no");
+            spousesubapp_Resident_Alien_Page(webDriver,"yes");
+            /*generic_file_Upld(webDriver);*/
+            /*click_Element(webDriver, "Application_Common_Continue_Button");*/
+            spousesubapp_UploadResume_Page(webDriver);
+            spousesubapp_Appl_Firm_Ownership_Page(webDriver, "80", "Anything");
+            spousesubapp_Bank_Acct_Access_Page(webDriver, "yes", "Anything");
+            spousesubapp_Prior_Ownership_Page(webDriver, "yes","Anything","yes");
+            spousesubapp_Business_Affiliations_Page(webDriver, "yes", "yes", "something To Test");
+            spousesubapp_8a_Prior_Involvement_Page(webDriver, "yes", "yes", "yes");
+            spousesubapp_8a_Federal_Employment_Page(webDriver, "yes");
+            spousesubapp_8a_Financial_Page(webDriver, "yes", "yes", "yes", "yes");
+            spousesubapp_8a_Criminal_History_Page(webDriver, "yes", "Anything", "yes", "yes", "yes");
+            spousesubapp_criminal_Hist_Doc_Page(webDriver);
+            spousesubapp_Tax_Returns_Page(webDriver);
+            spousesubapp_financial_CashOnHand_Page(webDriver, "01/01/2019", "111", "111", "111");
+            spousesubapp_financial_OtherSource_Page(webDriver, "111", "111", "Anything", "111", "111");
+            spousesubapp_financial_Notes_Receivable_Page(webDriver, "Yes");
+            spousesubapp_financial_Retirement_Account_Page(webDriver, "Yes", "Yes");
+            spousesubapp_financial_Life_Insurance_Page(webDriver,"Yes","Yes");
+            spousesubapp_financial_StocksAndBonds_Page(webDriver,"Yes");
+            spousesubapp_financial_RealEstate_Page(webDriver, "Yes", "Yes", "Yes", "Yes", "Yes",
+                "Yes");
+            spousesubapp_financial_RealEstateOther_Page(webDriver, "Yes", "Yes", "Yes", "Yes", "Yes",
+                "Yes");
+            spousesubapp_financial_Personal_Property_Page(webDriver, "Yes", "Yes");
+            spousesubapp_financial_NotesPayableandOther_Page(webDriver, "Yes");
+            spousesubapp_financial_Assessed_Taxes_Page(webDriver, "Yes");
+            // Personal summary Report
+            spousesubapp_financial_PersonalSummary_Page(webDriver);
+            spousesubapp_financial_PrivacyStatements_Page(webDriver);
+            spousesubapp_financial_Review_Page(webDriver);
+            spousesubapp_Signature_Page(webDriver);
 
         } catch (Exception e) {
             logger.info(e.toString());

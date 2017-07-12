@@ -2,15 +2,12 @@
 
 package gov.sba.pageObjetcs;
 
-import static gov.sba.automation.CommonApplicationMethods.click_Element;
-import static gov.sba.automation.CommonApplicationMethods.getLocator;
-import static gov.sba.automation.CommonApplicationMethods.navigationMenuClick;
-import static gov.sba.automation.CommonApplicationMethods.setText_Element;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import java.util.Map;
 
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
+import static gov.sba.automation.CommonApplicationMethods.*;
 
 public class ProgramsPage {
 
@@ -151,7 +148,7 @@ public class ProgramsPage {
       setText_Element(webDriver, "Contributor_Login_FullName", FullName);
       setText_Element(webDriver, "Contributor_Login_EmailAddress", EmailAddress);
       click_Element(webDriver, "Contributor_Login_Button");
-    } catch (Exception e) {
+      } catch (Exception e) {
       throw e;
     }
   }
