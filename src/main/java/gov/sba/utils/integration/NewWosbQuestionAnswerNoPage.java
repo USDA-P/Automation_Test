@@ -240,7 +240,7 @@ public class NewWosbQuestionAnswerNoPage {
     Expected_Text = "Reference: 13 C.F.R. 127.202(a)";
     assertEquals(Actual_Text, Expected_Text);
     // Verify link.
-    webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     String main_window = webDriver.getWindowHandle();
     logger.info("Before switching, title is = certify.sba.gov");
     webDriver.findElement(By.xpath("(//a[contains(text(),'13 C.F.R. 127.202(a)')])[2]")).click();

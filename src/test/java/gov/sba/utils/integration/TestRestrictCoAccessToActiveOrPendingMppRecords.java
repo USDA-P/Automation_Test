@@ -170,7 +170,7 @@ public class TestRestrictCoAccessToActiveOrPendingMppRecords extends TestCase {
       Expected_Text = "EDWOSB";
       assertEquals(Actual_Text, Expected_Text);
       // Verify the EDWOSB.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("EDWOSB")).click();
@@ -330,7 +330,7 @@ public class TestRestrictCoAccessToActiveOrPendingMppRecords extends TestCase {
       Expected_Text = "EDWOSB";
       assertEquals(Actual_Text, Expected_Text);
       // Verify the EDWOSB.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("EDWOSB")).click();

@@ -98,7 +98,7 @@ public class TestMaster8aQuestionCompanyInfo extends TestCase {
         "To qualify as a protégé firm, your business must qualify as small for the NAICS code for which it is seeking business development assistance. Size standards have been established for types of economic activity, or industry, under the North American Industry Classification System (NAICS). To determine the size standard associated with a particular NAICS code, refer to the table of size standards in the Small Business Size Regulations. Reference: 13 CFR 121.201";
     assertEquals(Actual_Text, Expected_Text);
     // verify link.
-    webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     String main_window = webDriver.getWindowHandle();
     logger.info("Before switching, title is = certify.sba.gov");
     webDriver.findElement(By.linkText("13 CFR 121.201")).click();

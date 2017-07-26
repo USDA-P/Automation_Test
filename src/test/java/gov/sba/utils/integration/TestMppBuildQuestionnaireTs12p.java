@@ -157,7 +157,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
       webDriver.findElement(By.id("answers_120_value_no")).click();
       webDriver.findElement(By.id("answers_121_value_no")).click();
       // Verify the Reference link.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window1 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("13 CFR 124.520(d)(2)")).click();
@@ -362,7 +362,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
       Expected_Text = "Please answer this question";
       assertEquals(Actual_Text, Expected_Text);
       // Verify the Reference link.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window3 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("completing a business plan")).click();
@@ -383,7 +383,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
         CoreUtils.clickContinue(webDriver);
       }
       Thread.sleep(2000);
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window31 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("local resource partner near you.")).click();
@@ -629,7 +629,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
           "This type of assistance might include help with general business processes, or other administrative support. Reference: 13 CFR 124.520 a) and e)";
       assertEquals(Actual_Text, Expected_Text);
       // Verify all reference links 1.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window3111 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       wait.until(ExpectedConditions.elementToBeClickable(By.linkText("13 CFR 124.520 a) and e)")));
@@ -650,7 +650,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
         }
       }
       // Link 2.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window31111 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       wait.until(ExpectedConditions
@@ -673,7 +673,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
         }
       }
       // Link 3.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window4 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       wait.until(ExpectedConditions
@@ -696,7 +696,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
         }
       }
       // link 4.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window41 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       wait.until(ExpectedConditions
@@ -719,7 +719,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
         }
       }
       // Link 5.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window5 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       wait.until(ExpectedConditions

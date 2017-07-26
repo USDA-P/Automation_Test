@@ -34,7 +34,7 @@ public class AddOrStartEightACertificationPage {
       // Click on the Start a new application button.
       webDriver.findElement(By.id("add_certification")).click();
       // Verify link 13 CFR § 124.3.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("124.3")).click();
@@ -72,7 +72,7 @@ public class AddOrStartEightACertificationPage {
       // Click on the EDWOSB link.
       webDriver.findElement(By.linkText("8(a) Document Upload")).click();
       // Verify link 13 CFR § 124.3.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("124.3")).click();

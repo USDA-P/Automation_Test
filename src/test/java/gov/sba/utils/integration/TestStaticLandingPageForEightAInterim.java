@@ -90,7 +90,7 @@ public class TestStaticLandingPageForEightAInterim extends TestCase {
     webDriver.navigate().back();
     Thread.sleep(2000);
     // Verify the 2nd download links.
-    webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     String main_window1 = webDriver.getWindowHandle();
     logger.info("Before switching, title is = certify.sba.gov");
     webDriver.findElement(By.linkText("Guidance to Submitting an 8(a) Application")).click();
@@ -116,7 +116,7 @@ public class TestStaticLandingPageForEightAInterim extends TestCase {
       }
       Thread.sleep(3000);
       // Verify the 1st download links.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("User Guide for certify.SBA.gov")).click();

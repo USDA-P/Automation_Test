@@ -94,7 +94,7 @@ public class AddOrStartNewMppProgramPage extends TestCase {
           "Please read the following certification statements. The Federal government relies on the information in this form and any documents or supplemental information submitted to determine whether the business is eligible to participate in the All Small Business Mentor-Protégé Program. The definition of the terms used in this certification are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR Part 124.520 and 125.9), and also any statutory and regulatory provision referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person signing this certification may be prosecuted if they have provided false information. Any action taken with respect to this certification does not affect the Government’s right to pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
       assertEquals(Actual_Text, Expected_Text);
       // Verify links on the table.
-      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       String main_window = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("Mentor-Protégé Program training module")).click();
@@ -196,7 +196,7 @@ public class AddOrStartNewMppProgramPage extends TestCase {
         logger.info("Back to main window = " + webDriver.getWindowHandle());
         // Verify the SAM.gov link.
         Thread.sleep(2000);
-        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         String main_window = webDriver.getWindowHandle();
         logger.info("Before switching, title is = certify.sba.gov");
         webDriver.findElement(By.linkText("SAM.gov")).click();
