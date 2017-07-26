@@ -157,7 +157,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
       webDriver.findElement(By.id("answers_120_value_no")).click();
       webDriver.findElement(By.id("answers_121_value_no")).click();
       // Verify the Reference link.
-      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
       String main_window1 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("13 CFR 124.520(d)(2)")).click();
@@ -362,7 +362,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
       Expected_Text = "Please answer this question";
       assertEquals(Actual_Text, Expected_Text);
       // Verify the Reference link.
-      webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+      webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
       String main_window3 = webDriver.getWindowHandle();
       logger.info("Before switching, title is = certify.sba.gov");
       webDriver.findElement(By.linkText("completing a business plan")).click();
