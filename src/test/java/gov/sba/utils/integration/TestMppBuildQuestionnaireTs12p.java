@@ -1034,9 +1034,10 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
     } catch (Exception e) {
       elapsed_Seconds = (System.currentTimeMillis() - tStart) / 1000.0;
       logger.info("End:" + elapsed_Seconds);
-      ScreenShotPage screenShot = new ScreenShotPage(webDriver);
-      screenShot.ScreenShot();
-      logger.info(e.getMessage());
+      e.printStackTrace();
+      // ScreenShotPage screenShot = new ScreenShotPage(webDriver);
+      // screenShot.ScreenShot();
+      logger.error(e.getMessage());
       Assert.fail();
     }
 
