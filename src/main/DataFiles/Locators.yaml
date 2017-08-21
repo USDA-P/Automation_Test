@@ -396,7 +396,7 @@ EDWOSB_financial_Personal_Property_DescAss:                {Locator: 'id', Value
 EDWOSB_financial_Personal_Property_No:                     {Locator: 'id', Value: "answers_382_value_no"}
 #Do you own any other personal property or assets?
 EDWOSB_financial_Oth_Personal_Property_Yes:               {Locator: 'id', Value: "answers_383_value_yes"}
-EDWOSB_financial_Oth_Personal_Property_New_Button:        {Locator: 'xpath', Value: "//div[ @id = 'answers_799_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
+EDWOSB_financial_Oth_Personal_Property_New_Button:        {Locator: 'xpath', Value: "//div[ @id = 'answers_383_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Oth_Personal_Property_CurrVal:           {Locator: 'id', Value: "DTE_Field_current_value"}
 EDWOSB_financial_Oth_Personal_Property_LoadBal:           {Locator: 'id', Value: "DTE_Field_loan_balance"}
 EDWOSB_financial_Oth_Personal_Property_DescAss:           {Locator: 'id', Value: "DTE_Field_asset_description"}
