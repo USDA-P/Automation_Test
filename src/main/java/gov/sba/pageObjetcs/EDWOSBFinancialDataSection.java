@@ -509,6 +509,21 @@ public class EDWOSBFinancialDataSection {
     }
 
   }
+  public static void edwosb_financial_Adjusted_Gross_Income_Page(WebDriver webDriver)
+          throws Exception {
+    try {
+      // Elements Tags: @vendor_Admin_Adjusted_Gross_Income_Page
+      setText_Element(webDriver, "EDWOSB_financial_Page_Ans_386_SetText", "1000");
+      setText_Element(webDriver, "EDWOSB_financial_Page_Ans_387_SetText", "2000");
+      setText_Element(webDriver, "EDWOSB_financial_Page_Ans_388_SetText", "3000");
+
+      click_Element(webDriver, "Application_Common_Continue_Button");
+    } catch (Exception e) {
+      logger.info(e.toString());
+      throw e;
+    }
+
+  }
 
   public static void edwosb_financial_PersonalSummary_Page(WebDriver webDriver) throws Exception {
     try { // Elements Tags: Application_Common_Continue_Button

@@ -90,6 +90,7 @@ public class TestWorkflowEDWOSB07 extends TestCase {
       edwosb_financial_Personal_Property_Page(webDriver, "yes", "yes");
       edwosb_financial_NotesPayableandOther_Page(webDriver, "yes");
       edwosb_financial_Assessed_Taxes_Page(webDriver, "yes");
+      edwosb_financial_Adjusted_Gross_Income_Page(webDriver);
       edwosb_financial_PersonalSummary_Page(webDriver);
       edwosb_financial_PrivacyStatements_Page(webDriver);
       edwosb_financial_Review_Page(webDriver);
