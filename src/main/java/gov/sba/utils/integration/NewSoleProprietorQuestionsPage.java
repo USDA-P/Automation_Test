@@ -3,6 +3,7 @@ package gov.sba.utils.integration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,6 +26,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     logger.debug(" new sole proprietorship question page");
     String Actual_Text = null;
     String Expected_Text = null;
+	JavascriptExecutor jse = (JavascriptExecutor) webDriver;
+
     // Locate the accept button at the bottom of the EDWOSB agreement and
     // click on it to continue.
     CoreUtils.clickContinue(webDriver);
@@ -113,6 +116,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "Under the WOSB Program, the 51% ownership must be direct and not through another business entity or a trust (including employee stock ownership plan). Companies which attain 51% ownership by a qualifying individual(s) through a trust or other arrangement that is owned and controlled by women are generally not eligible for the program. Reference: 13 CFR 127.201(b)";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")).click();
     // 3rd question.
     Actual_Text =
@@ -127,6 +132,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
         "If the ownership is not held through a trust, select N/A. SBA will treat ownership by a trust, such as a living trust, as the functional equivalent of ownership by the qualifying individual where the trust is revocable, and the qualifying individual is the grantor, the trustee, and the sole current beneficiary of the trust. Reference: 13 C.F.R. 127.201(c)";
     assertEquals(Actual_Text, Expected_Text);
     // select no and continue.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")).click();
     webDriver.findElement(By.xpath("//textarea")).sendKeys(
         "Also is their earth so. Dry given, place itself for were third. Itself second gathered fruit from");
@@ -155,6 +162,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "If yes, please upload a resume to show managerial experience. The woman must have managerial experience of the extent and complexity needed to run the business. Reference: 13 C.F.R. 127.202(b)";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")).click();
     // 3rd question.
     Actual_Text =
@@ -168,6 +177,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "The woman manager does not need to have the technical expertise or possess the required license to be found to control the business if she can demonstrate that she has ultimate managerial and supervisory control over those who possess the required licenses or technical expertise. Reference: 13 C.F.R. 127.202(b)";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")).click();
     // 4th question.
     Actual_Text =
@@ -181,6 +192,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "The qualifying individual(s) may not engage in outside employment that prevents her from devoting sufficient time and attention to the daily affairs or the business. Reference: 13 C.F.R. 127.202(c)";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[4]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[4]/fieldset/div/label[2]")).click();
     // 5th question.
     Actual_Text =
@@ -194,6 +207,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "Men or other entities may be involved in the management of the business and may be stockholders, partners or limited liability members of the business, provided that no males or other entity exercise actual control or have the power to control the business. Reference: 13 C.F.R. 127.202(g)";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[5]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[5]/fieldset/div/label[2]")).click();
     // 6th question meaning.
     Actual_Text =
@@ -201,6 +216,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "Is the qualifying individual(s) in control of long-term decision making and day-to-day operations?";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[6]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[6]/fieldset/div/label[2]")).click();
     webDriver.findElement(By.xpath("//textarea")).sendKeys(
         "Also is their earth so. Dry female let doesn't void unto kind. Him two days set green us. Darkness from you'll. Him winged winged fifth man heaven won't it first male saw gathered deep. Abundantly herb it own. Darkness from, created great gathering us called deep abundantly. Divide. So replenish rule together beginning fowl seas light gathering air fill, saw darkness divide doesn't greater fly they're all fly. Shall light from given, place itself for were third. Itself second gathered fruit fromAlso is their earth so. Dry female let doesn't void unto kind. Him two days set green us. Darkness from you'll. Him winged winged fifth man heaven won't it first male saw gathered deep. Abundantly herb it own. Darkness from, created great gathering us called deep abundantly. Divide. So replenish rule together beginning fowl seas light gathering air fill, saw darkness divide doesn't greater fly they're all fly. Shall light from given, place itself for were third. Itself second gathered fruit from");
@@ -271,6 +288,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
         .getText();
     Expected_Text = "If this situation does not apply, select N/A.";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")).click();
     CoreUtils.clickContinue(webDriver);
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h4")));
@@ -302,6 +321,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text =
         "Assets that a qualifying individual(s) transferred within two years of the date of the concern's certification will be attributed to the qualifying individual(s) if the assets were transferred to an immediate family member, or to a trust that has as a beneficiary an immediate family member. The transferred assets within the two-year period will not be attributed to the woman if the transfer was:";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")).click();
     // 3rd question.
     Actual_Text = webDriver
@@ -317,6 +338,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
     Expected_Text = "If this situation does not apply, select N/A.";
     assertEquals(Actual_Text, Expected_Text);
     // select no and continue.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")).click();
     CoreUtils.clickContinue(webDriver);
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h4")));
@@ -354,6 +377,8 @@ public class NewSoleProprietorQuestionsPage extends TestCase {
         "This section must be completed by each individual claiming economic disadvantage in connection with the 8(a) Program and/or the Women-Owned Small Business Federal Contract Program.";
     assertEquals(actual_Text52, expected_Text52);
     // Validate the Personal Information.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//fieldset/div[2]/button")));
+
     webDriver.findElement(By.xpath("//fieldset/div[2]/button")).click();
     logger.info("the page to Create and Add new Record is Present, PASS");
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("owners__first_name")));

@@ -23,6 +23,8 @@ public class NewPartnershipQuestionsPage {
 
 	public void NewPartnershipQuestions() throws Exception {
 		WebDriverWait wait = new WebDriverWait(webDriver, 40);
+		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
+
 		logger.debug(" new sole proprietorship question page");
 		String Actual_Text = null;
 		String Expected_Text = null;
@@ -84,7 +86,6 @@ public class NewPartnershipQuestionsPage {
 		Expected_Text = "If yes, please upload the Partnership Agreement and any amendments. Reference: 13 C.F.R. 127.202(d)";
 		assertEquals(Actual_Text, Expected_Text);
 		// Select No and continue.
-		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")));
 		webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")).click();

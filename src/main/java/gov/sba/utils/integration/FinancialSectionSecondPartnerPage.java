@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -28,6 +29,8 @@ public class FinancialSectionSecondPartnerPage {
     WebDriverWait wait = new WebDriverWait(webDriver, 40);
     String Actual_Text = null;
     String Expected_Text = null;
+	JavascriptExecutor jse = (JavascriptExecutor) webDriver;
+
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
     // Locate section for 'Cash on Hand' enter all valid data as required.
     // Locate the As of Date: Search box for user and enter the information
@@ -229,6 +232,7 @@ public class FinancialSectionSecondPartnerPage {
     CoreUtils.clickContinue(webDriver);
     Actual_Text = webDriver.findElement(By.xpath("//div/span")).getText();
     Expected_Text = "Please answer this question";
+    
     webDriver.findElement(By.xpath("//div/input")).click();
     webDriver.findElement(By.xpath("//div/a/span")).click();
     webDriver.findElement(By.id("DTE_Field_total_value")).sendKeys("98000000");
@@ -254,6 +258,7 @@ public class FinancialSectionSecondPartnerPage {
     Expected_Text =
         "Include all other retirement accounts such as traditional IRA, 401K, Self Employed Pension Plan, Thrift Savings Plan, etc. Include retirement accounts that could be held in a trust. If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your retirement account provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")));
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")).click();
     wait.until(ExpectedConditions
         .visibilityOfElementLocated(By.xpath("//div[2]/fieldset/div[2]/div[2]/div/a/span")));
@@ -311,7 +316,7 @@ public class FinancialSectionSecondPartnerPage {
     Expected_Text = "Do you have any loans against a life insurance policy?";
     assertEquals(Actual_Text, Expected_Text);
     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[2]/fieldset/div/label")));
-    Thread.sleep(2000);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")));
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[2]/input")).sendKeys("5000000");
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='commit']")));
@@ -379,6 +384,8 @@ public class FinancialSectionSecondPartnerPage {
     Actual_Text = webDriver.findElement(By.xpath("//div/div[2]/fieldset/h4")).getText();
     Expected_Text = "Is your primary residence jointly owned?";
     assertEquals(Actual_Text, Expected_Text);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")).click();
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[3]/fieldset/h4")));
     Actual_Text = webDriver.findElement(By.xpath("//div[3]/fieldset/h4")).getText();
@@ -418,10 +425,14 @@ public class FinancialSectionSecondPartnerPage {
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[3]/fieldset/div/div[2]/input")).sendKeys("50");
     webDriver.findElement(By.xpath("//div[4]/fieldset/div/div[2]/input")).sendKeys("98");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[5]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[5]/fieldset/div/input")).click();
     // mydriver.findElement(By.xpath(".//*[@id='answers_48_2_5_value']")).sendKeys(Percentage);
     webDriver.findElement(By.xpath("//div[6]/fieldset/div/div[2]/input")).sendKeys("78");
     webDriver.findElement(By.xpath("//div[7]/fieldset/div/div[2]/input")).sendKeys("76");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[8]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[8]/fieldset/div/input")).click();
     logger.info("Heyyyy! Verifying the newly added question on Real Estate");
     // Verify the new added question.
@@ -446,6 +457,8 @@ public class FinancialSectionSecondPartnerPage {
         By.cssSelector("#answers_real_estate_second_mortgage_value_1 > fieldset > h4"));
     HighLight.highLightElement(webDriver, NewQuestionB);
     // Answers yes for A question.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[9]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[9]/fieldset/div/input")).click();
     // Verify question triggered.
     Actual_Text = webDriver
@@ -460,6 +473,8 @@ public class FinancialSectionSecondPartnerPage {
     HighLight.highLightElement(webDriver, NewQuestionT);
     webDriver.findElement(By.xpath("//div[10]/fieldset/div/div[2]/input")).sendKeys("87");
     webDriver.findElement(By.xpath("//div[11]/fieldset/div/div[2]/input")).sendKeys("500");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[12]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[12]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[13]/fieldset/div/div[2]/input")).sendKeys("50");
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("section_submit_button")));
@@ -525,15 +540,21 @@ public class FinancialSectionSecondPartnerPage {
         .findElement(
             By.xpath("//div[@id='answers_real_estate_address_1']/fieldset/div/div[2]/input"))
         .sendKeys("1000 go rd, NJ 20990");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[3]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[3]/fieldset/div/input")).click();
     wait.until(ExpectedConditions
         .visibilityOfElementLocated(By.xpath("//div[4]/fieldset/div/div[2]/input")));
     webDriver.findElement(By.xpath("//div[4]/fieldset/div/div[2]/input")).sendKeys("80");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[5]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[5]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[6]/fieldset/div/div[2]/input")).sendKeys("90");
     webDriver.findElement(By.xpath("//div[7]/fieldset/div/div[2]/input")).sendKeys("76");
     webDriver.findElement(By.xpath("//div[8]/fieldset/div/div[2]/input")).sendKeys("87");
     // Select yes for the last two question.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[9]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[9]/fieldset/div/input")).click();
     logger.info("Heyyyy! Verifying the newly added question on Real Estate");
     // Verify the new added question.
@@ -558,6 +579,8 @@ public class FinancialSectionSecondPartnerPage {
         By.cssSelector("#answers_real_estate_second_mortgage_value_1 > fieldset > h4"));
     HighLight.highLightElement(webDriver, NewQuestionReoB);
     // Answers yes for A question.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[10]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[10]/fieldset/div/input")).click();
     // Verify question triggered.
     Actual_Text = webDriver
@@ -572,6 +595,8 @@ public class FinancialSectionSecondPartnerPage {
     HighLight.highLightElement(webDriver, NewQuestionReoT);
     webDriver.findElement(By.xpath("//div[11]/fieldset/div/div[2]/input")).sendKeys("87");
     webDriver.findElement(By.xpath("//div[12]/fieldset/div/div[2]/input")).sendKeys("500");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[13]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[13]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[14]/fieldset/div/div[2]/input")).sendKeys("50");
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//fieldset/a/span")));
@@ -580,31 +605,49 @@ public class FinancialSectionSecondPartnerPage {
     webDriver.findElement(By.xpath("//fieldset/a/span")).click();
     wait.until(ExpectedConditions
         .visibilityOfElementLocated(By.xpath("//div[2]/div/div/fieldset/div/div[2]/select")));
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div/fieldset/div/div[2]/select")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div/fieldset/div/div[2]/select")).click();
     webDriver.findElement(By.xpath("//div[2]/div/div/fieldset/div/div[2]/select/option[3]"))
         .click();
     webDriver.findElement(By.xpath("//div[2]/div/div[2]/fieldset/div/div[2]/input"))
         .sendKeys("1000Long rd Denmark");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[3]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[3]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[2]/div/div[4]/fieldset/div/div[2]/input")).sendKeys("76");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[5]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[5]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[2]/div/div[6]/fieldset/div/div[2]/input")).sendKeys("76");
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[7]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[7]/fieldset/div/div[2]/input"))
         .sendKeys("760000000");
     webDriver.findElement(By.xpath("//div[2]/div/div[8]/fieldset/div/div[2]/input"))
         .sendKeys("870099878");
     // ON the last two question, select Yes to trigger the new question then select No .
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[9]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[9]/fieldset/div/input")).click();
     WebElement SecondForm = webDriver.findElement(By.xpath("//div[2]/div/div[10]/fieldset/h4"));
     HighLight.highLightElement(webDriver, SecondForm);
     WebElement SecondForm1 = webDriver.findElement(By.xpath("//div[2]/div/div[12]/fieldset/h4"));
     HighLight.highLightElement(webDriver, SecondForm1);
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[10]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[10]/fieldset/div/input")).click();
     WebElement SecondForm2 = webDriver.findElement(By.xpath("//div[2]/div/div[11]/fieldset/h4"));
     HighLight.highLightElement(webDriver, SecondForm2);
     // Select no to disable section.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[10]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[10]/fieldset/div/label[2]")).click();
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[9]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[9]/fieldset/div/label[2]")).click();
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/div/div[13]/fieldset/div/label[2]")));
+
     webDriver.findElement(By.xpath("//div[2]/div/div[13]/fieldset/div/label[2]")).click();
     CoreUtils.clickContinue(webDriver);
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
@@ -654,6 +697,8 @@ public class FinancialSectionSecondPartnerPage {
     HighLight.highLightElement(webDriver, OtherPersonalProperty);
     // Select Yes for question; 'Do you own any other personal property or
     // assets?.
+    jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")));
+
     webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")).click();
     webDriver.findElement(By.xpath("//div[2]/fieldset/div[2]/div[2]/div/a/span")).click();
     webDriver.findElement(By.id("DTE_Field_current_value")).sendKeys("456000000");
@@ -695,7 +740,8 @@ public class FinancialSectionSecondPartnerPage {
     Expected_Text =
         "Credit Card\nLien on Vehicle\nLien on Personal Property\nPersonal Loan\nPersonal Line of Credit\nOther";
     assertEquals(Actual_Text, Expected_Text);
-    webDriver.findElement(By.id("DTE_Field_type")).click();
+    WebElement rateElement = webDriver.findElement(By.id("DTE_Field_type"));
+	((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);
     webDriver.findElement(By.xpath("//option[5]")).click();
     // Original balance.
     webDriver.findElement(By.id("DTE_Field_original_balance")).sendKeys("98090000");

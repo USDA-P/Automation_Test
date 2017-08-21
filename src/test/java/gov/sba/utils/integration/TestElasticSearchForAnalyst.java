@@ -9,9 +9,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import gov.sba.automation.TestHelpers;
 import junit.framework.TestCase;
@@ -40,6 +41,7 @@ public class TestElasticSearchForAnalyst extends TestCase {
     // try{
     String Actual_Text;
     String Expected_Text;
+	JavascriptExecutor jse = (JavascriptExecutor) webDriver;
     logger.info("Apply Analyst permissions to All Cases page, Elastic Search");
     // Login to dashboard.
     LoginPageWithReference login_Data =
@@ -140,6 +142,7 @@ public class TestElasticSearchForAnalyst extends TestCase {
       logger.info("Search successful, Permission Pass");
     }
     // Click on the clear filter button.
+	jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.name("commit")));
     webDriver.findElement(By.name("commit")).click();
     Thread.sleep(2000);
     Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/input")).getText();
@@ -151,7 +154,10 @@ public class TestElasticSearchForAnalyst extends TestCase {
     WebElement OwnerBoxCleared = webDriver.findElement(By.xpath("//div[2]/div/input"));
     HighLight.highLightElement(webDriver, OwnerBoxCleared);
     // Logout, log back in and submit some application.
-    webDriver.findElement(By.id("profileid")).click();
+	jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.id("profileid")));
+
+    Actions act = new Actions(webDriver);
+    act.doubleClick(webDriver.findElement(By.id("profileid"))).build().perform();
     webDriver.findElement(By.linkText("Logout")).click();
     // Login to dashboard.
     get_The_Row_From_Login_Data = 3;

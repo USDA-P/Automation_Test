@@ -4,11 +4,12 @@ package gov.sba.utils.integration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,7 +32,7 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
     webDriver = TestHelpers.getDefaultWebDriver();
     webDriver.get(TestHelpers.getBaseUrl());
     webDriver.manage().window().maximize();
-    Email = "staging@mailinator.com";
+    Email = "jw_llc@mailinator.com";
     Old_PassW = "password";
     New_PassW = "The Quick Brown Fox Jumps Over The Lazy 12345";
     New_PassW2 = "The Quick Brown Fox Jumps Over The Lazy Dog 123456";
@@ -39,8 +40,6 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
 
   @Test
   public void testEdithPassword2RegressionTest1() throws Exception {
-
-    try {
       WebDriverWait wait = new WebDriverWait(webDriver, 30);
       // Open Firefox,Chrome,and IE and navigate to the valid url.
       webDriver.findElement(By.cssSelector("button.button-full")).click();
@@ -92,8 +91,10 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
         logger.info("User change password Successfully");
         // webDriver.findElement(By.id("labelid")).click();
         // Click on the log-out button.
-        webDriver.findElement(By.linkText("Logout")).click();
-        assertFalse(webDriver.getPageSource().contains("Signed out successfully"));
+        WebElement rateElement2 = webDriver.findElement(By.id("profileid"));
+		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement2);
+		WebElement rateElement = webDriver.findElement(By.linkText("Logout"));
+		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);        assertFalse(webDriver.getPageSource().contains("Signed out successfully"));
         logger.info("Successful sign out alert message not present");
         // Locate and click on the log-in link.
         webDriver.findElement(By.cssSelector("button.button-full")).click();
@@ -105,7 +106,7 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
         webDriver.findElement(By.id("business_signin")).click();
         // Verify that user logged in successfully with the new updated
         // password.
-        assertTrue(webDriver.getPageSource().contains("112286644"));
+        assertTrue(webDriver.getPageSource().contains("135453634"));
         logger.info("Password Update is Successful");
       } else {
         if (webDriver.getPageSource().contains("Invalid email or password")) {
@@ -175,8 +176,10 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
             // Locate the logout button and click on it then log
             // back in with
             // the new password.
-            webDriver.findElement(By.linkText("Logout")).click();
-            // Locate and click on the log-in link.
+            WebElement rateElement2 = webDriver.findElement(By.id("profileid"));
+    		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement2);
+    		WebElement rateElement = webDriver.findElement(By.linkText("Logout"));
+    		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);            // Locate and click on the log-in link.
             webDriver.findElement(By.cssSelector("button.button-full")).click();
             // Locate the email search box and enter a valid email.
             webDriver.findElement(By.id("user_email")).sendKeys(Email);
@@ -188,7 +191,7 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
             // Verify that user logged in successfully with the new
             // updated
             // password.
-            assertTrue(webDriver.getPageSource().contains("112286644"));
+            assertTrue(webDriver.getPageSource().contains("135453634"));
             logger.info("Password Update is Successful");
             return;
           } else {
@@ -241,8 +244,11 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
             // Locate the logout button and click on it then log
             // back in with
             // the new password.
-            webDriver.findElement(By.linkText("Logout")).click();
-            // Locate and click on the log-in link.
+            WebElement rateElement2 = webDriver.findElement(By.id("profileid"));
+    		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement2);
+    		WebElement rateElement = webDriver.findElement(By.linkText("Logout"));
+    		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);            
+    		// Locate and click on the log-in link.
             webDriver.findElement(By.cssSelector("button.button-full")).click();
             // Locate the email search box and enter a valid email.
             webDriver.findElement(By.id("user_email")).sendKeys(Email);
@@ -254,18 +260,12 @@ public class TestEdithPassword2RegressionTest1 extends TestCase {
             // Verify that user logged in successfully with the new
             // updated
             // password.
-            assertTrue(webDriver.getPageSource().contains("112286644"));
+            assertTrue(webDriver.getPageSource().contains("135453634"));
             logger.info("Password Update is Successful");
             return;
           }
         }
       }
-    } catch (Exception e) {
-      ScreenShotPage screenShot = new ScreenShotPage(webDriver);
-      screenShot.ScreenShot();
-      logger.info(e.getMessage());
-      Assert.fail();
-    }
 
     logger.info("Success");
   }

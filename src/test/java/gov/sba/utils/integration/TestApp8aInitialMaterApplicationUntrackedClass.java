@@ -74,10 +74,10 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			ContributorOtherIndividualsQuestionPage contributorOtherIndividualsQuestion = new ContributorOtherIndividualsQuestionPage(
 					webDriver);
 			contributorOtherIndividualsQuestion.ContributorOtherIndividualsQuestion();
-
 			WebElement rateElement2 = webDriver.findElement(By.id("profileid"));
 			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement2);
-			webDriver.findElement(By.linkText("Logout")).click();
+			WebElement rateElement = webDriver.findElement(By.linkText("Logout"));
+			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);
 		} catch (Exception e) {
 			ScreenShotPage screenShot = new ScreenShotPage(webDriver);
 			screenShot.ScreenShot();

@@ -64,7 +64,6 @@ public class PartnershipReturnCertPage extends TestCase {
 		logger.info("Clicking accept buuton to trigger pop up alert");
 		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
 		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.id("accept-button")));
-
 		webDriver.findElement(By.id("accept-button")).click();
 		wait.until(ExpectedConditions.alertIsPresent());
 		Actual_Text = webDriver.switchTo().alert().getText();
@@ -80,7 +79,6 @@ public class PartnershipReturnCertPage extends TestCase {
 		webDriver.findElement(By.id("legal_1")).click();
 		webDriver.findElement(By.id("legal_2")).click();
 		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.id("legal_3")));
-
 		webDriver.findElement(By.id("legal_3")).click();
 		webDriver.findElement(By.id("legal_4")).click();
 		webDriver.findElement(By.id("legal_5")).click();

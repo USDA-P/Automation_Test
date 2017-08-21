@@ -58,7 +58,7 @@ public class AddOrStartCertificationPage {
           .findElement(By.xpath("//article[@id='main-content']/section/article/div/div[2]"))
           .getText();
       Expected_Text =
-          "Get started now on your WOSB self-certification, EDWOSB self-certification, All Small Business Mentor-Protégé agreement, or 8(a) Document Upload.";
+          "Get started now on your WOSB self-certification, EDWOSB self-certification, All Small Business Mentor-Protégé agreement, or 8(a) Initial Application.";
       assertEquals(Actual_Text, Expected_Text);
       // Click on the EDWOSB link.
       wait.until(ExpectedConditions.elementToBeClickable(By.linkText("EDWOSB self-certification")));
