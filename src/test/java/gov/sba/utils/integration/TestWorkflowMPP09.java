@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import static gov.sba.automation.CommonApplicationMethods.*;
@@ -39,7 +40,7 @@ public class TestWorkflowMPP09 extends TestCase {
     get_Stop_Execution_Flag();
     clear_Env_Chrome();
     logger.info("Set as head");
-    // TestHelpers.set_Headless();
+     TestHelpers.set_Headless();
     webDriver = set_Timeouts(TestHelpers.getDefaultWebDriver());
     webDriver.get(TestHelpers.getBaseUrl());
     String[] details = findUnusedDunsNumber("");
@@ -113,7 +114,8 @@ public class TestWorkflowMPP09 extends TestCase {
       new LoginPageWithReference(webDriver, 56).Login_With_Reference();
       search_Cases_Duns_Number_Table(webDriver, duns_Number);
       click_Element(webDriver, "SBA_Legal_Business_Name_Link");
-       double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      // double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      new Actions(webDriver).doubleClick(find_Element(webDriver, "SBA_Question_Determinations_SideNav")).build().perform();
       /* Determination SBA Approved */
       click_Element(webDriver, "SBA_Review_Determ_Made");
       assertNotNull(find_Element(webDriver, "Analyst_Review_Determ_Decision", true));

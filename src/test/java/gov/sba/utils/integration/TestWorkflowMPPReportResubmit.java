@@ -18,6 +18,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.Map;
@@ -78,7 +79,8 @@ public class TestWorkflowMPPReportResubmit extends TestCase {
       /* case Overview Page */
       verify_Text(webDriver, "Case_CaseOverview_title", "Case Overview");
       click_Element(webDriver, "Case_Submit_Button");
-       double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      // double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      new Actions(webDriver).doubleClick(find_Element(webDriver, "SBA_Question_Determinations_SideNav")).build().perform();
       /* Determination SBA Approved */
       click_Element(webDriver, "SBA_Review_Determ_Made");
       assertNotNull(find_Element(webDriver, "Analyst_Review_Determ_Decision", true));

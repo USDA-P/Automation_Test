@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import static gov.sba.automation.CommonApplicationMethods.*;
@@ -116,7 +117,8 @@ public class TestWorkflowMPP04 extends TestCase {
       search_Cases_Duns_Number_Table(webDriver, duns_Number);
       click_Element(webDriver, "SBA_Legal_Business_Name_Link");
       click_Element(webDriver, "Application_Common_Submit_Button_Id");
-       double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      // double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      new Actions(webDriver).doubleClick(find_Element(webDriver, "SBA_Question_Determinations_SideNav")).build().perform();
       click_Element(webDriver, "SBA_Review_Determ_Made");
       new Select(find_Element(webDriver, "Analyst_Review_Determ_Decision")).selectByIndex(1);
 

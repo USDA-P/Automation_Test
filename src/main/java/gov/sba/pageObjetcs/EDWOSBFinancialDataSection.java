@@ -86,7 +86,7 @@ public class EDWOSBFinancialDataSection {
       // IRA?
       if (!IRAYesNo.equals(null) && !IRAYesNo.equals("")) {
         switch (IRAYesNo.toLowerCase()) {
-          case "Yes":
+          case "yes":
             click_Element(webDriver, "EDWOSB_financial_Page_Ans_372_Y");
             click_Element(webDriver, "EDWOSB_financial_Retirement_Accounts_IRA_New_Button");
             new Select(find_Element(webDriver, "EDWOSB_financial_Retirement Accounts_IRA_Type"))
@@ -228,19 +228,19 @@ public class EDWOSBFinancialDataSection {
       if (!YesNo.equals(null) && !YesNo.equals("")) {
         switch (YesNo.toLowerCase()) {
           case "yes":
-            click_Element(webDriver, "8EDWOSB_financial_Page_Ans_378_Y");
+            click_Element(webDriver, "EDWOSB_financial_Page_Ans_378_Y");
             setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Primary_Address", "ABCD");
             if (!JointOwnedYesNo.equals(null) && !JointOwnedYesNo.equals("")) {
               switch (JointOwnedYesNo) {
-                case "Yes":
+                case "yes":
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_Jointly_Owned_Yes");
-                  setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Jointly_Owned_No",
-                      "100");
                   setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Percentage_Ownership",
+                      "100");
+                  setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Percentage_Mortage",
                       "10");
                   break;
                 case "no":
-                  click_Element(webDriver, "EDWOSB_financial_Real_Estate_Percentage_Mortagee");
+                  click_Element(webDriver, "EDWOSB_financial_Real_Estate_Jointly_Owned_No");
               }
             }
             if (!MortageNameYesNo.equals(null) && !MortageNameYesNo.equals("")) {
@@ -325,7 +325,7 @@ public class EDWOSBFinancialDataSection {
                   setText_Element(webDriver,
                       "EDWOSB_financial_Real_Estate_Oth_Percentage_RealEstate", "100");
                   break;
-                case "No":
+                case "no":
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_Oth_Jointly_Owned_No");
               }
             }

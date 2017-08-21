@@ -20,6 +20,7 @@ import org.junit.experimental.categories.Category;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import gov.sba.automation.CommonApplicationMethods;
@@ -134,7 +135,8 @@ public class TestWorkflowWOSBAnalyst extends TestCase {
 
       click_Element(webDriver, "Application_Common_Submit_Button");
 
-       double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+     //  double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
+      new Actions(webDriver).doubleClick(find_Element(webDriver, "SBA_Question_Determinations_SideNav")).build().perform();
       click_Element(webDriver, "SBA_Review_Return_For_Mod");
       // click_Element(webDriver, "SBA_Signature_Review_Save_Continue");
 

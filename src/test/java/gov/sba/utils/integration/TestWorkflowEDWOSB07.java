@@ -71,10 +71,11 @@ public class TestWorkflowEDWOSB07 extends TestCase {
       Edwosb_Questionnaire_AdjustedGrossIncome_Page(webDriver, "yes", "Yes");
       Edwosb_Questionnaire_Assets_Page(webDriver, "yes", "yes", "yes");
       Edwosb_Questionnaire_EconomicDisadvantage_Page(webDriver, "yes");
-      accept_Alert(webDriver,5);
+      accept_Alert(webDriver,15);
       /* 413 form to including first and secnodn partners */
       NewFinancialQuestion(webDriver, "deepa", "patri", "123456789", "deepa@gmail.com", "12", "VA",
           "12345", "123-123-1234", "123-123-1234", "MClean", "USA");
+      accept_Alert(webDriver,15);
       Edwosb_legalseparation(webDriver, "no");
       /* EDWOSB financial question page */
       edwosb_financial_CashOnHand_Page(webDriver, "01/01/2018", "111", "111", "111");

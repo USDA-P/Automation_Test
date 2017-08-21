@@ -80,7 +80,8 @@ public class ProgramsPage {
       throws Exception {
     // Elements tag: @Join_New_Program_Page
     if (!which_Cert.equals(null) && !which_Cert.equals("")) {
-      navigationMenuClick(webDriver, "Programs");
+      //navigationMenuClick(webDriver, "Programs");
+      navigationClick(webDriver,"Programs");
       switch (which_Cert.toUpperCase()) {
         case "EDWOSB":
           click_Element(webDriver, "JoinNewPgm_Create_App_EDWOSB");

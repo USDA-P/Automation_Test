@@ -28,7 +28,10 @@ SBA_CaseTable_Search:                    {Locator: 'id', Value: "search-field-sm
 # EDWOSB Questionnaire Page
 
 # Navigation Links On Top
-Navigation_Logout:          {Locator: 'xpath', Value: "//a[ contains(@class, 'ogout' ) and contains(text(), 'ogout') ]"}
+Navigation_Bar_Link_1:         {Locator: 'xpath', Value: "//nav[@role='navigation' and contains(@class, 'navigation')]"}
+Navigation_Bar_Link_2:         {Locator: 'xpath', Value: "//div[ contains(@class, 'usa-navbar') ]/div/ul/li [ a [ span[ contains(text(), 'rograms') ] "}
+
+Navigation_Logout:         {Locator: 'xpath', Value: "//a[ contains(@class, 'ogout' ) and contains(text(), 'ogout') ]"}
 Navigation_Help:            {Locator: 'xpath', Value: "//nav[@role='navigation']/div/ul/li/a/span[contains(text(),'Help')]"}
 Navigation_Cases:           {Locator: 'xpath', Value: "//nav[@role='navigation']/div/ul/li/a/span[contains(text(),'ases')]"}
 Navigation_Programs:        {Locator: 'xpath', Value: "//nav[@role='navigation']/div//span[contains(text(),'rograms')]"}
@@ -38,6 +41,7 @@ Navigation_Documents:       {Locator: 'xpath', Value: "//nav[@role='navigation']
 Navigation_Home:            {Locator: 'xpath', Value: "//nav[@role='navigation']/div/ul/li/a/span[contains(text(),'Home')]"}
 Navigation_Prepare:         {Locator: 'xpath', Value: "//nav[@role='navigation']/div/ul/li/a/span[contains(text(),'repare')]"}
 Navigation_Present_Or_Not:  {Locator: 'xpath', Value: "//nav[@role='navigation']"}
+
 
 Navigation_Logout_02:           {Locator: 'xpath', Value: "//div[ contains(@class, 'usa-navbar') ]//li [ a [ span[ contains(text(), 'ogout') ] ] ]"}
 Navigation_Help_02:             {Locator: 'xpath', Value: "//div[ contains(@class, 'usa-navbar') ]//li [ a [ span[ contains(text(), 'Help') ] ] ]"}
