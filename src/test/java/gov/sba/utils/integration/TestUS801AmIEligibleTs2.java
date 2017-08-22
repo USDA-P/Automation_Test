@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -35,8 +36,8 @@ public class TestUS801AmIEligibleTs2 extends TestCase {
 
   @Test
   public void testUS801AmIEligibleTs2() throws Exception {
+		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
     try {
-
       logger.info(
           "User is NOT eligible(due to NO for Qs1) for Any of the programs 8(a), WOSB, EDWOSB & Hob-zone");
       WebDriverWait wait = new WebDriverWait(webDriver, 30);
@@ -65,12 +66,14 @@ public class TestUS801AmIEligibleTs2 extends TestCase {
           "A U.S.citizenmeans a person born or naturalized in the United States. Resident aliens and holders of permanent visas are not considered to be citizens for program purposes.";
       assertEquals(actual_Text3, expected_Text3);
       // verify and click on the No button.
+      jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.id("no_button_us_citizen")));
       webDriver.findElement(By.id("no_button_us_citizen")).click();
       // Verify searched results.
       String actual_Text1 = webDriver.findElement(By.cssSelector("span.message")).getText();
       String expected_Text1 =
           "In order to participate in SBA small business programs, the qualifying individual(s) of the firm must be U.S. citizens.";
       assertEquals(actual_Text1, expected_Text1);
+      jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.linkText("Exit")));
       webDriver.findElement(By.linkText("Exit")).click();
     } catch (Exception e) {
       ScreenShotPage screenShot = new ScreenShotPage(webDriver);

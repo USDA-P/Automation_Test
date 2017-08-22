@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,6 +34,7 @@ public class TestUS801AmIEligibleTs3 extends TestCase {
 
   @Test
   public void testUS801AmIEligibleTs3() throws Exception {
+		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
     try {
       // Open Firefox,Chrome or IE and navigate to the certify.sba.gov
       // landing
@@ -65,6 +67,7 @@ public class TestUS801AmIEligibleTs3 extends TestCase {
           "A U.S.citizenmeans a person born or naturalized in the United States. Resident aliens and holders of permanent visas are not considered to be citizens for program purposes.";
       assertEquals(actual_Text3, expected_Text3);
       // verify and click on the Yes button.
+      jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.cssSelector("button.yes_button")));
       webDriver.findElement(By.cssSelector("button.yes_button")).click();
       wait.until(ExpectedConditions.elementSelectionStateToBe(
           By.xpath(".//*[@id='unconditional_direct_51_percent']/div[1]/div[1]/p"), false));
@@ -95,6 +98,7 @@ public class TestUS801AmIEligibleTs3 extends TestCase {
           "Controlmeans that both the long-term decision making and the day-to-day management of the business are controlled by qualifying individual(s).";
       assertEquals(actual_error5, expected_error5);
       // verify and click on the No button.
+      jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.id("no_button_unconditional_direct_51_percent")));
       webDriver.findElement(By.id("no_button_unconditional_direct_51_percent")).click();
       wait.until(
           ExpectedConditions.elementSelectionStateToBe(By.cssSelector("span.message"), false));
@@ -104,6 +108,7 @@ public class TestUS801AmIEligibleTs3 extends TestCase {
           "In order to participate in SBA small business programs, the owner or owners of the firm must be unconditional and direct.";
       assertEquals(actual_error7, expected_error7);
       // Click on the Exit button.
+      jse.executeScript("arguments[0].scrollIntoView()",webDriver.findElement(By.linkText("Exit")));
       webDriver.findElement(By.linkText("Exit")).click();
     } catch (Exception e) {
       ScreenShotPage screenShot = new ScreenShotPage(webDriver);
