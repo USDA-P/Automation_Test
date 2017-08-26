@@ -44,7 +44,7 @@ public class TestApp8aInitialMaterApplicationTracked extends TestCase {
 		BasicEligibilityMasterAppPage basicEligibilityMasterApp = new BasicEligibilityMasterAppPage(webDriver);
 		basicEligibilityMasterApp.BasicEligibilityMasterApp();
 		// Complete the Business Ownership section.
-		BusinessOwnershipSubsectionMasterPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterPage(
+		BusinessOwnershipSubsectionMasterCorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterCorpPage(
 				webDriver);
 		businessOwnershipSubsectionMaster.BusinessOwnershipSubsectionMaster();
 		// Complete the character section.
