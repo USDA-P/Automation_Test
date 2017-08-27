@@ -19,6 +19,7 @@ import static gov.sba.automation.DatabaseUtils.findUnusedDunsNumber;
 import static gov.sba.pageObjetcs.Contributor8aDisadvantagedIndAppPage.*;
 import static gov.sba.pageObjetcs.MasterApplication8a.*;
 import static gov.sba.pageObjetcs.ProgramsPage.generic_file_Upld;
+import static gov.sba.pageObjetcs.ProgramsPage.join_New_Program_CheckBoxes;
 import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_Return;
 
 // Still in progress
@@ -60,9 +61,7 @@ public class TestWorkFlow8a01 extends TestCase {
       new LoginPageWithDetails(webDriver, email, password).Login_With_Details();
 
       /* new programs_Page().select_MyCertifications_Table(webDriver, "Delete_8a_Initial_Draft"); */
-      webDriver.navigate().to(
-          "https://certify.qa.sba-one.net/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
-      click_Element(webDriver, "Application_Common_Accept_Button");
+      join_New_Program_CheckBoxes(webDriver, "8A");
       /* masterApp_8a_Page_Click(webDriver,"page_basiceligibility"); */
       /* Basic Eligibility Page */
       BasicEligiblity_General_Assessment_Page(webDriver, "Yes", "no", "Yes", "Yes", "Yes");
