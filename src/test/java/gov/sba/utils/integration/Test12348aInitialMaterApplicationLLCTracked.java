@@ -12,9 +12,9 @@ import org.openqa.selenium.WebElement;
 import gov.sba.automation.TestHelpers;
 import junit.framework.TestCase;
 
-public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
+public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 	private static final Logger logger = LogManager
-			.getLogger(TestApp8aInitialMaterApplicationUntrackedClass.class.getName());
+			.getLogger(Test12348aInitialMaterApplicationLLCTracked.class.getName());
 	private static WebDriver webDriver;
 	int get_The_Row_From_Login_Data;
 
@@ -23,12 +23,12 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 		webDriver = TestHelpers.getDefaultWebDriver();
 		webDriver.get(TestHelpers.getBaseUrl());
 		webDriver.manage().window().maximize();
-		get_The_Row_From_Login_Data = 1;
+		get_The_Row_From_Login_Data = 88;
 
 	}
 
 	@Test
-	public void testApp8aInitialMaterApplication() throws Exception {
+	public void test12348aInitialMaterApplicationLLCTracked() throws Exception {
 		String Actual_Text = null;
 		String Expected_Text = null;
 		// try {
@@ -47,9 +47,9 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 		BasicEligibilityMasterAppPage basicEligibilityMasterApp = new BasicEligibilityMasterAppPage(webDriver);
 		basicEligibilityMasterApp.BasicEligibilityMasterApp();
 		// Complete the Business Ownership section.
-		BusinessOwnershipSubsectionMasterCorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterCorpPage(
+		BusinessOwnershipSubsectionMasterLlcPage businessOwnershipSubsectionMasterLlc = new BusinessOwnershipSubsectionMasterLlcPage(
 				webDriver);
-		businessOwnershipSubsectionMaster.BusinessOwnershipSubsectionMaster();
+		businessOwnershipSubsectionMasterLlc.BusinessOwnershipSubsectionMasterLlc();
 		// Complete the character section.
 		CharacterMasterAppSectionPage characterMasterAppSection = new CharacterMasterAppSectionPage(webDriver);
 		characterMasterAppSection.CharacterMasterAppSection();
@@ -70,7 +70,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			contributorDisadvantageIndividualQuetion.ContributorDisadvantageIndividualQuetion();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 1;
+			get_The_Row_From_Login_Data = 88;
 			LoginPageWithReference login_Data1 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data1.Login_With_Reference();
 			// Click on the dashboard.
@@ -93,7 +93,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			contributorSpouseOfaDisadvantageIndividual.ContributorSpouseOfaDisadvantageIndividual();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 1;
+			get_The_Row_From_Login_Data = 88;
 			LoginPageWithReference login_Data11 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data11.Login_With_Reference();
 			// Click on the dashboard.
@@ -115,7 +115,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			contributorOtherIndividualsQuestion.ContributorOtherIndividualsQuestion();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 1;
+			get_The_Row_From_Login_Data = 88;
 			LoginPageWithReference login_Data111 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data111.Login_With_Reference();
 			// Click on the dashboard.

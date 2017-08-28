@@ -13,16 +13,16 @@ import gov.sba.automation.CoreUtils;
 import gov.sba.automation.FixtureUtils;
 import junit.framework.TestCase;
 
-public class BusinessOwnershipSubsectionMasterPage extends TestCase {
-	private static final Logger logger = LogManager.getLogger(BusinessOwnershipSubsectionMasterPage.class.getName());
+public class BusinessOwnershipSubsectionMasterLlcPage extends TestCase {
+	private static final Logger logger = LogManager.getLogger(BusinessOwnershipSubsectionMasterLlcPage.class.getName());
 	WebDriver webDriver;
 
-	public BusinessOwnershipSubsectionMasterPage(WebDriver webDriver) {
+	public BusinessOwnershipSubsectionMasterLlcPage(WebDriver webDriver) {
 		this.webDriver = webDriver;
 
 	}
 
-	public void BusinessOwnershipSubsectionMaster() throws Exception {
+	public void BusinessOwnershipSubsectionMasterLlc() throws Exception {
 		WebDriverWait wait = new WebDriverWait(webDriver, 30);
 		String Actual_Text = null;
 		String Expected_Text = null;
@@ -259,7 +259,7 @@ public class BusinessOwnershipSubsectionMasterPage extends TestCase {
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.elementSelectionStateToBe(By.cssSelector("h2"), false));
 		Actual_Text = webDriver.findElement(By.cssSelector("h2")).getText();
-		Expected_Text = "Corporations";
+		Expected_Text = "LLCs";
 		assertEquals(Actual_Text, Expected_Text);
 		// Click back on Entity Ownership and verify that notes are being saved.
 		WebElement rateElement1 = webDriver.findElement(By.xpath("//aside/ul/li/ul/li/a"));
@@ -306,7 +306,7 @@ public class BusinessOwnershipSubsectionMasterPage extends TestCase {
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
 		Actual_Text = webDriver.findElement(By.cssSelector("h2")).getText();
-		Expected_Text = "Corporations";
+		Expected_Text = "LLCs";
 		assertEquals(Actual_Text, Expected_Text);
 		// Verify that this section is required.
 		CoreUtils.clickContinue(webDriver);
@@ -314,9 +314,14 @@ public class BusinessOwnershipSubsectionMasterPage extends TestCase {
 		Actual_Text = webDriver.findElement(By.xpath("//div/span")).getText();
 		Expected_Text = "Attachment is required";
 		assertEquals(Actual_Text, Expected_Text);
+		logger.info(webDriver.findElement(By.xpath(".//*[@id='answers_upload_relevant_llc_documents']/fieldset/h4")).getText());
+		// question verify.
+		Actual_Text = webDriver.findElement(By.cssSelector("h4")).getText();
+		Expected_Text = "Please upload all relevant documents from the following list:\nArticles of Organization (original and current version)\nOperating Agreement (current version)\nResolutions (see details below)\nMembership shares and ledgers (see details below)";
+		assertEquals(Actual_Text, Expected_Text);
 		// Details.
-		Actual_Text = webDriver.findElement(By.xpath("//fieldset/p")).getText();
-		Expected_Text = "Documents should show that the applicant firm is at least 51% unconditionally and directly owned by one or more individual(s) claiming disadvantaged status, unless it is entity-owned.";
+		Actual_Text = webDriver.findElement(By.xpath("//p[2]")).getText();
+		Expected_Text = "If not included in the Operating Agreement, upload resolutions or any other documentation designating officers, directors, member representatives, management committee members, and general managers. Although not required, if your LLC has issued membership shares, please provide a copy of the certificates and the ledger. At least 51% of each class of member interest must be unconditionally owned by the individual(s) claiming disadvantaged status, unless the applicant firm is entity-owned. Reference: 13 CFR §124.105(c)";
 		assertEquals(Actual_Text, Expected_Text);
 		// Upload document.
 		String file_path_abs2 = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
@@ -324,29 +329,16 @@ public class BusinessOwnershipSubsectionMasterPage extends TestCase {
 		MontanaUploadDocument5.MontanaUploadDocument(file_path_abs2);
 		// 2nd upload.
 		Actual_Text = webDriver.findElement(By.xpath("//div[2]/fieldset/h4")).getText();
-		Expected_Text = "Please upload all relevant documents from the following list:\nStock certificates (front and back)\nStock ledgers\nRegisters\nTransmutation agreements (for community property states)\nVoting agreements";
+		Expected_Text = "Please upload the applicant firm’s current Certificate of Good Standing.";
 		assertEquals(Actual_Text, Expected_Text);
 		// Details.
 		Actual_Text = webDriver.findElement(By.xpath("//div[2]/fieldset/p")).getText();
-		Expected_Text = "Documents should show that at least 51% of each class of voting stock outstanding and 51% of the aggregate of all stock outstanding must be owned by the individual(s) claiming disadvantaged status, unless the applicant firm is entity-owned. A transmutation agreement is only required if the individual claiming disadvantaged status is married and resides in a community property state (i.e. California). A transmutation agreement is not required for entity-owned firms. Reference: 13 CFR § 124.105(d)";
+		Expected_Text = "If the applicant firm does not have a Certificate of Good Standing, it may have a similar document from the state where the applicant firm is incorporated or organized. It is also known as the Certificate of Existence or Certificate of Status.";
 		assertEquals(Actual_Text, Expected_Text);
 		// Upload a document.
 		file_path_abs = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
 		Upload2pdfOnSamePage contributorUpload2 = new Upload2pdfOnSamePage(webDriver);
 		contributorUpload2.Upload2pdfOnSame(file_path_abs);
-		;
-		// 3rd upload.
-		Actual_Text = webDriver.findElement(By.xpath("//div[3]/fieldset/h4")).getText();
-		Expected_Text = "Please upload the applicant firm’s current Certificate of Good Standing.";
-		assertEquals(Actual_Text, Expected_Text);
-		// Details.
-		Actual_Text = webDriver.findElement(By.xpath("//div[3]/fieldset/p")).getText();
-		Expected_Text = "If the applicant firm does not have a Certificate of Good Standing, it may have a similar document from the state where the applicant firm is incorporated or organized. It is also known as the Certificate of Existence or Certificate of Status.";
-		assertEquals(Actual_Text, Expected_Text);
-		// Upload a document.
-		file_path_abs = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
-		Upload3pdfOnSamePage MontanaUploadDocument7 = new Upload3pdfOnSamePage(webDriver);
-		MontanaUploadDocument7.Upload3pdfOnSame(file_path_abs);
 		// click on the continue button.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.elementSelectionStateToBe(By.xpath("//h2"), false));

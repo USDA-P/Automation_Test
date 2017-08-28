@@ -8,6 +8,7 @@
   <name>SBA Automation Modules</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <selenium.version>3.4.0</selenium.version>
   </properties>
   <packaging>jar</packaging>
   <dependencies>
@@ -49,12 +50,12 @@
   <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.4.0</version>
+    <version>${selenium.version}</version>
   </dependency>
   <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-server</artifactId>
-    <version>3.4.0</version>
+    <version>${selenium.version}</version>
   </dependency>
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
@@ -66,20 +67,6 @@
     <artifactId>log4j-core</artifactId>
     <version>2.0.2</version>
   </dependency>
-<!--
-  <dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-engine</artifactId>
-    <version>5.0.0-M5</version>
-    <scope>test</scope>
-  </dependency>
-  <dependency>
-    <groupId>org.junit.vintage</groupId>
-    <artifactId>junit-vintage-engine</artifactId>
-    <version>4.12.0-M5</version>
-    <scope>test</scope>
-  </dependency>
--->
   <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-csv</artifactId>
