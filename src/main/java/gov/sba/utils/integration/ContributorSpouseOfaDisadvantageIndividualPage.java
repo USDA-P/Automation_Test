@@ -45,11 +45,12 @@ public class ContributorSpouseOfaDisadvantageIndividualPage extends TestCase {
 		Actual_Text = webDriver.findElement(By.linkText("Contributors")).getText();
 		Expected_Text = "Contributors";
 		assertEquals(Actual_Text, Expected_Text);
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+				.getText();
 		Expected_Text = "Complete";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement ContributorCompleteStatus = webDriver
-				.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, ContributorCompleteStatus);
 		// Click on the link to start eligibility check.
 		WebElement rateElement = webDriver.findElement(By.linkText("Contributors"));

@@ -32,11 +32,11 @@ public class ControlMasterAppSubsectionPage extends TestCase {
     Expected_Text = "Control";
     assertEquals(Actual_Text, Expected_Text);
     // Verify Status.
-    Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span")).getText();
+    Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span")).getText();
     Expected_Text = "Not started";
     assertEquals(Actual_Text, Expected_Text);
     WebElement EligibilityCompleteStatus = webDriver
-			.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span"));
+			.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span"));
 	HighLight.highLightElement(webDriver, EligibilityCompleteStatus);
     // Click on the link to start eligibility check.
     WebElement rateElement = webDriver.findElement(By.linkText("Control"));
@@ -207,11 +207,11 @@ public class ControlMasterAppSubsectionPage extends TestCase {
     // click on the draft 8(a) Initial Program.
     WebElement rateElement2 = webDriver.findElement(By.linkText("8(a) Initial Application"));
     ((JavascriptExecutor)webDriver).executeScript("arguments[0].click();", rateElement2);
-	jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span")));
-    Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span")).getText();
+	jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span")));
+    Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span")).getText();
     Expected_Text = "In progress";
     assertEquals(Actual_Text, Expected_Text);
-    WebElement CharacterInProgressStatus1 = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span"));
+    WebElement CharacterInProgressStatus1 = webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span"));
     HighLight.highLightElement(webDriver, CharacterInProgressStatus1);
 	WebElement rateElement111 = webDriver.findElement(By.linkText("Control"));
     ((JavascriptExecutor)webDriver).executeScript("arguments[0].click();", rateElement111);  
@@ -411,12 +411,13 @@ public class ControlMasterAppSubsectionPage extends TestCase {
     // click on the draft 8(a) Initial Program.
     WebElement rateElement7 = webDriver.findElement(By.linkText("8(a) Initial Application"));
     ((JavascriptExecutor)webDriver).executeScript("arguments[0].click();", rateElement7);
-	jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span")));    
-	Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span")).getText();
+	jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span")));    
+	Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span")).getText();
     Expected_Text = "In progress";
     assertEquals(Actual_Text, Expected_Text);
-    WebElement CharacterInProgressStatus11 = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span"));
-    HighLight.highLightElement(webDriver, CharacterInProgressStatus11);
+		WebElement CharacterInProgressStatus11 = webDriver
+				.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span"));
+	    HighLight.highLightElement(webDriver, CharacterInProgressStatus11);
     WebElement rateElement51 = webDriver.findElement(By.linkText("Control"));
     ((JavascriptExecutor)webDriver).executeScript("arguments[0].click();", rateElement51);   	
     webDriver.findElement(By.id("eight_a_control_leased_facility")).click();
@@ -428,10 +429,10 @@ public class ControlMasterAppSubsectionPage extends TestCase {
     CoreUtils.clickContinue(webDriver);
     // webDriver.switchTo().alert().accept();
     // Verify status.
-    Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span")).getText();
+    Actual_Text = webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span")).getText();
     Expected_Text = "Complete";
     assertEquals(Actual_Text, Expected_Text);
-    WebElement ControlComplteStatus = webDriver.findElement(By.xpath("//div[3]/div[2]/div/div[2]/table/tbody/tr/td/span"));
+    WebElement ControlComplteStatus = webDriver.findElement(By.xpath("//div[3]/div[2]/section/div/div[2]/table/tbody/tr/td/span"));
     HighLight.highLightElement(webDriver, ControlComplteStatus);
   }
 }

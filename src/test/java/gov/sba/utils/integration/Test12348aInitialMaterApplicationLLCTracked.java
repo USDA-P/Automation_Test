@@ -23,7 +23,7 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 		webDriver = TestHelpers.getDefaultWebDriver();
 		webDriver.get(TestHelpers.getBaseUrl());
 		webDriver.manage().window().maximize();
-		get_The_Row_From_Login_Data = 88;
+		get_The_Row_From_Login_Data = 77;
 
 	}
 
@@ -70,7 +70,7 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			contributorDisadvantageIndividualQuetion.ContributorDisadvantageIndividualQuetion();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 88;
+			get_The_Row_From_Login_Data = 77;
 			LoginPageWithReference login_Data1 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data1.Login_With_Reference();
 			// Click on the dashboard.
@@ -81,11 +81,11 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			// add
 			// other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")).getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus3 = webDriver
-					.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+					.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 			HighLight.highLightElement(webDriver, ContributorCompleteStatus3);
 			// Complete the SDvD section.
 			ContributorSpouseOfaDisadvantageIndividualPage contributorSpouseOfaDisadvantageIndividual = new ContributorSpouseOfaDisadvantageIndividualPage(
@@ -93,7 +93,7 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			contributorSpouseOfaDisadvantageIndividual.ContributorSpouseOfaDisadvantageIndividual();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 88;
+			get_The_Row_From_Login_Data = 77;
 			LoginPageWithReference login_Data11 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data11.Login_With_Reference();
 			// Click on the dashboard.
@@ -103,11 +103,11 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			// Contributors is verify to be completed, but click
 			// on it to add other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")).getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus31 = webDriver
-					.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+					.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 			HighLight.highLightElement(webDriver, ContributorCompleteStatus31);
 			// Complete the Other Individuals section.
 			ContributorOtherIndividualsQuestionPage contributorOtherIndividualsQuestion = new ContributorOtherIndividualsQuestionPage(
@@ -115,7 +115,7 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			contributorOtherIndividualsQuestion.ContributorOtherIndividualsQuestion();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 88;
+			get_The_Row_From_Login_Data = 77;
 			LoginPageWithReference login_Data111 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data111.Login_With_Reference();
 			// Click on the dashboard.
@@ -125,11 +125,11 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			// Contributors is verify to be completed, but click on
 			// it to add other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")).getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus311 = webDriver
-					.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+					.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 			HighLight.highLightElement(webDriver, ContributorCompleteStatus311);
 			logger.info("All Required sections are completed, Ready to Review, Sign and Submit.");
 			WebElement rateElement2 = webDriver.findElement(By.id("profileid"));
