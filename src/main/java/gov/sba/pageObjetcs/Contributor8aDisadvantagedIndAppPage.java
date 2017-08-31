@@ -127,10 +127,6 @@ public class Contributor8aDisadvantagedIndAppPage {
         case "yes":
           click_Element(webDriver, "8a_DisAdv_US_Citizenship_yes");
           generic_file_Upld(webDriver);
-          /*
-           * new newMppUploadDocumentPageDeepa(webDriver).deepaUploadMppDocument(fixturesDir() +
-           * "Upload.pdf");
-           */
           break;
         case "no":
           click_Element(webDriver, "8a_DisAdv_US_citizenship_no");

@@ -34,7 +34,7 @@ public class TestWorkflowAppMppPrepareLinkAndCopyUdates extends TestCase {
 
     try {
       String expected_Text;
-      navigationMenuClick(webDriver, "Prepare");
+      navigationMenuClickNewQA(webDriver, "Prepare");
       /* Check the Top part of the text for MPP Link */
 
       expected_Text = "All Small Mentor-Protégé Program Preparation Checklist";
