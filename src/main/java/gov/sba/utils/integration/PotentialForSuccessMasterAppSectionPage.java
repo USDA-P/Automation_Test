@@ -28,11 +28,12 @@ public class PotentialForSuccessMasterAppSectionPage extends TestCase {
 		Expected_Text = "Potential for Success";
 		assertEquals(Actual_Text, Expected_Text);
 		// Verify Status.
-		Actual_Text = webDriver.findElement(By.xpath("//div[3]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//div[3]/div/section/div/div[2]/table/tbody/tr/td/span"))
+				.getText();
 		Expected_Text = "Not started";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement EligibilityCompleteStatus = webDriver
-				.findElement(By.xpath("//div[3]/div/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[3]/div/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, EligibilityCompleteStatus);
 		// Click on the link to start Potential for Success.
 		WebElement rateElement = webDriver.findElement(By.linkText("Potential for Success"));
@@ -204,11 +205,12 @@ public class PotentialForSuccessMasterAppSectionPage extends TestCase {
 		} catch (Error e) {
 			logger.info(e.getMessage());
 		}
-		Actual_Text = webDriver.findElement(By.xpath("//div[3]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//div[3]/div/section/div/div[2]/table/tbody/tr/td/span"))
+				.getText();
 		Expected_Text = "Complete";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement EligibilityCompleteStatus1 = webDriver
-				.findElement(By.xpath("//div[3]/div/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[3]/div/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, EligibilityCompleteStatus1);
 	}
 }

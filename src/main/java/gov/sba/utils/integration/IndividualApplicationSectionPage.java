@@ -33,11 +33,12 @@ public class IndividualApplicationSectionPage extends TestCase {
 		Actual_Text = webDriver.findElement(By.linkText("Contributors")).getText();
 		Expected_Text = "Contributors";
 		assertEquals(Actual_Text, Expected_Text);
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+				.getText();
 		Expected_Text = "Not started";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement EligibilityCompleteStatus = webDriver
-				.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, EligibilityCompleteStatus);
 		// Click on the link to start eligibility check.
 		WebElement rateElement = webDriver.findElement(By.linkText("Contributors"));
@@ -359,12 +360,13 @@ public class IndividualApplicationSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		logger.info("8(a) Disadvantaged Individual section is complete");
 		jse.executeScript("arguments[0].scrollIntoView()",
-				webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")));
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+				webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")));
+		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+				.getText();
 		Expected_Text = "Complete";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement IndividualStatusCOMPLETED = webDriver
-				.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, IndividualStatusCOMPLETED);
 		logger.info("All Required sections are completed, Ready to Review & Sign");
 

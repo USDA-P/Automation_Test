@@ -21,8 +21,8 @@ public class ScreenShotPage {
   public void ScreenShot() throws Exception {
     // Take screenshot and store as a file format
 
-    File src = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-    try {
+		File src = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+	    try {
       // now copy the screenshot to desired location using copyFile method
 
       FileUtils.copyFile(src, new File("C:/SbaProject/sba-automation-develop/MontanaScreenShots/"

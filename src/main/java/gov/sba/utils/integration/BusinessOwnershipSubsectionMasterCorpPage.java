@@ -14,7 +14,8 @@ import gov.sba.automation.FixtureUtils;
 import junit.framework.TestCase;
 
 public class BusinessOwnershipSubsectionMasterCorpPage extends TestCase {
-	private static final Logger logger = LogManager.getLogger(BusinessOwnershipSubsectionMasterCorpPage.class.getName());
+	private static final Logger logger = LogManager
+			.getLogger(BusinessOwnershipSubsectionMasterCorpPage.class.getName());
 	WebDriver webDriver;
 
 	public BusinessOwnershipSubsectionMasterCorpPage(WebDriver webDriver) {
@@ -358,11 +359,13 @@ public class BusinessOwnershipSubsectionMasterCorpPage extends TestCase {
 		// wait.until(ExpectedConditions.alertIsPresent());
 		// webDriver.switchTo().alert().accept();
 		// verify section is completed.
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div[2]/table/tbody/tr/td/span")).getText();
+		jse.executeScript("arguments[0].scrollIntoView()",
+				webDriver.findElement(By.xpath("//div[2]/section/div/div[2]/table/tbody/tr/td/span")));
+		Actual_Text = webDriver.findElement(By.xpath("//div[2]/section/div/div[2]/table/tbody/tr/td/span")).getText();
 		Expected_Text = "Complete";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement EligibilityCompleteStatus = webDriver
-				.findElement(By.xpath("//div[2]/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[2]/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, EligibilityCompleteStatus);
 
 	}

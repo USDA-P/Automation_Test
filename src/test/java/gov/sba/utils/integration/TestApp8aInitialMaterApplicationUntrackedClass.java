@@ -31,7 +31,6 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 	public void testApp8aInitialMaterApplication() throws Exception {
 		String Actual_Text = null;
 		String Expected_Text = null;
-		// try {
 		logger.info("Test for 8a initial master Flow");
 		// Login to dashboard.
 		LoginPageWithReference login_Data = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
@@ -81,11 +80,12 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			// add
 			// other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+					.getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus3 = webDriver
-					.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+					.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 			HighLight.highLightElement(webDriver, ContributorCompleteStatus3);
 			// Complete the SDvD section.
 			ContributorSpouseOfaDisadvantageIndividualPage contributorSpouseOfaDisadvantageIndividual = new ContributorSpouseOfaDisadvantageIndividualPage(
@@ -103,11 +103,12 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			// Contributors is verify to be completed, but click
 			// on it to add other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+					.getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus31 = webDriver
-					.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+					.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 			HighLight.highLightElement(webDriver, ContributorCompleteStatus31);
 			// Complete the Other Individuals section.
 			ContributorOtherIndividualsQuestionPage contributorOtherIndividualsQuestion = new ContributorOtherIndividualsQuestionPage(
@@ -125,11 +126,12 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			// Contributors is verify to be completed, but click on
 			// it to add other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+					.getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus311 = webDriver
-					.findElement(By.xpath("//div[2]/div/div/div[2]/table/tbody/tr/td/span"));
+					.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 			HighLight.highLightElement(webDriver, ContributorCompleteStatus311);
 			logger.info("All Required sections are completed, Ready to Review, Sign and Submit.");
 			WebElement rateElement2 = webDriver.findElement(By.id("profileid"));

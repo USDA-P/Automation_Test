@@ -314,7 +314,8 @@ public class BusinessOwnershipSubsectionMasterLlcPage extends TestCase {
 		Actual_Text = webDriver.findElement(By.xpath("//div/span")).getText();
 		Expected_Text = "Attachment is required";
 		assertEquals(Actual_Text, Expected_Text);
-		logger.info(webDriver.findElement(By.xpath(".//*[@id='answers_upload_relevant_llc_documents']/fieldset/h4")).getText());
+		logger.info(webDriver.findElement(By.xpath(".//*[@id='answers_upload_relevant_llc_documents']/fieldset/h4"))
+				.getText());
 		// question verify.
 		Actual_Text = webDriver.findElement(By.cssSelector("h4")).getText();
 		Expected_Text = "Please upload all relevant documents from the following list:\nArticles of Organization (original and current version)\nOperating Agreement (current version)\nResolutions (see details below)\nMembership shares and ledgers (see details below)";
@@ -350,11 +351,11 @@ public class BusinessOwnershipSubsectionMasterLlcPage extends TestCase {
 		// wait.until(ExpectedConditions.alertIsPresent());
 		// webDriver.switchTo().alert().accept();
 		// verify section is completed.
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/div[2]/table/tbody/tr/td/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//div[2]/section/div/div[2]/table/tbody/tr/td/span")).getText();
 		Expected_Text = "Complete";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement EligibilityCompleteStatus = webDriver
-				.findElement(By.xpath("//div[2]/div/div[2]/table/tbody/tr/td/span"));
+				.findElement(By.xpath("//div[2]/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, EligibilityCompleteStatus);
 
 	}
