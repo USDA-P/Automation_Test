@@ -20,10 +20,10 @@ try{
 	logger.info("Running clean up command in the database.");
 	Class.forName("org.postgresql.Driver");
 	Connection con = DriverManager.getConnection("jdbc:postgresql://db.qa.sba-one.net:5432/sbaone_qa", "app_ruby", "rubypassword");
-	PreparedStatement stmt = con.prepareStatement("select * from sbaone.email_notification_histories;");
+	PreparedStatement stmt = con.prepareStatement("select * from sbaone.users;");
 	ResultSet Rs = stmt.executeQuery();
 	while(Rs.next()){
-		logger.info(Rs.getInt(1)+" "+Rs.getString(2)+" "+Rs.getString(3));
+		logger.info(Rs.getInt(1)+" "+Rs.getString(2));
 	}
 	
 }

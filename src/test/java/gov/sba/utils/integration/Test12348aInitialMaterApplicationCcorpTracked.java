@@ -12,9 +12,9 @@ import org.openqa.selenium.WebElement;
 import gov.sba.automation.TestHelpers;
 import junit.framework.TestCase;
 
-public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
+public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 	private static final Logger logger = LogManager
-			.getLogger(TestApp8aInitialMaterApplicationUntrackedClass.class.getName());
+			.getLogger(Test12348aInitialMaterApplicationCcorpTracked.class.getName());
 	private static WebDriver webDriver;
 	int get_The_Row_From_Login_Data;
 
@@ -23,7 +23,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 		webDriver = TestHelpers.getDefaultWebDriver();
 		webDriver.get(TestHelpers.getBaseUrl());
 		webDriver.manage().window().maximize();
-		get_The_Row_From_Login_Data = 1;
+		get_The_Row_From_Login_Data = 90;
 
 	}
 
@@ -43,15 +43,15 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 		DeleteDraftCertPage deleteDraftCert1 = new DeleteDraftCertPage(webDriver);
 		deleteDraftCert1.DeleteDraftCert();
 		// Check if user already has pending app.
-		InitialScorpUsersPage Verifyaccount = new InitialScorpUsersPage(webDriver);
-		Verifyaccount.InitialScorpUsers();
+		InitialCcorpUsersPage Verifyaccount = new InitialCcorpUsersPage(webDriver);
+		Verifyaccount.InitialCcorpUsers();
 		// Complete the basic eligibility section.
 		BasicEligibilityMasterAppPage basicEligibilityMasterApp = new BasicEligibilityMasterAppPage(webDriver);
 		basicEligibilityMasterApp.BasicEligibilityMasterApp();
 		// Complete the Business Ownership section.
-		BusinessOwnershipSubsectionMasterScorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterScorpPage(
+		BusinessOwnershipSubsectionMasterCcorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterCcorpPage(
 				webDriver);
-		businessOwnershipSubsectionMaster.BusinessOwnershipSubsectionMaster();
+		businessOwnershipSubsectionMaster.BusinessOwnershipSubsectionMasterCcorp();
 		// Complete the character section.
 		CharacterMasterAppSectionPage characterMasterAppSection = new CharacterMasterAppSectionPage(webDriver);
 		characterMasterAppSection.CharacterMasterAppSection();
@@ -72,7 +72,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			contributorDisadvantageIndividualQuetion.ContributorDisadvantageIndividualQuetion();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 1;
+			get_The_Row_From_Login_Data = 90;
 			LoginPageWithReference login_Data1 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data1.Login_With_Reference();
 			// Click on the dashboard.
@@ -96,7 +96,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			contributorSpouseOfaDisadvantageIndividual.ContributorSpouseOfaDisadvantageIndividual();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 1;
+			get_The_Row_From_Login_Data = 90;
 			LoginPageWithReference login_Data11 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data11.Login_With_Reference();
 			// Click on the dashboard.
@@ -119,7 +119,7 @@ public class TestApp8aInitialMaterApplicationUntrackedClass extends TestCase {
 			contributorOtherIndividualsQuestion.ContributorOtherIndividualsQuestion();
 			// Verify status flow.
 			// Login to the Admin dashboard.
-			get_The_Row_From_Login_Data = 1;
+			get_The_Row_From_Login_Data = 90;
 			LoginPageWithReference login_Data111 = new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data);
 			login_Data111.Login_With_Reference();
 			// Click on the dashboard.

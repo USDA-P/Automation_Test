@@ -8,17 +8,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import gov.sba.automation.CoreUtils;
 import gov.sba.automation.FixtureUtils;
 import junit.framework.TestCase;
 
-public class BusinessOwnershipSubsectionMasterCorpPage extends TestCase {
+public class BusinessOwnershipSubsectionMasterScorpPage extends TestCase {
 	private static final Logger logger = LogManager
-			.getLogger(BusinessOwnershipSubsectionMasterCorpPage.class.getName());
+			.getLogger(BusinessOwnershipSubsectionMasterScorpPage.class.getName());
 	WebDriver webDriver;
 
-	public BusinessOwnershipSubsectionMasterCorpPage(WebDriver webDriver) {
+	public BusinessOwnershipSubsectionMasterScorpPage(WebDriver webDriver) {
 		this.webDriver = webDriver;
 
 	}
@@ -192,7 +191,7 @@ public class BusinessOwnershipSubsectionMasterCorpPage extends TestCase {
 		// verify that section is required.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.elementSelectionStateToBe(By.xpath("//div/span"), false));
-		Actual_Text = webDriver.findElement(By.xpath("//div/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//fieldset/div/span")).getText();
 		Expected_Text = "Please answer this question";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//div[3]/fieldset/div/span")).getText();

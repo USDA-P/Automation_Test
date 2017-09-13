@@ -40,9 +40,8 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 					webDriver.navigate().to(
 							"http://newqa.sba-one.net/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
 				} else {
-					webDriver.navigate().to(
-							"http://localhost/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
-
+					WebElement rateElement = webDriver.findElement(By.linkText("8(a) Initial Application"));
+					((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);
 				}
 			}
 		}
@@ -315,9 +314,8 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 					webDriver.navigate().to(
 							"https://newqa.sba-one.net/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
 				} else {
-					webDriver.navigate().to(
-							"http://localhost/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
-				}
+					WebElement rateElement1 = webDriver.findElement(By.linkText("8(a) Initial Application"));
+					((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement1);}
 			}
 		}
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));

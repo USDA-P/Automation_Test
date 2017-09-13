@@ -78,7 +78,7 @@ public class CodsAnalystSendsRequestAccessPage extends TestCase {
 		Expected_Text = "Where is your duty station?";
 		// Verify and Select duty station.
 		Actual_Text = webDriver.findElement(By.id("duty_station_duty_station")).getText();
-		Expected_Text = "Connecticut\nMaine\nMassachusetts\nN Hampshire\nRhode Island\nVermont\nBuffalo\nNew Jersey\nNew York\nPR & USVI\nSyracuse\nBaltimore\nDelaware\nPhiladelphia\nPittsburgh\nRichmond\nWashington\nWest Virginia\nAlabama\nGeorgia\nKentucky\nMississippi\nN Carolina\nN Florida\nS Carolina\nS Florida\nTennessee\nCleveland\nColumbus\nIllinois\nIndiana\nMichigan\nMinnesota\nWisconsin\nArkansas\nDallas\nEl Paso\nHouston\nLouisiana\nLower Rio G V\nLubbock\nNew Mexico\nOklahoma\nSan Antonio\nDes Moines\nKansas City\nNebraska\nSt. Louis\nWichita\nColorado\nMontana\nN Dakota\nS Dakota\nUtah\nWyoming\nArizona\nFresno\nHawaii\nLos Angeles\nNevada\nSacramento\nSan Diego\nSan Francisco\nSanta Ana\nAlaska\nBoise\nPortland\nSeattle";
+		Expected_Text = "San Francisco\nPhiladelphia";
 		assertEquals(Actual_Text, Expected_Text);
 		// Click the back button and select CODS
 		webDriver.findElement(By.xpath("//form/a")).click();

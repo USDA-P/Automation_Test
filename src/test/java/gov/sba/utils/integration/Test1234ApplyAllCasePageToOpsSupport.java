@@ -12,9 +12,9 @@ import org.openqa.selenium.WebElement;
 import gov.sba.automation.TestHelpers;
 import junit.framework.TestCase;
 
-public class TestApplyAllCasePageToOpsSupport extends TestCase {
+public class Test1234ApplyAllCasePageToOpsSupport extends TestCase {
   private static final Logger logger =
-      LogManager.getLogger(TestApplyAllCasePageToOpsSupport.class.getName());
+      LogManager.getLogger(Test1234ApplyAllCasePageToOpsSupport.class.getName());
   private static WebDriver webDriver;
   int get_The_Row_From_Login_Data;
 

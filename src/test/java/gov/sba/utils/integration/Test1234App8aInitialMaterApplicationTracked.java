@@ -12,8 +12,9 @@ import org.openqa.selenium.WebElement;
 import gov.sba.automation.TestHelpers;
 import junit.framework.TestCase;
 
-public class TestApp8aInitialMaterApplicationTracked extends TestCase {
-	private static final Logger logger = LogManager.getLogger(TestApp8aInitialMaterApplicationTracked.class.getName());
+public class Test1234App8aInitialMaterApplicationTracked extends TestCase {
+	private static final Logger logger = LogManager
+			.getLogger(Test1234App8aInitialMaterApplicationTracked.class.getName());
 	private static WebDriver webDriver;
 	int get_The_Row_From_Login_Data;
 
@@ -40,11 +41,14 @@ public class TestApp8aInitialMaterApplicationTracked extends TestCase {
 		// delete second draft if any.
 		DeleteDraftCertPage deleteDraftCert1 = new DeleteDraftCertPage(webDriver);
 		deleteDraftCert1.DeleteDraftCert();
+		// Check if user already has pending app.
+		InitialScorpUsersPage Verifyaccount = new InitialScorpUsersPage(webDriver);
+		Verifyaccount.InitialScorpUsers();
 		// Complete the basic eligibility section.
 		BasicEligibilityMasterAppPage basicEligibilityMasterApp = new BasicEligibilityMasterAppPage(webDriver);
 		basicEligibilityMasterApp.BasicEligibilityMasterApp();
 		// Complete the Business Ownership section.
-		BusinessOwnershipSubsectionMasterCorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterCorpPage(
+		BusinessOwnershipSubsectionMasterScorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterScorpPage(
 				webDriver);
 		businessOwnershipSubsectionMaster.BusinessOwnershipSubsectionMaster();
 		// Complete the character section.

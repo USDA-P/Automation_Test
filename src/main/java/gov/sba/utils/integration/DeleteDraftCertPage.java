@@ -26,13 +26,11 @@ public class DeleteDraftCertPage extends TestCase {
 		// delete to start a new certification.
 		if (webDriver.getPageSource().contains("Draft")) {
 			webDriver.navigate().refresh();
-
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
 			// WebElement rateElement =
 			// webDriver.findElement(By.linkText("Delete"));
 			JavascriptExecutor jse2 = (JavascriptExecutor) webDriver;
 			jse2.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.linkText("Delete")));
-
 			webDriver.findElement(By.linkText("Delete")).click();
 			// Actions act = new Actions(webDriver);
 			// act.doubleClick(webDriver.findElement(By.linkText("Delete"))).build().perform();

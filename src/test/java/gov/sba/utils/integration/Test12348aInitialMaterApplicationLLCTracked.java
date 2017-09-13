@@ -43,6 +43,9 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 		// delete second draft if any.
 		DeleteDraftCertPage deleteDraftCert1 = new DeleteDraftCertPage(webDriver);
 		deleteDraftCert1.DeleteDraftCert();
+		// Check if user already has pending app.
+		InitialLlcUsersPage Verifyaccount = new InitialLlcUsersPage(webDriver);
+		Verifyaccount.InitialLlcUsers();
 		// Complete the basic eligibility section.
 		BasicEligibilityMasterAppPage basicEligibilityMasterApp = new BasicEligibilityMasterAppPage(webDriver);
 		basicEligibilityMasterApp.BasicEligibilityMasterApp();
@@ -81,7 +84,8 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			// add
 			// other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+					.getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus3 = webDriver
@@ -103,7 +107,8 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			// Contributors is verify to be completed, but click
 			// on it to add other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+					.getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus31 = webDriver
@@ -125,7 +130,8 @@ public class Test12348aInitialMaterApplicationLLCTracked extends TestCase {
 			// Contributors is verify to be completed, but click on
 			// it to add other
 			// contributors.
-			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
+					.getText();
 			Expected_Text = "Complete";
 			assertEquals(Actual_Text, Expected_Text);
 			WebElement ContributorCompleteStatus311 = webDriver
