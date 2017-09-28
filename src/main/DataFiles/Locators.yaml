@@ -939,7 +939,7 @@ Review_Application:               {Locator: "id", Value: "review"}
 #@contributor_8a_spouse_DisAdv_Application_Page_Role in Applicant Firm End
 
 #@contributor_8a_DisAdv_Application_Page_length og Residency Start
-8a_DisAdv_Page_length_of_Residency_yes:         {Locator: 'xpath', Value: "label[@for='answers_809_value_yes']"}
+8a_DisAdv_Page_length_of_Residency_yes:         {Locator: 'xpath', Value: "//label[@for='answers_809_value_yes']"}
 8a_DisAdv_Page_length_of_Residency_no:          {Locator: 'xpath', Value: "//label[@for='answers_809_value_no']"}
 #@contributor_8a_DisAdv_Application_Page_length of Residency End
 
@@ -965,7 +965,7 @@ Review_Application:               {Locator: "id", Value: "review"}
 
 
 #@contributor_8a_spouse_Application_Page_Previous Home Address Start
-8a_sposueSubapp_Page_presentAdd_yes:             {Locator: 'xpath', Value: "//label[@for='answers_646_value_yes']"}
+8a_sposueSubapp_Page_presentAdd_yes:             {Locator: 'xpath', Value: " //label[@for='answers_646_value_yes']"}
 8a_sposueSubapp_Page_presentAdd_no:               {Locator: 'xpath', Value: "//label[@for='answers_646_value_no']"}
 8a_sposueSubapp_Page_PreviousStAdd:             {Locator: 'xpath', Value: "//input[contains(@id,'answers_647_value_mailing_address')]"}
 8a_sposueSubapp_Page_PreviousCity:              {Locator: 'xpath', Value: "//input[contains(@id,'answers_647_value_city')]"}
@@ -1042,9 +1042,9 @@ Review_Application:               {Locator: "id", Value: "review"}
 
 
 #@contributor_8a_DisAdv_Application_Bank_Acct_Access Page Start
-8a_DisAdv_Bank_Acct_Access_Yes:         {Locator: 'xpath', Value: "//label[@for='answers_819_value_yes']"}
+8a_DisAdv_Bank_Acct_Access_Yes:         {Locator: 'xpath', Value:  "//label[@for='answers_819_value_yes']"}
 8a_DisAdv_Bank_Acct_Access_Yes_Text:    {Locator: 'id', Value: "answers_819_comment"}
-8a_DisAdv_Bank_Acct_Access_No:          {Locator: 'xpath', Value: "''label[@for='answers_819_value_no']"}
+8a_DisAdv_Bank_Acct_Access_No:          {Locator: 'xpath', Value: "//label[@for='answers_819_value_no']"}
 #@contributor_8a_DisAdv_Application_Bank_Acct_Access Page  End
 
 
