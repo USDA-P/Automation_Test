@@ -1,17 +1,22 @@
 // TS_Created_By_Deepa_Patri
 package gov.sba.utils.integration;
 
+import gov.sba.automation.DatabaseUtils;
+import gov.sba.automation.FixtureUtils;
 import gov.sba.automation.TestHelpers;
 import junit.framework.TestCase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static gov.sba.automation.CommonApplicationMethods.*;
@@ -27,9 +32,11 @@ import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_
 public class TestWorkFlow8a01 extends TestCase {
   // Set The variabl.es/Define
   Logger logger = LogManager.getLogger(TestWorkFlow8a01.class.getName());
+  String[][] appFirm;
   private static WebDriver webDriver;
   /* int get_The_Row_From_Login_Data; */
   String duns_Number, email, password;
+  String app_Firm_Name, app_Firm_Address, app_Firm_State;
 
   @Before
   public void setUp() throws Exception {
@@ -45,24 +52,19 @@ public class TestWorkFlow8a01 extends TestCase {
     email = details[0];
     password = details[1];
     duns_Number = details[2];
+    appFirm = DatabaseUtils.getApplication_Firm(duns_Number);
+    app_Firm_Name    = appFirm[0][0];
+    app_Firm_Address = appFirm[0][1];
+    app_Firm_State   = appFirm[0][2];
   }
 
   @Test
   public void testWorkFlow8a01() throws Exception {
     try {
 
-      /* return_All_Applications(webDriver, 11, "165324125"); */
-      /* delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125"); */
-      /* delete_All_Application_Draft(webDriver, email, password, duns_Number); */
-      /* Login to Dashboard. */
-      /*
-       * new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data) .Login_With_Reference();
-       */
       new LoginPageWithDetails(webDriver, email, password).Login_With_Details();
 
-      /* new programs_Page().select_MyCertifications_Table(webDriver, "Delete_8a_Initial_Draft"); */
-      join_New_Program_CheckBoxes(webDriver, "8A");
-      /* masterApp_8a_Page_Click(webDriver,"page_basiceligibility"); */
+       join_New_Program_CheckBoxes(webDriver, "8A");
       /* Basic Eligibility Page */
       BasicEligiblity_General_Assessment_Page(webDriver, "Yes", "no", "Yes", "Yes", "Yes");
       BasicEligiblity_Prior_8a_Involvement_Page(webDriver, "no", "Yes", "Yes");
@@ -70,8 +72,6 @@ public class TestWorkFlow8a01 extends TestCase {
       BasicEligiblity_Business_Size_Page(webDriver, "Yes", "Yes");
       BasicEligiblity_Size_Determination_Page(webDriver);
       /* Basic ownership Page */
-      /* logger.info(webDriver.getPageSource()); */
-
       masterApp_8a_Page_Click(webDriver, "page_business_ownership");
       Business_Ownership_Entity_Ownership_Page(webDriver, "yes");
       Business_Ownership_Ownership_Details_Page(webDriver, "yes", "no", "no", "no");
@@ -99,61 +99,65 @@ public class TestWorkFlow8a01 extends TestCase {
       firm_Control_Page_Review(webDriver);
       /* Contributor Page- Vendor Admin Sub application */
       masterApp_8a_Page_Click(webDriver, "page_contributors_Start_Indv_Cont");
-      disAdvApp_Gender_Info_Page(webDriver, "Male");
-      disAdvApp_MaritalStatus_Page(webDriver, "Married");
-      disAdvApp_SocialSecNum_Page(webDriver, "12345678");
-      disAdvApp_ContactInfo_Page(webDriver, "12345678");
-      disAdvApp_CuurentHomeAddress_Page(webDriver, "mclean", "mclean", "AL", "10002", "US",
-          "01/01/2019");
-      disAdvApp_LengthofResidency_Page(webDriver, "yes");
-      disAdvApp_DateandPlaceofBirth_Page(webDriver, "01/01/2019", "Mclean", "India");
-      disAdvApp_Us_Citizenship_Page(webDriver, "yes");
-      generic_file_Upld(webDriver);
-      click_Element(webDriver, "Application_Common_Continue_Button");
-      /* disAdvApp_UploadResume_Page(webDriver); */
-      disAdvApp_Appl_Firm_Ownership_Page(webDriver, "80", "Anything");
-      disAdvApp_Bank_Acct_Access_Page(webDriver, "yes", "Anything");
-      disAdvApp_Full_Time_Devotion_Page(webDriver, "yes");
-      disAdvApp_Business_Affiliations_Page(webDriver, "yes", "yes", "something To Test");
-      disAdvApp_8a_Prior_Involvement_Page(webDriver, "yes", "yes", "yes");
-      disAdvApp_8a_Federal_Employment_Page(webDriver, "yes");
-      disAdvApp_8a_Household_Federal_Employment_Page(webDriver, "yes");
-      disAdvApp_8a_Financial_Page(webDriver, "yes", "yes", "yes", "yes");
-      disAdvApp_8a_Criminal_History_Page(webDriver, "yes", "Anything", "yes", "yes", "yes");
-      disAdvApp_criminal_Hist_Doc_Page(webDriver);
-      disAdvApp_Basic_Of_Disadvantage_Page(webDriver, "Black American", "Anything");
-      disAdvApp_Social_Narrative_Page(webDriver);
-      disAdvApp_Transfer_Assets_Page(webDriver, "Yes", "Anything");
-      disAdvApp_Tax_Returns_Page(webDriver);
-      disAdvApp_financial_CashOnHand_Page(webDriver, "01/01/2019", "111", "111", "111");
-      disAdvApp_financial_OtherSource_Page(webDriver, "111", "111", "Anything", "111", "111");
-      disAdvApp_financial_Notes_Receivable_Page(webDriver, "Yes");
-      disAdvApp_financial_Retirement_Account_Page(webDriver, "Yes", "Yes");
-      disAdvApp_financial_Life_Insurance_Page(webDriver, "Yes", "Yes");
-      disAdvApp_financial_StocksAndBonds_Page(webDriver, "Yes");
-      disAdvApp_financial_RealEstate_Page(webDriver, "Yes", "Yes", "Yes", "Yes", "Yes", "Yes");
-      disAdvApp_financial_RealEstateOther_Page(webDriver, "Yes", "Yes", "Yes", "Yes", "Yes", "Yes");
-      disAdvApp_financial_Personal_Property_Page(webDriver, "Yes", "Yes");
-      disAdvApp_financial_NotesPayableandOther_Page(webDriver, "Yes");
-      disAdvApp_financial_Assessed_Taxes_Page(webDriver, "Yes");
-      // Personal summary Report
-      disAdvApp_financial_PersonalSummary_Page(webDriver);
-      disAdvApp_financial_PrivacyStatements_Page(webDriver);
-      disAdvApp_financial_Review_Page(webDriver);
-      disAdvApp_Signature_Page(webDriver);
+      contributorsubApp_8aDisAdvInd(webDriver);
       /* To complete 8a Master Application. */
       master8aApp_final_ReviewSign(webDriver);
       navigationMenuClick(webDriver, "DASHBOARD");
       List<WebElement> all_Cells = verify_Row_In_A_Table_And_Return(webDriver,
           new String[] {"8(a) Initial Application", "", "Pending", "", "", "", ""});
       assertNotNull(all_Cells);
-      /* For Demo Start - July 6 To show 8a cod's supervsior page displaying the Unassigned cases */
+
+      /* Create a file and write the output into the file*/
+      //String file_Path = FixtureUtils.fixturesDir() + "test8asubmission_output.txt";
+      //delete_Any_File(file_Path);
+      //create_Any_File(file_Path);
+      //write_file(file_Path, appFirm[0][1]);
+      /* APp-1145*/
+      /* 8a cod's supervsior page displaying the Unassigned cases */
       navigationMenuClick(webDriver, "Logout");
       webDriver.get(TestHelpers.getBaseUrl());
       click_Element(webDriver, "SBA_Login_Button");
       setText_Element(webDriver, "SBA_Login_Email", "sba_supervisor_8a_cods_5@mailinator.com");
       setText_Element(webDriver, "SBA_Login_Pwd", "password");
       click_Element(webDriver, "SBA_Login_Sign_in");
+      List<WebElement> row_Header = find_Elements(webDriver,"SBA_Supervisor_Unassigned_Cases_Table");
+      String[] header_Names_Array =
+              new String[] {"Date Submitted", "Applicant Firm", "Applicant Firm Location", "Actions"};
+      String[] header_Names_Array_Validate = new String[4];
+      java.util.Iterator<WebElement> list_elements = row_Header.iterator();
+      int i = 0;
+      while (list_elements.hasNext()) {
+        logger.info(i);
+        header_Names_Array_Validate[i] = list_elements.next().getText();
+        i = i + 1;
+      }
+      Assert.assertArrayEquals(header_Names_Array, header_Names_Array_Validate);
+      List<ArrayList<String>> ui_rows_array = new ArrayList<>();
+      String xpath_For_Row = "//article[@id='main-content']//header[ h2[ contains(text(),'Unassigned Cases')] ]/table/tbody/tr[ td [position()=2]/a[ contains(text(),'"+  app_Firm_Name + "') ] ]";
+      String xpath_For_Row_Link = "//article[@id='main-content']//header[ h2[ contains(text(),'Unassigned Cases')] ]/table/tbody/tr/td [position()=2]/a[ contains(text(),'"+  app_Firm_Name + "') ] ";
+      List<WebElement> rows_Body = webDriver.findElements(By
+              .xpath(xpath_For_Row));
+      for (int j = 0; j < rows_Body.size(); j++) {
+        ArrayList<String> ui_rows_Cell = new ArrayList<>();
+        logger.info(rows_Body.get(j).getAttribute("innerHTML"));
+        List<WebElement> rows_Body_Cells = rows_Body.get(j).findElements(By.xpath("td"));
+
+        logger.info("+++++++" + rows_Body_Cells.size());
+        ui_rows_Cell.add(rows_Body_Cells.get(0).getText().toUpperCase());
+        logger.info(rows_Body_Cells.get(0).getText().toUpperCase());
+        ui_rows_Cell.add(rows_Body_Cells.get(1).getText().toUpperCase());
+        logger.info(rows_Body_Cells.get(1).getText().toUpperCase());
+        ui_rows_Cell.add(rows_Body_Cells.get(2).getText().toUpperCase());
+        logger.info(rows_Body_Cells.get(2).getText().toUpperCase());
+        ui_rows_Cell.add(rows_Body_Cells.get(3).getText().toUpperCase());
+        logger.info(rows_Body_Cells.get(3).getText().toUpperCase());
+        ui_rows_array.add(ui_rows_Cell);
+      }
+
+      logger.info(ui_rows_array.toString());
+
+      //click_Element(webDriver,"xpath", xpath_For_Row_Link);
+
       /* For Demo End - July 6 */
 
     } catch (Exception e) {
@@ -165,7 +169,7 @@ public class TestWorkFlow8a01 extends TestCase {
 
   @After
   public void tearDown() throws Exception {
-    webDriver.quit();
+    //webDriver.quit();
   }
 }
 

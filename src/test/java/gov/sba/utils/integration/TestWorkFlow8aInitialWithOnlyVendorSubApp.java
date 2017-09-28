@@ -32,7 +32,7 @@ import static gov.sba.pageObjetcs.VendorDashboardPage.verify_Row_In_A_Table_And_
  */
 // Still in progress
 @Category({gov.sba.utils.integration.StableTests.class})
-public class TestWorkFlow8aInitialWithOnlyVendorSubApp {
+public class TestWorkFlow8aInitialWithOnlyVendorSubApp extends TestCase{
   // Set The variabl.es/Define
   Logger logger = LogManager.getLogger(TestWorkFlow8aInitialWithOnlyVendorSubApp.class.getName());
   private static WebDriver webDriver;
@@ -58,28 +58,15 @@ public class TestWorkFlow8aInitialWithOnlyVendorSubApp {
   public void testWorkFlow8aInitialWithOnlyVendorSubApp() throws Exception {
     try {
 
-      /* return_All_Applications(webDriver, 11, "165324125"); */
-      /* delete_All_Application_Draft(webDriver, email, password, duns_Number); */
-      /* Login to Dashboard. */
-      /* delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125"); */
-      /*
-       * new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data) .Login_With_Reference();
-       */
       new LoginPageWithDetails(webDriver, email, password).Login_With_Details();
-      //navigationMenuClick(webDriver, "logout");
-      /* new programs_Page().select_MyCertifications_Table(webDriver, "Delete_8a_Initial_Draft"); */
-      //webDriver.navigate().to("https://certify.qa.sba-one.net/questionnaires/eight_a_initial/sba_applications/new?application_type_id=initial&certificate_type_id=eight_a_initial");
       join_New_Program_CheckBoxes(webDriver, "8A");
-            /* masterApp_8a_Page_Click(webDriver,"page_basiceligibility"); */
-      /* Basic Eligibility Page */
+      /*Basic Eligiblity section*/
       BasicEligiblity_General_Assessment_Page(webDriver, "Yes", "no", "Yes", "Yes", "Yes");
       BasicEligiblity_Prior_8a_Involvement_Page(webDriver, "no", "Yes", "Yes");
       BasicEligiblity_Outside_Assistance_Page(webDriver, "Yes");
       BasicEligiblity_Business_Size_Page(webDriver, "Yes", "Yes");
       BasicEligiblity_Size_Determination_Page(webDriver);
       /* Basic ownership Page */
-      /* logger.info(webDriver.getPageSource()); */
-
       masterApp_8a_Page_Click(webDriver, "page_business_ownership");
       Business_Ownership_Entity_Ownership_Page(webDriver, "yes");
       Business_Ownership_Ownership_Details_Page(webDriver, "yes", "no", "no", "no");
@@ -127,7 +114,7 @@ public class TestWorkFlow8aInitialWithOnlyVendorSubApp {
       disAdvApp_8a_Criminal_History_Page(webDriver, "yes", "Anything", "yes", "yes", "yes");
       disAdvApp_criminal_Hist_Doc_Page(webDriver);
       disAdvApp_Basic_Of_Disadvantage_Page(webDriver, "Black American", "Anything");
-      disAdvApp_Social_Narrative_Page(webDriver);
+      //disAdvApp_Social_Narrative_Page(webDriver);
       disAdvApp_Transfer_Assets_Page(webDriver, "Yes", "Anything");
       disAdvApp_Tax_Returns_Page(webDriver);
       disAdvApp_financial_CashOnHand_Page(webDriver, "01/01/2019", "111", "111", "111");
@@ -147,20 +134,24 @@ public class TestWorkFlow8aInitialWithOnlyVendorSubApp {
       disAdvApp_financial_Review_Page(webDriver);
       disAdvApp_Signature_Page(webDriver);
       /* To complete 8a Master Application. */
+
       master8aApp_final_ReviewSign(webDriver);
       navigationMenuClick(webDriver, "DASHBOARD");
       List<WebElement> all_Cells = verify_Row_In_A_Table_And_Return(webDriver,
           new String[] {"8(a) Initial Application", "", "Pending", "", "", "", ""});
       Assert.assertNotNull(all_Cells);
-      /* For Demo Start - July 6 */
-     navigationMenuClick(webDriver, "LOGOUT");
-      //navigationBarClick(webDriver, "LOGOUT");
+      //* For Demo Start - July 6 *//*
+     //navigationMenuClick(webDriver, "LOGOUT");
+
+      navigationBarClick(webDriver, "LOGOUT");
       webDriver.get(TestHelpers.getBaseUrl());
       click_Element(webDriver, "SBA_Login_Button");
       setText_Element(webDriver, "SBA_Login_Email", "sba_supervisor_8a_cods_5@mailinator.com");
       setText_Element(webDriver, "SBA_Login_Pwd", "password");
       click_Element(webDriver, "SBA_Login_Sign_in");
+
       /* For Demo End - July 6 */
+
     } catch (Exception e) {
       logger.info(e.toString());
       take_ScreenShot_TestCaseName(webDriver, new String[] {"testWorkFlow8aInitialWithOnlyVendorSubApp", "Exception"});
@@ -170,7 +161,7 @@ public class TestWorkFlow8aInitialWithOnlyVendorSubApp {
 
   @After
   public void tearDown() throws Exception {
-    //webDriver.quit();
+    webDriver.quit();
   }
 }
 

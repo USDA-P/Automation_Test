@@ -711,7 +711,7 @@ public class MasterApplication8a {
       disAdvApp_8a_Criminal_History_Page(webDriver, "yes", "Anything", "yes", "yes", "yes");
       disAdvApp_criminal_Hist_Doc_Page(webDriver);
       disAdvApp_Basic_Of_Disadvantage_Page(webDriver, "Black American", "Anything");
-      disAdvApp_Social_Narrative_Page(webDriver);
+     // disAdvApp_Social_Narrative_Page(webDriver);
       disAdvApp_Transfer_Assets_Page(webDriver, "Yes", "Anything");
       disAdvApp_Tax_Returns_Page(webDriver);
       disAdvApp_financial_CashOnHand_Page(webDriver, "01/01/2019", "111", "111", "111");
