@@ -72,7 +72,7 @@ public class TestWorkflowEDWOSB07 extends TestCase {
       Edwosb_Questionnaire_Assets_Page(webDriver, "yes", "yes", "yes");
       Edwosb_Questionnaire_EconomicDisadvantage_Page(webDriver, "yes");
       accept_Alert(webDriver,15);
-      /* 413 form to including first and secnodn partners */
+      /* 413 form to including first and second partners */
       NewFinancialQuestion(webDriver, "deepa", "patri", "123456789", "deepa@gmail.com", "12", "VA",
           "12345", "123-123-1234", "123-123-1234", "MClean", "USA");
       accept_Alert(webDriver,15);
@@ -94,6 +94,29 @@ public class TestWorkflowEDWOSB07 extends TestCase {
       edwosb_financial_PersonalSummary_Page(webDriver);
       edwosb_financial_PrivacyStatements_Page(webDriver);
       edwosb_financial_Review_Page(webDriver);
+      //click_Element(webDriver,"EDWOSB_Questionnaire_form413");
+       /* 413 form to including second partners */
+   /*   NewFinancialQuestion(webDriver, "Mahesh", "Prem", "123456789", "deepa@gmail.com", "12", "VA",
+              "12345", "123-123-1234", "123-123-1234", "MClean", "USA");
+      accept_Alert(webDriver,15);
+      Edwosb_legalseparation(webDriver, "no");
+      *//* EDWOSB financial question page *//*
+      edwosb_financial_CashOnHand_Page(webDriver, "01/01/2018", "111", "111", "111");
+      edwosb_financial_OtherSource_Page(webDriver, "111", "111", "other income comments", "111",
+              "111");
+      edwosb_financial_Notes_Receivable_Page(webDriver, "yes");
+      edwosb_financial_Retirement_Account_Page(webDriver, "yes", "yes");
+      edwosb_financial_Life_Insurance_Page(webDriver, "yes", "yes");
+      edwosb_financial_StocksAndBonds_Page(webDriver, "yes");
+      edwosb_financial_RealEstate_Page(webDriver, "yes", "yes", "yes", "yes", "yes", "yes");
+      edwosb_financial_RealEstateOther_Page(webDriver, "yes", "yes", "yes", "yes", "yes", "yes");
+      edwosb_financial_Personal_Property_Page(webDriver, "yes", "yes");
+      edwosb_financial_NotesPayableandOther_Page(webDriver, "yes");
+      edwosb_financial_Assessed_Taxes_Page(webDriver, "yes");
+      edwosb_financial_Adjusted_Gross_Income_Page(webDriver);
+      edwosb_financial_PersonalSummary_Page(webDriver);
+      edwosb_financial_PrivacyStatements_Page(webDriver);
+      edwosb_financial_Review_Page(webDriver);*/
       finalSignatureSubmit(webDriver);
 
       /* if (stop_Exec == 1) {return;} /* TODO Working On */

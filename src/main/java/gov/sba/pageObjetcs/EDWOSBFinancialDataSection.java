@@ -236,8 +236,7 @@ public class EDWOSBFinancialDataSection {
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_Jointly_Owned_Yes");
                   setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Percentage_Ownership",
                       "100");
-                  setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Percentage_Mortage",
-                      "10");
+
                   break;
                 case "no":
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_Jointly_Owned_No");
@@ -247,16 +246,18 @@ public class EDWOSBFinancialDataSection {
               switch (MortageNameYesNo.toLowerCase()) {
                 case "yes":
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_Name_Mortage_Yes");
+                  setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Percentage_Mortage",
+                          "10");
+                  setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Current_Residence_Val",
+                          "11111");
+                  setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Mortage_Balance_Val", "111");
                   break;
                 case "no":
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_Name_Mortage_No");
               }
             }
-            setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Current_Residence_Val",
-                "11111");
-            setText_Element(webDriver, "EDWOSB_financial_Real_Estate_Mortage_Balance_Val", "111");
 
-            if (!ndMortageYesNo.equals(null) && !ndMortageYesNo.equals("")) {
+               if (!ndMortageYesNo.equals(null) && !ndMortageYesNo.equals("")) {
               switch (ndMortageYesNo.toLowerCase()) {
                 case "yes":
                   click_Element(webDriver, "EDWOSB_financial_Real_Estate_2nd_Mortgage_Yes");

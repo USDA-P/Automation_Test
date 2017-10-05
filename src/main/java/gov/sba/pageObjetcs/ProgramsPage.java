@@ -2,16 +2,23 @@
 
 package gov.sba.pageObjetcs;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.Map;
 
 import static gov.sba.automation.CommonApplicationMethods.*;
+import static gov.sba.automation.FixtureUtils.fixturesDir;
 
 public class ProgramsPage {
+  Logger logger = LogManager.getLogger(ProgramsPage.class.getName());
 
   public static void select_MyCertifications_Table(WebDriver webDriver, String which_Cert)
       throws Exception {
@@ -75,8 +82,60 @@ public class ProgramsPage {
     }
 
   }
+  public static void join_New_Program_CheckBoxes (WebDriver webDriver,String link_Cert)
+  throws Exception{
+    WebElement el;
+    switch (link_Cert.toUpperCase()) {
+      case "WOSB":
+       el =  find_Element(webDriver,"DasbNewPgm_Create_App_WOSB", true);
+       if (el == null){
+         dashbaord_Program_link(webDriver, link_Cert);
+       }
+       else
+       {
+         el.click();
+       }
+      break;
+      case "EDWOSB":
+        el =  find_Element(webDriver,"DasbNewPgm_Create_App_EDWOSB", true);
+        if (el == null){
+          dashbaord_Program_link(webDriver, link_Cert);
+        }
+        else
+        {
+          el.click();
+        }
+       break;
+      case "MPP":
+        el =  find_Element(webDriver,"DasbNewPgm_Create_App_MPP", true);
+        if (el == null){
+          dashbaord_Program_link(webDriver, link_Cert);
+        }
+        else
+        {
+          el.click();
+        }
+      break;
+      case "8A":
+        el =  find_Element(webDriver,"DasbNewPgm_Create_App_8A", true);
+        if (el == null){
+          dashbaord_Program_link(webDriver, link_Cert);
+        }
+        else
+        {
+          el.click();
+        }
+        break;
+      default:
+        Assert.assertEquals("Edwosb or WOSB or MPP or 8a", "Not Found");
+        break;
+    }
+    click_Element(webDriver, "Application_Common_Accept_Button");
 
-  public static void join_New_Program_CheckBoxes(WebDriver webDriver, String which_Cert)
+
+  }
+
+  public static void dashbaord_Program_link (WebDriver webDriver, String which_Cert)
       throws Exception {
     // Elements tag: @Join_New_Program_Page
     if (!which_Cert.equals(null) && !which_Cert.equals("")) {
@@ -106,36 +165,45 @@ public class ProgramsPage {
 
   }
 
-  public static void generic_file_Upld(WebDriver webDriver) throws Exception {
-    // Elements Tags: @Generic file attach-upload
-    try {
-      click_Element(webDriver, "File_Up1_Add_Req");
-      Thread.sleep(800);
-      click_Element(webDriver, "File_Up1_Choose_Doc_Library");
-      Thread.sleep(800);
-      click_Element(webDriver, "File_Up1_Choose_Doc");
-      Thread.sleep(900);
-      click_Element(webDriver, "File_Up1_Associate_Button");
-      Thread.sleep(600);
+
+
+  public static void generic_file_Upld(WebDriver webDriver)
+          throws Exception {
+
+    try{
+     click_Element(webDriver, "File_Up1_Add_Req");
+     Thread.sleep(800);
+     click_Element(webDriver, "File_Up1_Choose_Doc_Library");
+     Thread.sleep(800);
+      WebElement e1 = find_Element(webDriver,"File_Up1_row_Existance",true);
+      if(e1 == null){
+        doUpload_Action();
+      }
+      else {
+        click_Element(webDriver, "File_Up1_Choose_Doc");
+        Thread.sleep(900);
+        click_Element(webDriver, "File_Up1_Associate_Button");
+        Thread.sleep(600);
       /*
        * Between file association and some JS execution we need time. Both before and after JHS the
        * button is still valid. But if we click sooner than its failing
        */
 
-      Actions actions = new Actions(webDriver);
+        Actions actions = new Actions(webDriver);
 
-      //actions.moveToElement(find_Element(webDriver, "Application_Common_Submit_Button")).click().perform();
-      click_Element(webDriver, "Application_Common_Submit_Button");
+        //actions.moveToElement(find_Element(webDriver, "Application_Common_Submit_Button")).click().perform();
+        click_Element(webDriver, "Application_Common_Submit_Button");
+        Thread.sleep(900);
+      }
 
-      click_Element(webDriver, "Application_Common_Submit_Button");
-      Thread.sleep(900);
     } catch (Exception e) {
       throw e;
     }
   }
 
+
   public static void generic_file_Upld(WebDriver webDriver, String add_File_Locator)
-      throws Exception {
+          throws Exception {
     // Elements Tags: @Generic file attach-upload
     try {
       Map locator = getLocator(add_File_Locator);
@@ -144,14 +212,22 @@ public class ProgramsPage {
       Thread.sleep(800);
       click_Element(webDriver, "xpath", locator.get("L2").toString());
       Thread.sleep(800);
-      click_Element(webDriver, "xpath", locator.get("L3").toString());
-      Thread.sleep(900);
-      click_Element(webDriver, "xpath", locator.get("L4").toString());
-      Thread.sleep(900);
+      WebElement e1 = find_Element(webDriver,"File_Up1_row_Existance",true);
+      if(e1 == null){
+        doUpload_Action();
+      }
+      else {
+        click_Element(webDriver, "xpath", locator.get("L3").toString());
+        Thread.sleep(900);
+        click_Element(webDriver, "xpath", locator.get("L4").toString());
+        Thread.sleep(900);
+      }
+
     } catch (Exception e) {
       throw e;
     }
   }
+
 
 
   public static void contributor_Spouse_login(WebDriver webDriver, String FullName,
@@ -188,6 +264,65 @@ public class ProgramsPage {
     } catch (Exception e) {
       throw e;
     }
+  }
+  public static void doUpload_Action() throws Exception {
+    StringSelection ss = new StringSelection(fixturesDir() + "Upload.pdf");
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+    Robot robot = new Robot();
+    //logger.info("Uploading a new document - Clicked on Upload");
+
+    robot.keyPress(KeyEvent.VK_ALT);
+    robot.keyPress(KeyEvent.VK_TAB);
+    Thread.sleep(300);
+    robot.keyRelease(KeyEvent.VK_ALT);
+    robot.keyRelease(KeyEvent.VK_TAB);
+    Thread.sleep(300);
+    robot.keyPress(KeyEvent.VK_ALT);
+    robot.keyPress(KeyEvent.VK_TAB);
+    Thread.sleep(300);
+    robot.keyRelease(KeyEvent.VK_ALT);
+    robot.keyRelease(KeyEvent.VK_TAB);
+    Thread.sleep(300);
+    //logger.info("Uploading a new document - Alt tab done");
+
+    robot.keyPress(KeyEvent.VK_F4);
+    Thread.sleep(300);
+    robot.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(300);
+    //logger.info("Uploading a new document - Clicked on F4");
+    robot.keyPress(KeyEvent.VK_SHIFT);
+    robot.keyPress(KeyEvent.VK_TAB);
+    robot.keyRelease(KeyEvent.VK_SHIFT);
+    Thread.sleep(300);
+    //logger.info("Uploading a new document - Clicked on Tab");
+    robot.keyPress(KeyEvent.VK_SHIFT);
+    robot.keyPress(KeyEvent.VK_TAB);
+    robot.keyRelease(KeyEvent.VK_SHIFT);
+    Thread.sleep(300);
+    //logger.info("Uploading a new document - Clicked on Tab2");
+    robot.keyPress(KeyEvent.VK_SHIFT);
+    robot.keyPress(KeyEvent.VK_TAB);
+    robot.keyRelease(KeyEvent.VK_SHIFT);
+    Thread.sleep(300);
+    //logger.info("Uploading a new document - Clicked on Tab3");
+    robot.keyPress(KeyEvent.VK_SHIFT);
+    robot.keyPress(KeyEvent.VK_TAB);
+    robot.keyRelease(KeyEvent.VK_SHIFT);
+    Thread.sleep(300);
+
+    //logger.info("Uploading a new document - Clicked on Tab4");
+    robot.keyPress(KeyEvent.VK_CONTROL);
+
+    robot.keyPress(KeyEvent.VK_V);
+    robot.keyRelease(KeyEvent.VK_CONTROL);
+    Thread.sleep(300);
+    //logger.info("Uploading a new document - Clicked on Paste");
+    robot.keyPress(KeyEvent.VK_ENTER);
+    robot.keyRelease(KeyEvent.VK_ENTER);
+    robot.keyPress(KeyEvent.VK_ENTER);
+    robot.keyRelease(KeyEvent.VK_ENTER);
+    //logger.info("Uploading a new document - Clicked on All Enters");
+
   }
 }
 

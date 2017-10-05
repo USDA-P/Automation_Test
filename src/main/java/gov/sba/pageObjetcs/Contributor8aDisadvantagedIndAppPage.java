@@ -781,8 +781,6 @@ public class Contributor8aDisadvantagedIndAppPage {
                   click_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Jointly_Owned_Yes");
                   setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Percentage_Ownership",
                       "100");
-                  setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Percentage_Mortage",
-                      "10");
                   break;
                 case "No":
                   click_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Jointly_Owned_No");
@@ -792,15 +790,19 @@ public class Contributor8aDisadvantagedIndAppPage {
               switch (MortageNameYesNo) {
                 case "Yes":
                   click_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Name_Mortage_Yes");
+                  setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Percentage_Mortage",
+                          "10");
+                  setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Current_Residence_Val",
+                          "11111");
+                  setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Mortage_Balance_Val",
+                          "111");
                   break;
                 case "No":
                   click_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Name_Mortage_No");
               }
             }
-            setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Current_Residence_Val",
-                "11111");
-            setText_Element(webDriver, "8a_DisAdv_financial_Real_Estate_Mortage_Balance_Val",
-                "111");
+
+
 
             if (!ndMortageYesNo.equals(null) && !ndMortageYesNo.equals("")) {
               switch (ndMortageYesNo) {
@@ -1106,64 +1108,6 @@ public class Contributor8aDisadvantagedIndAppPage {
 
   }
 
-  public static void doUpload_Action() throws Exception {
-    StringSelection ss = new StringSelection(fixturesDir() + "Upload.pdf");
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-    Robot robot = new Robot();
-    logger.info("Uploading a new document - Clicked on Upload");
 
-    robot.keyPress(KeyEvent.VK_ALT);
-    robot.keyPress(KeyEvent.VK_TAB);
-    Thread.sleep(300);
-    robot.keyRelease(KeyEvent.VK_ALT);
-    robot.keyRelease(KeyEvent.VK_TAB);
-    Thread.sleep(300);
-    robot.keyPress(KeyEvent.VK_ALT);
-    robot.keyPress(KeyEvent.VK_TAB);
-    Thread.sleep(300);
-    robot.keyRelease(KeyEvent.VK_ALT);
-    robot.keyRelease(KeyEvent.VK_TAB);
-    Thread.sleep(300);
-    logger.info("Uploading a new document - Alt tab done");
-
-    robot.keyPress(KeyEvent.VK_F4);
-    Thread.sleep(300);
-    robot.keyPress(KeyEvent.VK_ESCAPE);
-    Thread.sleep(300);
-    logger.info("Uploading a new document - Clicked on F4");
-    robot.keyPress(KeyEvent.VK_SHIFT);
-    robot.keyPress(KeyEvent.VK_TAB);
-    robot.keyRelease(KeyEvent.VK_SHIFT);
-    Thread.sleep(300);
-    logger.info("Uploading a new document - Clicked on Tab");
-    robot.keyPress(KeyEvent.VK_SHIFT);
-    robot.keyPress(KeyEvent.VK_TAB);
-    robot.keyRelease(KeyEvent.VK_SHIFT);
-    Thread.sleep(300);
-    logger.info("Uploading a new document - Clicked on Tab2");
-    robot.keyPress(KeyEvent.VK_SHIFT);
-    robot.keyPress(KeyEvent.VK_TAB);
-    robot.keyRelease(KeyEvent.VK_SHIFT);
-    Thread.sleep(300);
-    logger.info("Uploading a new document - Clicked on Tab3");
-    robot.keyPress(KeyEvent.VK_SHIFT);
-    robot.keyPress(KeyEvent.VK_TAB);
-    robot.keyRelease(KeyEvent.VK_SHIFT);
-    Thread.sleep(300);
-
-    logger.info("Uploading a new document - Clicked on Tab4");
-    robot.keyPress(KeyEvent.VK_CONTROL);
-
-    robot.keyPress(KeyEvent.VK_V);
-    robot.keyRelease(KeyEvent.VK_CONTROL);
-    Thread.sleep(300);
-    logger.info("Uploading a new document - Clicked on Paste");
-    robot.keyPress(KeyEvent.VK_ENTER);
-    robot.keyRelease(KeyEvent.VK_ENTER);
-    robot.keyPress(KeyEvent.VK_ENTER);
-    robot.keyRelease(KeyEvent.VK_ENTER);
-    logger.info("Uploading a new document - Clicked on All Enters");
-
-  }
 }
 

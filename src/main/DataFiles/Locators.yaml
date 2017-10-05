@@ -131,19 +131,25 @@ Search_Duns_Search_Submit_Non_Vendor:  {Locator: 'xpath', Value: "//div[@role='s
 #Vendor Admin Dashboard
 Vendor_Admin_Dashboard_More_Details:     {Locator: 'xpath', Value: "//button[@aria-controls='more-details']"}
 Vendor_Admin_Dashboard_More_Details_Id:     {Locator: 'id', Value: "more-details"}
+DasbNewPgm_Create_App_WOSB:   {Locator: 'xpath', Value: "//a[contains(text(),'WOSB self-certification')]"}
+DasbNewPgm_Create_App_EDWOSB:   {Locator: 'xpath', Value: "//a[contains(text(),'EDWOSB self-certification')]"}
+DasbNewPgm_Create_App_MPP:   {Locator: 'xpath', Value: "//a[contains(text(),'All Small Business Mentor-Protégé agreement')]"}
+DasbNewPgm_Create_App_8A:   {Locator: 'xpath', Value: "  //a[contains(text(),'8(a) Initial Application')]"}
 
 #  @Join_New_Program_Page  Start
-JoinNewPgm_Create_App_EDWOSB:   {Locator: 'id', Value: "certificate_type_edwosb"}
-JoinNewPgm_Create_App_WOSB:     {Locator: 'id', Value: "certificate_type_wosb"}
-JoinNewPgm_Create_App_MPP:      {Locator: 'id', Value: "certificate_type_mpp"}
+JoinNewPgm_Create_App_EDWOSB:   {Locator: 'xpath', Value: "//label[@for='certificate_type_edwosb']"}
+JoinNewPgm_Create_App_WOSB:     {Locator: 'xpath', Value: "//label[@for='certificate_type_wosb']"}
+#JoinNewPgm_Create_App_MPP:      {Locator: 'id', Value: "certificate_type_mpp"}
+JoinNewPgm_Create_App_MPP:      {Locator: 'cssselector', Value: "#certificate_choice > fieldset > ul > li:nth-child(4) > label"}
+#JoinNewPgm_Create_App_MPP:      {Locator: 'xpath', Value: "//label[@for='certificate_type_mpp']"}
 JoinNewPgm_Create_App_8A:       {Locator: 'xpath', Value: "//label[@for='certificate_type_eight_a']"}
 #JoinNewPgm_Create_App_8A:       {Locator: 'id', Value: "certificate_type_eight_a"}
-General_Answer_Page_8A_117:      {Locator: 'id', Value: "answers_117_value_no"}
-General_Answer_Page_8A_117_Yes:      {Locator: 'id', Value: "answers_117_value_yes"}
-General_Answer_Page_8A_228:      {Locator: 'id', Value: "answers_228_value_yes"}
-General_5a_Id_Answer:            {Locator: 'id', Value: "answers_5_value_yes"}
-General_Answer_Page_8A_No:      {Locator: 'xpath', Value: "//input[ @type='radio' and contains( @id, 'answer') and contains( @id, 'value_no') ]"}
-General_Answer_Page_8A_Yes:     { Locator: 'xpath', Value: "//input[ contains( @id , 'value_yes' ) ]" }
+General_Answer_Page_8A_117:      {Locator: 'xpath', Value: "//label[@for='answers_117_value_no']"}
+General_Answer_Page_8A_117_Yes:      {Locator: 'xpath', Value: "//label[@for='answers_117_value_yes']"}
+General_Answer_Page_8A_228:      {Locator: 'xpath', Value: "//label[@for='answers_228_value_yes']"}
+General_5a_Id_Answer:            {Locator: 'xpath', Value: "//label[@for='answers_5_value_yes']"}
+General_Answer_Page_8A_No:      {Locator: 'xpath', Value: "//input[ @type='radio' and contains( @for, 'answer') and contains( @for, 'value_no') ]"}
+General_Answer_Page_8A_Yes:     { Locator: 'xpath', Value: "//input[ contains( @for , 'value_yes' ) ]" }
 #JoinNewPgm_Add_Cert:            {Locator: 'xpath', Value: "//button[ @id='add_certification' and not(contains(@disabled, '')) ]"}
 JoinNewPgm_Add_Cert:            {Locator: 'id', Value: "add_certification"}
 #  @Join_New_Program_Page  End
@@ -160,87 +166,87 @@ Opp_Support_Page_Cases_Link:                    {Locator: 'xpath', Value:  "//di
 Opp_Support_Admin_Page_Cases:                   {Locator: 'xpath', Value:  "//article[@id='main-content']/h1"}
 #EDWOSB_Scorp Questionnaire_Page with No flow
 EDWOSB_Questionnaire_Page_Titl1_Main: {Locator: 'xpath', Value: "//div[@id='answers_8aq1']/fieldset/h4"}
+EDWOSB_Questionnaire_form413:         {Locator: 'xpath', Value: "//a[@id='form413']"}
 
 
-
-EDWOSB_Questionnaire_Page_Ans_389_N: {Locator: 'id', Value: "answers_389_value_no"}
-EDWOSB_Questionnaire_Page_Ans_389_Y: {Locator: 'id', Value: "answers_389_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_390_Y: {Locator: 'id', Value: "answers_390_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_390_N: {Locator: 'id', Value: "answers_390_value_no"}
-EDWOSB_Questionnaire_Page_Ans_391_Y: {Locator: 'id', Value: "answers_391_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_391_N: {Locator: 'id', Value: "answers_391_value_no"}
-EDWOSB_Questionnaire_Page_Ans_392_Y: {Locator: 'id', Value: "answers_392_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_392_N: {Locator: 'id', Value: "answers_392_value_no"}
-EDWOSB_Questionnaire_Page_Ans_393_N: {Locator: 'id', Value: "answers_393_value_no"}
-EDWOSB_Questionnaire_Page_Ans_393_Y: {Locator: 'id', Value: "answers_393_value_yes"}
+EDWOSB_Questionnaire_Page_Ans_389_N: {Locator: 'xpath', Value: "//label[@for='answers_389_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_389_Y: {Locator: 'xpath', Value: "//label[@for='answers_389_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_390_Y: {Locator: 'xpath', Value: "//label[@for='answers_390_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_390_N: {Locator: 'xpath', Value: "//label[@for='answers_390_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_391_Y: {Locator: 'xpath', Value: "//label[@for='answers_391_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_391_N: {Locator: 'xpath', Value: "//label[@for='answers_391_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_392_Y: {Locator: 'xpath', Value: "//label[@for='answers_392_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_392_N: {Locator: 'xpath', Value: "//label[@for='answers_392_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_393_N: {Locator: 'xpath', Value: "//label[@for='answers_393_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_393_Y: {Locator: 'xpath', Value: "//label[@for='answers_393_value_yes']"}
 EDWOSB_Questionnaire_Page_Ans_393_setText: {Locator: 'id', Value: "answers_393_comment"}
-EDWOSB_Questionnaire_Page_Ans_394_N: {Locator: 'id', Value: "answers_394_value_no"}
-EDWOSB_Questionnaire_Page_Ans_394_Y: {Locator: 'id', Value: "answers_394_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_395_N: {Locator: 'id', Value: "answers_395_value_no"}
-EDWOSB_Questionnaire_Page_Ans_395_Y: {Locator: 'id', Value: "answers_395_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_396_N: {Locator: 'id', Value: "answers_396_value_no"}
-EDWOSB_Questionnaire_Page_Ans_396_Y: {Locator: 'id', Value: "answers_396_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_397_N: {Locator: 'id', Value: "answers_397_value_no"}
-EDWOSB_Questionnaire_Page_Ans_397_Y: {Locator: 'id', Value: "answers_397_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_398_N: {Locator: 'id', Value: "answers_398_value_no"}
-EDWOSB_Questionnaire_Page_Ans_398_Y: {Locator: 'id', Value: "answers_398_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_399_N: {Locator: 'id', Value: "answers_399_value_no"}
-EDWOSB_Questionnaire_Page_Ans_399_Y: {Locator: 'id', Value: "answers_399_value_yes"}
+EDWOSB_Questionnaire_Page_Ans_394_N: {Locator: 'xpath', Value: "//label[@for='answers_394_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_394_Y: {Locator: 'xpath', Value: "//label[@for='answers_394_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_395_N: {Locator: 'xpath', Value: "//label[@for='answers_395_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_395_Y: {Locator: 'xpath', Value: "//label[@for='answers_395_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_396_N: {Locator: 'xpath', Value: "//label[@for='answers_396_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_396_Y: {Locator: 'xpath', Value: "//label[@for='answers_396_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_397_N: {Locator: 'xpath', Value: "//label[@for='answers_397_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_397_Y: {Locator: 'xpath', Value: "//label[@for='answers_397_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_398_N: {Locator: 'xpath', Value: "//label[@for='answers_398_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_398_Y: {Locator: 'xpath', Value: "//label[@for='answers_398_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_399_N: {Locator: 'xpath', Value: "//label[@for='answers_399_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_399_Y: {Locator: 'xpath', Value: "//label[@for='answers_399_value_yes']"}
 EDWOSB_financial_page_Ans_Attahment_All:  {L1:  "//div[@id='answers[399][attachment]']//div[@id='add-req-doc-button']/a",
                                            L2:  "//div[@id='answers[399][attachment]']//button[@id='doc-lib-button']",
-                                           L3: "//div[@id='answers[399][attachment]']//*[@id='truth']",
+                                           L3: "//div[@id='answers[399][attachment]']//*[@for='399_truth_0']",
                                            L4: "//div[@id='answers[399][attachment]']//button[@id='document_library_associate']"}
 EDWOSB_Questionnaire_Page_Ans_399_setText: {Locator: 'id', Value: "answers_399_comment"}
 #EDWOSB_Questionnaire_Page_Ans_400_N: {Locator: 'id', Value: "answers_400_value_no"}
 #EDWOSB_Questionnaire_Page_Ans_401_N: {Locator: 'id', Value: "answers_401_value_no"}
 #EDWOSB_Questionnaire_Page_Ans_402_N: {Locator: 'id', Value: "answers_402_value_no"}
 #EDWOSB_Questionnaire_Page_Ans_403_N: {Locator: 'id', Value: "answers_403_value_no"}
-EDWOSB_Questionnaire_Page_Ans_404_N: {Locator: 'id', Value: "answers_404_value_no"}
-EDWOSB_Questionnaire_Page_Ans_404_Y: {Locator: 'id', Value: "answers_404_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_405_N: {Locator: 'id', Value: "answers_405_value_no"}
-EDWOSB_Questionnaire_Page_Ans_405_Y: {Locator: 'id', Value: "answers_405_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_406_N: {Locator: 'id', Value: "answers_406_value_no"}
-EDWOSB_Questionnaire_Page_Ans_406_Y: {Locator: 'id', Value: "answers_406_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_407_N: {Locator: 'id', Value: "answers_407_value_no"}
-EDWOSB_Questionnaire_Page_Ans_407_Y: {Locator: 'id', Value: "answers_407_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_407_NA: {Locator: 'id', Value: "answers_407_value_na"}
+EDWOSB_Questionnaire_Page_Ans_404_N: {Locator: 'xpath', Value: "//label[@for='answers_404_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_404_Y: {Locator: 'xpath', Value: "//label[@for='answers_404_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_405_N: {Locator: 'xpath', Value: "//label[@for='answers_405_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_405_Y: {Locator: 'xpath', Value: "//label[@for='answers_405_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_406_N: {Locator: 'xpath', Value: "//label[@for='answers_406_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_406_Y: {Locator: 'xpath', Value: "//label[@for='answers_406_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_407_N: {Locator: 'xpath', Value: "//label[@for='answers_407_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_407_Y: {Locator: 'xpath', Value: "//label[@for='answers_407_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_407_NA: {Locator: 'xpath', Value: "//label[@for='answers_407_value_na']"}
 EDWOSB_Questionnaire_Page_Ans_407_setText: {Locator: 'id', Value: "answers_407_comment"}
-EDWOSB_Questionnaire_Page_Ans_408_N: {Locator: 'id', Value: "answers_408_value_no"}
-EDWOSB_Questionnaire_Page_Ans_408_Y: {Locator: 'id', Value: "answers_408_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_409_N: {Locator: 'id', Value: "answers_409_value_no"}
-EDWOSB_Questionnaire_Page_Ans_409_Y: {Locator: 'id', Value: "answers_409_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_410_N: {Locator: 'id', Value: "answers_410_value_no"}
-EDWOSB_Questionnaire_Page_Ans_410_Y: {Locator: 'id', Value: "answers_410_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_411_N: {Locator: 'id', Value: "answers_411_value_no"}
-EDWOSB_Questionnaire_Page_Ans_411_Y: {Locator: 'id', Value: "answers_411_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_412_N: {Locator: 'id', Value: "answers_412_value_no"}
-EDWOSB_Questionnaire_Page_Ans_412_Y: {Locator: 'id', Value: "answers_412_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_413_N: {Locator: 'id', Value: "answers_413_value_no"}
-EDWOSB_Questionnaire_Page_Ans_413_N: {Locator: 'id', Value: "answers_413_value_no"}
-EDWOSB_Questionnaire_Page_Ans_413_Y: {Locator: 'id', Value: "answers_413_value_yes"}
+EDWOSB_Questionnaire_Page_Ans_408_N: {Locator: 'xpath', Value: "//label[@for='answers_408_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_408_Y: {Locator: 'xpath', Value: "//label[@for='answers_408_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_409_N: {Locator: 'xpath', Value: "//label[@for='answers_409_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_409_Y: {Locator: 'xpath', Value: "//label[@for='answers_409_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_410_N: {Locator: 'xpath', Value: "//label[@for='answers_410_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_410_Y: {Locator: 'xpath', Value: "//label[@for='answers_410_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_411_N: {Locator: 'xpath', Value: "//label[@for='answers_411_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_411_Y: {Locator: 'xpath', Value: "//label[@for='answers_411_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_412_N: {Locator: 'xpath', Value: "//label[@for='answers_412_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_412_Y: {Locator: 'xpath', Value: "//label[@for='answers_412_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_413_N: {Locator: 'xpath', Value: "//label[@for='answers_413_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_413_N: {Locator: 'xpath', Value: "//label[@for='answers_413_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_413_Y: {Locator: 'xpath', Value: "//label[@for='answers_413_value_yes']"}
 EDWOSB_Questionnaire_Page_Ans_413_setText: {Locator: 'id', Value: "answers_413_comment"}
-EDWOSB_Questionnaire_Page_Ans_414_N: {Locator: 'id', Value: "answers_414_value_no"}
-EDWOSB_Questionnaire_Page_Ans_414_Y: {Locator: 'id', Value: "answers_414_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_415_N: {Locator: 'id', Value: "answers_415_value_no"}
-EDWOSB_Questionnaire_Page_Ans_415_Y: {Locator: 'id', Value: "answers_415_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_416_N: {Locator: 'id', Value: "answers_416_value_no"}
-EDWOSB_Questionnaire_Page_Ans_416_Y: {Locator: 'id', Value: "answers_416_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_417_N: {Locator: 'id', Value: "answers_417_value_no"}
-EDWOSB_Questionnaire_Page_Ans_417_Y: {Locator: 'id', Value: "answers_417_value_yes"}
+EDWOSB_Questionnaire_Page_Ans_414_N: {Locator: 'xpath', Value: "//label[@for='answers_414_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_414_Y: {Locator: 'xpath', Value: "//label[@for='answers_414_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_415_N: {Locator: 'xpath', Value: "//label[@for='answers_415_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_415_Y: {Locator: 'xpath', Value: "//label[@for='answers_415_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_416_N: {Locator: 'xpath', Value: "//label[@for='answers_416_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_416_Y: {Locator: 'xpath', Value: "//label[@for='answers_416_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_417_N: {Locator: 'xpath', Value: "//label[@for='answers_417_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_417_Y: {Locator: 'xpath', Value: "//label[@for='answers_417_value_yes']"}
 EDWOSB_Questionnaire_Page_Ans_417_setText: {Locator: 'id', Value: "answers_417_comment"}
-EDWOSB_Questionnaire_Page_Ans_417_NA: {Locator: 'id', Value: "answers_417_value_na"}
-EDWOSB_Questionnaire_Page_Ans_418_N: {Locator: 'id', Value: "answers_418_value_no"}
-EDWOSB_Questionnaire_Page_Ans_418_Y: {Locator: 'id', Value: "answers_418_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_419_N: {Locator: 'id', Value: "answers_419_value_no"}
-EDWOSB_Questionnaire_Page_Ans_419_Y: {Locator: 'id', Value: "answers_419_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_420_N: {Locator: 'id', Value: "answers_420_value_no"}
-EDWOSB_Questionnaire_Page_Ans_420_Y: {Locator: 'id', Value: "answers_420_value_yes"}
+EDWOSB_Questionnaire_Page_Ans_417_NA: {Locator: 'xpath', Value: "//label[@for='answers_417_value_na']"}
+EDWOSB_Questionnaire_Page_Ans_418_N: {Locator: 'xpath', Value: "//label[@for='answers_418_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_418_Y: {Locator: 'xpath', Value: "//label[@for='answers_418_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_419_N: {Locator: 'xpath', Value: "//label[@for='answers_419_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_419_Y: {Locator: 'xpath', Value: "//label[@for='answers_419_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_420_N: {Locator: 'xpath', Value: "//label[@for='answers_420_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_420_Y: {Locator: 'xpath', Value: "//label[@for='answers_420_value_yes']"}
 EDWOSB_Questionnaire_Page_Ans_420_setText: {Locator: 'id', Value: "answers_420_comment"}
-EDWOSB_Questionnaire_Page_Ans_420_NA: {Locator: 'id', Value: "answers_420_value_na"}
-EDWOSB_Questionnaire_Page_Ans_421_N: {Locator: 'id', Value: "answers_421_value_no"}
-EDWOSB_Questionnaire_Page_Ans_421_Y: {Locator: 'id', Value: "answers_421_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_423_Y: {Locator: 'id', Value: "answers_423_value_yes"}
-EDWOSB_Questionnaire_Page_Ans_423_N: {Locator: 'id', Value: "answers_423_value_no"}
+EDWOSB_Questionnaire_Page_Ans_420_NA: {Locator: 'xpath', Value: "//label[@for='answers_420_value_na']"}
+EDWOSB_Questionnaire_Page_Ans_421_N: {Locator: 'xpath', Value: "//label[@for='answers_421_value_no']"}
+EDWOSB_Questionnaire_Page_Ans_421_Y: {Locator: 'xpath', Value: "//label[@for='answers_421_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_423_Y: {Locator: 'xpath', Value: "//label[@for='answers_423_value_yes']"}
+EDWOSB_Questionnaire_Page_Ans_423_N: {Locator: 'xpath', Value: "//label[@for='answers_423_value_no']"}
 # FinancialData Page - EDWOSB
 EDWOSB_Questionnaire_Page_Add_Person:          {Locator: 'xpath', Value: "//button[ contains(@class,'owner_add_button')]"}
 EDWOSB_Questionnaire_Page_FinancialPage_Link:  {Locator: 'xpath', Value: "//ul[ contains(@class,'usa-sidenav-list')]/li/a[ contains(text(),'Financial Data')]"}
@@ -262,7 +268,7 @@ EDWOSB_Questionnaire_Page_title: {Locator: 'id', Value: "owners__title"}
 EDWOSB_Questionnaire_Page_MaritalSt: {Locator: 'id', Value: "owners__marital_status"}
 
 EDWOSB_Questionnaire_Page_Done_Button: {Locator: 'xpath', Value: "//button[ contains(@class, 'owner_edit owner_done_button')]"}
-EDWOSB_Questionnaire_Page_Ans_423_N: {Locator: 'id', Value: "answers_423_value_no"}
+
 
 EDWOSB_Questionnaire_Page_Commit: {Locator: 'name', Value: "commit"}
 SBA_Common_Page_Commit: {Locator: 'xpath', Value: "//input[@name='commit']"}
@@ -280,8 +286,8 @@ EDWOSB_financial_Page_Ans_368_comment: {Locator: 'id', Value: 'answers_368_comme
 EDWOSB_financial_Page_Ans_369_setText: {Locator: 'id', Value: 'answers_369_value'}
 EDWOSB_financial_Page_Ans_370_setText: {Locator: 'id', Value: 'answers_370_value'}
 
-EDWOSB_financial_Page_Ans_371_N: {Locator: 'id', Value: "answers_371_value_no"}
-EDWOSB_financial_Page_Ans_371_Y: {Locator: 'id', Value: "answers_371_value_yes"}
+EDWOSB_financial_Page_Ans_371_N: {Locator: 'xpath', Value: "//label[@for='answers_371_value_no']"}
+EDWOSB_financial_Page_Ans_371_Y: {Locator: 'xpath', Value: "//label[@for='answers_371_value_yes']"}
 EDWOSB_financial_Notes_Receivable_New_Button: {Locator: 'xpath', Value: "//div[ @class = 'dt-buttons']/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Notes_Name_Of_Debtor:        {Locator: 'id', Value: "DTE_Field_debtor_name"}
 EDWOSB_financial_Notes_Addr_Of_Debtor:        {Locator: 'id', Value: "DTE_Field_debtor_address"}
@@ -291,8 +297,8 @@ EDWOSB_financial_Notes_Payment_Amount:        {Locator: 'id', Value: "DTE_Field_
 EDWOSB_financial_Notes_Type_Of_Collateral:    {Locator: 'id', Value: "DTE_Field_collateral_type"}
 
 
-EDWOSB_financial_Page_Ans_372_N: {Locator: 'id', Value: "answers_372_value_no"}
-EDWOSB_financial_Page_Ans_372_Y: {Locator: 'id', Value: "answers_372_value_yes"}
+EDWOSB_financial_Page_Ans_372_N: {Locator: 'xpath', Value: "//label[@for='answers_372_value_no']"}
+EDWOSB_financial_Page_Ans_372_Y: {Locator: 'xpath', Value: "//label[@for='answers_372_value_yes']"}
 EDWOSB_financial_Retirement_Accounts_IRA_New_Button:     {Locator: 'xpath', Value: "//div[ @id = 'answers_372_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Retirement Accounts_IRA_Type:           {Locator: 'xpath', Value: "//select[ @id = 'DTE_Field_type']"}
 EDWOSB_financial_Retirement_Accounts_IRA_TotVal:          {Locator: 'id', Value: "DTE_Field_total_value"}
@@ -300,35 +306,35 @@ EDWOSB_financial_Retirement_Accounts_IRA_Contributions:  {Locator: 'id', Value: 
 EDWOSB_financial_Retirement_Accounts_IRA_Date_Of_InCon:  {Locator: 'id', Value: "DTE_Field_date_of_initial_contribution"}
 EDWOSB_financial_Retirement_Accounts_IRA_Name_Of_InvCom: {Locator: 'id', Value: "DTE_Field_investment_company"}
 
-EDWOSB_financial_Page_Ans_373_N: {Locator: 'id', Value: "answers_373_value_no"}
-EDWOSB_financial_Page_Ans_373_Y: {Locator: 'id', Value: "answers_373_value_yes"}
+EDWOSB_financial_Page_Ans_373_N: {Locator: 'xpath', Value: "//label[@for='answers_373_value_no']"}
+EDWOSB_financial_Page_Ans_373_Y: {Locator: 'xpath', Value: "//label[@for='answers_373_value_yes']"}
 EDWOSB_financial_Retirement_Accounts_OTH_New_Button:     {Locator: 'xpath', Value: "//div[ @id = 'answers_373_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Retirement_Accounts_OTH_Type:           {Locator: 'xpath', Value: "//select[ @id = 'DTE_Field_type']"}
 EDWOSB_financial_Retirement_Accounts_OTH_TotalValue:     {Locator: 'id', Value: "DTE_Field_total_value"}
 EDWOSB_financial_Retirement_Accounts_OTH_Name_Of_InvCom: {Locator: 'id', Value: "DTE_Field_investment_company"}
 EDWOSB_financial_Retirement_Accounts_OTH_All:            {L1:  "//div[@id='answers[373][attachment]']//div[@id='add-req-doc-button']/a",
                                                              L2:  "//div[@id='answers[373][attachment]']//button[@id='doc-lib-button']",
-                                                             L3: "//div[@id='answers[373][attachment]']//*[@id='truth']",
+                                                             L3: "//div[@id='answers[373][attachment]']//*[@for='373_truth_0']",
                                                              L4: "//div[@id='answers[373][attachment]']//button[@id='document_library_associate']"}
 
 
-EDWOSB_financial_Page_Ans_374_N: {Locator: 'id', Value: "answers_374_value_no"}
-EDWOSB_financial_Page_Ans_374_Y: {Locator: 'id', Value: "answers_374_value_yes"}
-EDWOSB_financial_Life_Insurance_Policy_Yes:                    {Locator: 'id', Value: "answers_374_value_yes"}
-EDWOSB_financial_Life_Insurance_Policy_No:                    {Locator: 'id', Value: "answers_374_value_no"}
+EDWOSB_financial_Page_Ans_374_N: {Locator: 'xpath', Value: "//label[@for='answers_374_value_no']"}
+EDWOSB_financial_Page_Ans_374_Y: {Locator: 'xpath', Value: "//label[@for='answers_374_value_yes']"}
+EDWOSB_financial_Life_Insurance_Policy_Yes:                    {Locator: 'xpath', Value: "//label[@for='answers_374_value_yes']"}
+EDWOSB_financial_Life_Insurance_Policy_No:                    {Locator: 'xpath', Value: "//label[@for='answers_374_value_no']"}
 EDWOSB_financial_Life_Insurance_Policy_New_Button:             {Locator: 'xpath', Value: "//div[ @id = 'answers_374_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Life_Insurance_Policy_Name:                   {Locator: 'id', Value: "DTE_Field_company_name"}
 EDWOSB_financial_Life_Insurance_Policy_Cash:                   {Locator: 'id', Value: "DTE_Field_cash_surrender_value"}
 EDWOSB_financial_Life_Insurance_Policy_Amount:                 {Locator: 'id', Value: "DTE_Field_face_amount"}
 EDWOSB_financial_Life_Insurance_Policy_Beneficiaries:          {Locator: 'id', Value: "DTE_Field_beneficiaries"}
 #Do you have any loans against a life insurance policy?
-EDWOSB_financial_Life_Insurance_Loan_Yes:                     {Locator: 'id', Value: "answers_375_value_yes"}
+EDWOSB_financial_Life_Insurance_Loan_Yes:                     {Locator: 'xpath', Value: "//label[@for='answers_375_value_yes']"}
 EDWOSB_financial_Life_Insurance_Loan_Balance:                 {Locator: 'id', Value: "answers_376_value"}
 EDWOSB_financial_Life_Insurance_Loan_No:                      {Locator: 'id', Value: "answers_375_value_no"}
 #@contributor_8a_DisAdv_financial_Life Insurance End
-EDWOSB_financial_Page_Ans_375_N:                       {Locator: 'id', Value: "answers_375_value_no"}
-EDWOSB_financial_Page_Ans_377_N:                       {Locator: 'id', Value: "answers_377_value_no"}
-EDWOSB_financial_Page_Ans_377_Y:                       {Locator: 'id', Value: "answers_377_value_yes"}
+EDWOSB_financial_Page_Ans_375_N:                       {Locator: 'xpath', Value: "//label[@for='answers_375_value_no']"}
+EDWOSB_financial_Page_Ans_377_N:                       {Locator: 'xpath', Value: "//label[@for='answers_377_value_no']"}
+EDWOSB_financial_Page_Ans_377_Y:                       {Locator: 'xpath', Value: "//label[@for='answers_377_value_yes']"}
 EDWOSB_financial_StockandBonds_New_Button:             {Locator: 'xpath', Value: "//div[ @class = 'dt-buttons']/a/span[contains(text(),'New')]"}
 EDWOSB_financial_StockandBonds_Type:                   {Locator: 'xpath', Value: "//select[ @id = 'DTE_Field_type']"}
 EDWOSB_financial_StockandBonds_Name:                   {Locator: 'id', Value: "DTE_Field_securities_name"}
@@ -338,74 +344,74 @@ EDWOSB_financial_StockandBonds_Cost:                   {Locator: 'id', Value: "D
 EDWOSB_financial_StockandBonds_Market_Val:             {Locator: 'id', Value: "DTE_Field_market_value"}
 EDWOSB_financial_StockandBonds_Date:                   {Locator: 'id', Value: "DTE_Field_date"}
 EDWOSB_financial_StockandBonds_dividends:              {Locator: 'id', Value: "DTE_Field_interest_dividends"}
-EDWOSB_financial_StockandBonds_No:                     {Locator: 'id', Value: "answers_377_value_no"}
+EDWOSB_financial_StockandBonds_No:                     {Locator: 'xpath', Value: "//label[@for='answers_377_value_no']"}
 
-EDWOSB_financial_Page_Ans_378_N: {Locator: 'id', Value: "answers_378_value_no"}
-EDWOSB_financial_Page_Ans_378_Y: {Locator: 'id', Value: "answers_378_value_yes"}
+EDWOSB_financial_Page_Ans_378_N: {Locator: 'xpath', Value: "//label[@for='answers_378_value_no']"}
+EDWOSB_financial_Page_Ans_378_Y: {Locator: 'xpath', Value: "//label[@for='answers_378_value_yes']"}
 
 EDWOSB_financial_Real_Estate_Primary_Address:        {Locator: 'id', Value: "answers_379_1_1_value"}
-EDWOSB_financial_Real_Estate_Jointly_Owned_Yes:      {Locator: 'id', Value: "answers_379_1_2_value_yes"}
-EDWOSB_financial_Real_Estate_Jointly_Owned_No:       {Locator: 'id', Value: "answers_379_1_2_value_no"}
+EDWOSB_financial_Real_Estate_Jointly_Owned_Yes:      {Locator: 'xpath', Value: "//label[@for='answers_379_1_2_value_yes']"}
+EDWOSB_financial_Real_Estate_Jointly_Owned_No:       {Locator: 'xpath', Value: "//label[@for='answers_379_1_2_value_no']"}
 EDWOSB_financial_Real_Estate_Percentage_Ownership:   {Locator: 'id', Value: "answers_379_1_3_value"}
-EDWOSB_financial_Real_Estate_Percentage_Mortage:     {Locator: 'id', Value: "answers_379_1_4_value"}
-EDWOSB_financial_Real_Estate_Name_Mortage_Yes:       {Locator: 'id', Value: "answers_379_1_5_value_yes"}
-EDWOSB_financial_Real_Estate_Name_Mortage_No:        {Locator: 'id', Value: "answers_379_1_5_value_no"}
+EDWOSB_financial_Real_Estate_Percentage_Mortage:     {Locator: 'id', Value: "answers_379_1_5_value"}
+EDWOSB_financial_Real_Estate_Name_Mortage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_379_1_4_value_yes']"}
+EDWOSB_financial_Real_Estate_Name_Mortage_No:        {Locator: 'xpath', Value: "//label[@for='answers_379_1_4_value_no']"}
 EDWOSB_financial_Real_Estate_Current_Residence_Val:  {Locator: 'id', Value: "answers_379_1_6_value"}
 EDWOSB_financial_Real_Estate_Mortage_Balance_Val:    {Locator: 'id', Value: "answers_379_1_7_value"}
-EDWOSB_financial_Real_Estate_2nd_Mortgage_Yes:       {Locator: 'id', Value: "answers_379_1_8_value_yes"}
-EDWOSB_financial_Real_Estate_2nd_Mortgage_No:        {Locator: 'id', Value: "answers_379_1_8_value_no"}
-EDWOSB_financial_Real_Estate_Name_2nd_Mortgage_Yes:  {Locator: 'id', Value: "answers_379_1_9_value_yes"}
-EDWOSB_financial_Real_Estate_Name_2nd_Mortgage_No:   {Locator: 'id', Value: "answers_379_1_9_value_no"}
+EDWOSB_financial_Real_Estate_2nd_Mortgage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_379_1_8_value_yes']"}
+EDWOSB_financial_Real_Estate_2nd_Mortgage_No:        {Locator: 'xpath', Value: "//label[@for='answers_379_1_8_value_no']"}
+EDWOSB_financial_Real_Estate_Name_2nd_Mortgage_Yes:  {Locator: 'xpath', Value: "//label[@for='answers_379_1_9_value_yes']"}
+EDWOSB_financial_Real_Estate_Name_2nd_Mortgage_No:   {Locator: 'xpath', Value: "//label[@for='answers_379_1_9_value_no']"}
 EDWOSB_financial_Real_Estate_Percentage_2nd_Mortgage: {Locator: 'id', Value: "answers_379_1_10_value"}
 EDWOSB_financial_Real_Estate_CurrBal_2nd_Mortgage:    {Locator: 'id', Value: "answers_379_1_11_value"}
-EDWOSB_financial_Real_Estate_Income_yes:              {Locator: 'id', Value: "answers_379_1_12_value_yes"}
-EDWOSB_financial_Real_Estate_Income_No:               {Locator: 'id', Value: "answers_379_1_12_value_no"}
+EDWOSB_financial_Real_Estate_Income_yes:              {Locator: 'xpath', Value: "//label[@for='answers_379_1_12_value_yes']"}
+EDWOSB_financial_Real_Estate_Income_No:               {Locator: 'xpath', Value: "//label[@for='answers_379_1_12_value_no']"}
 EDWOSB_financial_Real_Estate_Income_Val:              {Locator: 'id', Value: "answers_379_1_13_value"}
 
 
-EDWOSB_financial_Page_Ans_380_N:                        {Locator: 'id', Value: "answers_380_value_no"}
-EDWOSB_financial_Page_Ans_380_Y:                        {Locator: 'id', Value: "answers_380_value_yes"}
+EDWOSB_financial_Page_Ans_380_N:                        {Locator: 'xpath', Value: "//label[@for='answers_380_value_no']"}
+EDWOSB_financial_Page_Ans_380_Y:                        {Locator: 'xpath', Value: "//label[@for='answers_380_value_yes']"}
 EDWOSB_financial_Real_Estate_Oth_Yes:                    {Locator: 'id', Value: "answers_380_value_yes"}
 EDWOSB_financial_Real_Estate_Oth_Add_Button:              {Locator: 'xpath', Value: "//a[ @id = 'add_real_estate']/span[contains(text(),'Add')]"}
 EDWOSB_financial_Real_Estate_Oth_Type:                   {Locator: 'id', Value: "answers_381_1_0_value"}
 EDWOSB_financial_Real_Estate_Oth_Address:                {Locator: 'id', Value: "answers_381_1_1_value"}
-EDWOSB_financial_Real_Estate_Oth_Jointly_Owned_Yes:      {Locator: 'id', Value: "answers_381_1_2_value_yes"}
-EDWOSB_financial_Real_Estate_Oth_Jointly_Owned_No:       {Locator: 'id', Value: "answers_381_1_2_value_no"}
+EDWOSB_financial_Real_Estate_Oth_Jointly_Owned_Yes:      {Locator: 'xpath', Value: "//label[@for='answers_381_1_2_value_yes']"}
+EDWOSB_financial_Real_Estate_Oth_Jointly_Owned_No:       {Locator: 'xpath', Value: "//label[@for='answers_381_1_2_value_no']"}
 EDWOSB_financial_Real_Estate_Oth_Percentage_RealEstate:  {Locator: 'id', Value: "answers_381_1_3_value"}
-EDWOSB_financial_Real_Estate_Oth_Name_Mortage_Yes:       {Locator: 'id', Value: "answers_381_1_4_value_yes"}
-EDWOSB_financial_Real_Estate_Oth_Name_Mortage_No:        {Locator: 'id', Value: "answers_381_1_4_value_no"}
+EDWOSB_financial_Real_Estate_Oth_Name_Mortage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_381_1_4_value_yes']"}
+EDWOSB_financial_Real_Estate_Oth_Name_Mortage_No:        {Locator: 'xpath', Value: "//label[@for='answers_381_1_4_value_no']"}
 EDWOSB_financial_Real_Estate_Oth_Percentage_Mortage:     {Locator: 'id', Value: "answers_381_1_5_value"}
 EDWOSB_financial_Real_Estate_Oth_Current_Val:            {Locator: 'id', Value: "answers_381_1_6_value"}
 EDWOSB_financial_Real_Estate_Oth_Mortage_Balance_Val:    {Locator: 'id', Value: "answers_381_1_7_value"}
-EDWOSB_financial_Real_Estate_Oth_2nd_Mortgage_Yes:       {Locator: 'id', Value: "answers_381_1_8_value_yes"}
-EDWOSB_financial_Real_Estate_Oth_2nd_Mortgage_No:        {Locator: 'id', Value: "answers_381_1_8_value_no"}
-EDWOSB_financial_Real_Estate_Oth_Name_2nd_Mortgage_Yes:  {Locator: 'id', Value: "answers_381_1_9_value_yes"}
-EDWOSB_financial_Real_Estate_Oth_Name_2nd_Mortgage_No:   {Locator: 'id', Value: "answers_381_1_9_value_no"}
+EDWOSB_financial_Real_Estate_Oth_2nd_Mortgage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_381_1_8_value_yes']"}
+EDWOSB_financial_Real_Estate_Oth_2nd_Mortgage_No:        {Locator: 'xpath', Value: "//label[@for='answers_381_1_8_value_no']"}
+EDWOSB_financial_Real_Estate_Oth_Name_2nd_Mortgage_Yes:  {Locator: 'xpath', Value: "//label[@for='answers_381_1_9_value_yes']"}
+EDWOSB_financial_Real_Estate_Oth_Name_2nd_Mortgage_No:   {Locator: 'xpath', Value: "//label[@for='answers_381_1_9_value_no']"}
 EDWOSB_financial_Real_Estate_Oth_Percentage_2nd_Mortgage: {Locator: 'id', Value: "answers_381_1_10_value"}
 EDWOSB_financial_Real_Estate_Oth_CurrBal_2nd_Mortgage:    {Locator: 'id', Value: "answers_381_1_11_value"}
-EDWOSB_financial_Real_Estate_Oth_Income_yes:              {Locator: 'id', Value: "answers_381_1_12_value_yes"}
-EDWOSB_financial_Real_Estate_Oth_Income_No:               {Locator: 'id', Value: "answers_381_1_12_value_no"}
+EDWOSB_financial_Real_Estate_Oth_Income_yes:              {Locator: 'xpath', Value: "//label[@for='answers_381_1_12_value_yes']"}
+EDWOSB_financial_Real_Estate_Oth_Income_No:               {Locator: 'xpath', Value: "//label[@for='answers_381_1_12_value_no']"}
 EDWOSB_financial_Real_Estate_Oth_Income_Val:              {Locator: 'id', Value: "answers_381_1_13_value"}
 
-EDWOSB_financial_Page_Ans_382_N: {Locator: 'id', Value: "answers_382_value_no"}
-EDWOSB_financial_Page_Ans_382_Y: {Locator: 'id', Value: "answers_382_value_yes"}
-EDWOSB_financial_Personal_Property_Yes:                    {Locator: 'id', Value: "answers_382_value_yes"}
+EDWOSB_financial_Page_Ans_382_N: {Locator: 'xpath', Value: "//label[@for='answers_382_value_no']"}
+EDWOSB_financial_Page_Ans_382_Y: {Locator: 'xpath', Value: "//label[@for='answers_382_value_yes']"}
+EDWOSB_financial_Personal_Property_Yes:                    {Locator: 'xpath', Value: "//label[@for='answers_382_value_yes']"}
 EDWOSB_financial_Personal_Property_New_Button:             {Locator: 'xpath', Value: "//div[ @id = 'answers_382_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Personal_Property_CurrVal:                {Locator: 'id', Value: "DTE_Field_current_value"}
 EDWOSB_financial_Personal_Property_LoadBal:                {Locator: 'id', Value: "DTE_Field_loan_balance"}
 EDWOSB_financial_Personal_Property_DescAss:                {Locator: 'id', Value: "DTE_Field_asset_description"}
-EDWOSB_financial_Personal_Property_No:                     {Locator: 'id', Value: "answers_382_value_no"}
+EDWOSB_financial_Personal_Property_No:                     {Locator: 'xpath', Value: "//label[@for='answers_382_value_no']"}
 #Do you own any other personal property or assets?
-EDWOSB_financial_Oth_Personal_Property_Yes:               {Locator: 'id', Value: "answers_383_value_yes"}
+EDWOSB_financial_Oth_Personal_Property_Yes:               {Locator: 'xpath', Value: "//label[@for='answers_383_value_yes']"}
 EDWOSB_financial_Oth_Personal_Property_New_Button:        {Locator: 'xpath', Value: "//div[ @id = 'answers_383_details_table_wrapper']/div/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Oth_Personal_Property_CurrVal:           {Locator: 'id', Value: "DTE_Field_current_value"}
 EDWOSB_financial_Oth_Personal_Property_LoadBal:           {Locator: 'id', Value: "DTE_Field_loan_balance"}
 EDWOSB_financial_Oth_Personal_Property_DescAss:           {Locator: 'id', Value: "DTE_Field_asset_description"}
-EDWOSB_financial_Oth_Personal_Property_No:                {Locator: 'id', Value: "answers_383_value_no"}
-EDWOSB_financial_Page_Ans_383_N: {Locator: 'id', Value: "answers_383_value_no"}
+EDWOSB_financial_Oth_Personal_Property_No:                {Locator: 'xpath', Value: "//label[@for='answers_383_value_no']"}
+EDWOSB_financial_Page_Ans_383_N: {Locator: 'xpath', Value: "//label[@for='answers_383_value_no']"}
 ##@Edwosb NotesPayable_OtherLiabities
-EDWOSB_financial_Page_Ans_384_N: {Locator: 'id', Value: "answers_384_value_no"}
-EDWOSB_financial_NotesPayable_OtherLiabilities_Yes:            {Locator: 'id', Value: "answers_384_value_yes"}
+EDWOSB_financial_Page_Ans_384_N: {Locator: 'xpath', Value: "//label[@for='answers_384_value_no']"}
+EDWOSB_financial_NotesPayable_OtherLiabilities_Yes:            {Locator: 'xpath', Value: "//label[@for='answers_384_value_yes']"}
 EDWOSB_financial_NotesPayable_OtherLiabilities_New_Button:     {Locator: 'xpath', Value: "//div[ @class= 'dt-buttons']/a/span[contains(text(),'New')]"}
 EDWOSB_financial_NotesPayable_OtherLiabilities_Type:           {Locator: 'id', Value: "DTE_Field_type"}
 EDWOSB_financial_NotesPayable_OtherLiabilities_OrgBal:         {Locator: 'id', Value: "DTE_Field_original_balance"}
@@ -414,85 +420,85 @@ EDWOSB_financial_NotesPayable_OtherLiabilities_Amount:         {Locator: 'id', V
 EDWOSB_financial_NotesPayable_OtherLiabilities_Collateral:     {Locator: 'id', Value: "DTE_Field_collateral_type"}
 EDWOSB_financial_NotesPayable_OtherLiabilities_Noteholder:     {Locator: 'id', Value: "DTE_Field_noteholder"}
 EDWOSB_financial_NotesPayable_OtherLiabilities_Addressholder:   {Locator: 'id', Value: "DTE_Field_noteholder_address"}
-EDWOSB_financial_NotesPayable_OtherLiabilities_No:              {Locator: 'id', Value: "answers_384_value_no"}
+EDWOSB_financial_NotesPayable_OtherLiabilities_No:              {Locator: 'xpath', Value: "//label[@for='answers_384_value_no']"}
 ##@Edwosb financial_Assessed Taxes
-EDWOSB_financial_Page_Ans_385_N:                {Locator: 'id', Value: "answers_385_value_no"}
-EDWOSB_financial_Assessed_Taxes_Yes:            {Locator: 'id', Value: "answers_385_value_yes"}
+EDWOSB_financial_Page_Ans_385_N:                {Locator: 'xpath', Value: "//label[@for='answers_385_value_no']"}
+EDWOSB_financial_Assessed_Taxes_Yes:            {Locator: 'xpath', Value: "//label[@for='answers_385_value_yes']"}
 EDWOSB_financial_Assessed_Taxes_New_Button:     {Locator: 'xpath', Value: "//div[ @class= 'dt-buttons']/a/span[contains(text(),'New')]"}
 EDWOSB_financial_Assessed_Taxes_Whom_Payable:   {Locator: 'id', Value: "DTE_Field_whom_payable"}
 EDWOSB_financial_Assessed_Taxes_Amount:         {Locator: 'id', Value: "DTE_Field_amount"}
 EDWOSB_financial_Assessed_Taxes_Whendue:        {Locator: 'id', Value: "DTE_Field_when_due"}
 EDWOSB_financial_Assessed_Property_Tax_Lien:    {Locator: 'id', Value: "DTE_Field_property_tax_lien"}
-EDWOSB_financial_Assessed_Taxes_No:             {Locator: 'id', Value: "answers_385_value_no"}
+EDWOSB_financial_Assessed_Taxes_No:             {Locator: 'xpath', Value: "//label[@for='answers_385_value_no']"}
 
 EDWOSB_financial_Page_Ans_386_SetText: {Locator: 'id', Value: "answers_386_value"}
 EDWOSB_financial_Page_Ans_387_SetText: {Locator: 'id', Value: "answers_387_value"}
 EDWOSB_financial_Page_Ans_388_SetText: {Locator: 'id', Value: "answers_388_value"}
 #WOSB_Questionaaire for LLC with No flow
-WOSB_Questionnaire_Page_Ans_188_No: {Locator: 'id', Value: "answers_188_value_no"}
-WOSB_Questionnaire_Page_Ans_188_Yes: {Locator: 'id', Value: "answers_188_value_yes"}
-WOSB_Questionnaire_Page_Ans_189_No: {Locator: 'id', Value: "answers_189_value_no"}
-WOSB_Questionnaire_Page_Ans_189_Yes: {Locator: 'id', Value: "answers_189_value_yes"}
-WOSB_Questionnaire_Page_Ans_188_N: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@id,'answers_') and contains(@id,'_value_no') ]"}
-WOSB_Questionnaire_Page_Ans_189_Y: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@id,'answers_') and contains(@id,'_value_yes') ]"}
-WOSB_Questionnaire_Page_Ans_190_Y: {Locator: 'id', Value: "answers_190_value_yes"}
-WOSB_Questionnaire_Page_Ans_190_N: {Locator: 'id', Value: "answers_190_value_no"}
-WOSB_Questionnaire_Page_Ans_191_Y: {Locator: 'id', Value: "answers_191_value_yes"}
-WOSB_Questionnaire_Page_Ans_191_N: {Locator: 'id', Value: "answers_191_value_no"}
-WOSB_Questionnaire_Page_Ans_192_Y: {Locator: 'id', Value: "answers_192_value_yes"}
+WOSB_Questionnaire_Page_Ans_188_No: {Locator: 'xpath', Value: "//label[@for='answers_188_value_no']"}
+WOSB_Questionnaire_Page_Ans_188_Yes: {Locator: 'xpath', Value: "//label[@for='answers_188_value_yes']"}
+WOSB_Questionnaire_Page_Ans_189_No: {Locator: 'xpath', Value: "//label[@for='answers_189_value_no']"}
+WOSB_Questionnaire_Page_Ans_189_Yes: {Locator: 'xpath', Value: "//label[@for='answers_189_value_yes']"}
+WOSB_Questionnaire_Page_Ans_188_N: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@for,'answers_') and contains(@for,'_value_no') ]"}
+WOSB_Questionnaire_Page_Ans_189_Y: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@for,'answers_') and contains(@for,'_value_yes') ]"}
+WOSB_Questionnaire_Page_Ans_190_Y: {Locator: 'xpath', Value: "//label[@for='answers_190_value_yes']"}
+WOSB_Questionnaire_Page_Ans_190_N: {Locator: 'xpath', Value: "//label[@for='answers_190_value_no']"}
+WOSB_Questionnaire_Page_Ans_191_Y: {Locator: 'xpath', Value: "//label[@for='answers_191_value_yes']"}
+WOSB_Questionnaire_Page_Ans_191_N: {Locator: 'xpath', Value: "//label[@for='answers_191_value_no']"}
+WOSB_Questionnaire_Page_Ans_192_Y: {Locator: 'xpath', Value: "//label[@for='answers_192_value_yes']"}
 WOSB_Questionnaire_Page_Ans_192_Comment: {Locator: 'id', Value: "answers_192_comment"}
-WOSB_Questionnaire_Page_Ans_192_N: {Locator: 'id', Value: "answers_192_value_no"}
-WOSB_Questionnaire_Page_Ans_193_Y: {Locator: 'id', Value: "answers_193_value_yes"}
-WOSB_Questionnaire_Page_Ans_193_N: {Locator: 'id', Value: "answers_193_value_no"}
-WOSB_Questionnaire_Page_Ans_194_Y: {Locator: 'id', Value: "answers_194_value_yes"}
-WOSB_Questionnaire_Page_Ans_194_N: {Locator: 'id', Value: "answers_194_value_no"}
-WOSB_Questionnaire_Page_Ans_195_Y: {Locator: 'id', Value: "answers_195_value_yes"}
-WOSB_Questionnaire_Page_Ans_195_N: {Locator: 'id', Value: "answers_195_value_no"}
-WOSB_Questionnaire_Page_Ans_196_Y: {Locator: 'id', Value: "answers_196_value_yes"}
-WOSB_Questionnaire_Page_Ans_196_N: {Locator: 'id', Value: "answers_196_value_no"}
-WOSB_Questionnaire_Page_Ans_197_Y: {Locator: 'id', Value: "answers_197_value_yes"}
-WOSB_Questionnaire_Page_Ans_197_N: {Locator: 'id', Value: "answers_197_value_no"}
-WOSB_Questionnaire_Page_Ans_198_Y: {Locator: 'id', Value: "answers_198_value_yes"}
+WOSB_Questionnaire_Page_Ans_192_N: {Locator: 'xpath', Value: "//label[@for='answers_192_value_no']"}
+WOSB_Questionnaire_Page_Ans_193_Y: {Locator: 'xpath', Value: "//label[@for='answers_193_value_yes']"}
+WOSB_Questionnaire_Page_Ans_193_N: {Locator: 'xpath', Value: "//label[@for='answers_193_value_no']"}
+WOSB_Questionnaire_Page_Ans_194_Y: {Locator: 'xpath', Value: "//label[@for='answers_194_value_yes']"}
+WOSB_Questionnaire_Page_Ans_194_N: {Locator: 'xpath', Value: "//label[@for='answers_194_value_no']"}
+WOSB_Questionnaire_Page_Ans_195_Y: {Locator: 'xpath', Value: "//label[@for='answers_195_value_yes']"}
+WOSB_Questionnaire_Page_Ans_195_N: {Locator: 'xpath', Value: "//label[@for='answers_195_value_no']"}
+WOSB_Questionnaire_Page_Ans_196_Y: {Locator: 'xpath', Value: "//label[@for='answers_196_value_yes']"}
+WOSB_Questionnaire_Page_Ans_196_N: {Locator: 'xpath', Value: "//label[@for='answers_196_value_no']"}
+WOSB_Questionnaire_Page_Ans_197_Y: {Locator: 'xpath', Value: "//label[@for='answers_197_value_yes']"}
+WOSB_Questionnaire_Page_Ans_197_N: {Locator: 'xpath', Value: "//label[@for='answers_197_value_no']"}
+WOSB_Questionnaire_Page_Ans_198_Y: {Locator: 'xpath', Value: "//label[@for='answers_198_value_yes']"}
 WOSB_Questionnaire_Page_Ans_Attachment_All:  {L1:  "//div[@id='answers[198][attachment]']//div[@id='add-req-doc-button']/a",
                                            L2:  "//div[@id='answers[198][attachment]']//button[@id='doc-lib-button']",
-                                           L3: "//div[@id='answers[198][attachment]']//*[@id='truth']",
+                                           L3: "//div[@id='answers[198][attachment]']//*[@for='198_truth_0']",
                                            L4: "//div[@id='answers[198][attachment]']//button[@id='document_library_associate']"}
-WOSB_Questionnaire_Page_Ans_198_N: {Locator: 'id', Value: "answers_198_value_no"}
+WOSB_Questionnaire_Page_Ans_198_N: {Locator: 'xpath', Value: "//label[@for='answers_198_value_no']"}
 WOSB_Questionnaire_Page_Ans_198_Comment: {Locator: 'id', Value: "answers_198_comment"}
-WOSB_Questionnaire_Page_Ans_201_N: {Locator: 'id', Value: "answers_201_value_no"}
+WOSB_Questionnaire_Page_Ans_201_N: {Locator: 'xpath', Value: "//label[@for='answers_201_value_no']"}
 WOSB_financial_Page_Ans_201_setText: {Locator: 'id', Value: "answers_201_comment"}
-WOSB_Questionnaire_Page_Ans_202_N: {Locator: 'id', Value: "answers_202_value_no"}
+WOSB_Questionnaire_Page_Ans_202_N: {Locator: 'xpath', Value: "//label[@for='answers_202_value_no']"}
 WOSB_financial_Page_Ans_202_setText: {Locator: 'id', Value: "answers_202_comment"}
-WOSB_Questionnaire_Page_Ans_203_N: {Locator: 'id', Value: "answers_203_value_no"}
-WOSB_Questionnaire_Page_Ans_203_Y: {Locator: 'id', Value: "answers_203_value_yes"}
-WOSB_Questionnaire_Page_Ans_204_N: {Locator: 'id', Value: "answers_204_value_no"}
-WOSB_Questionnaire_Page_Ans_204_Y: {Locator: 'id', Value: "answers_204_value_yes"}
-WOSB_Questionnaire_Page_Ans_205_N: {Locator: 'id', Value: "answers_205_value_no"}
-WOSB_Questionnaire_Page_Ans_205_Y: {Locator: 'id', Value: "answers_205_value_yes"}
-WOSB_Questionnaire_Page_Ans_206_Y: {Locator: 'id', Value: "answers_206_value_yes"}
-WOSB_Questionnaire_Page_Ans_206_N: {Locator: 'id', Value: "answers_206_value_no"}
-WOSB_Questionnaire_Page_Ans_206_NA: {Locator: 'id', Value: "answers_206_value_na"}
+WOSB_Questionnaire_Page_Ans_203_N: {Locator: 'xpath', Value: "//label[@for='answers_203_value_no']"}
+WOSB_Questionnaire_Page_Ans_203_Y: {Locator: 'xpath', Value: "//label[@for='answers_203_value_yes']"}
+WOSB_Questionnaire_Page_Ans_204_N: {Locator: 'xpath', Value: "//label[@for='answers_204_value_no']"}
+WOSB_Questionnaire_Page_Ans_204_Y: {Locator: 'xpath', Value: "//label[@for='answers_204_value_yes']"}
+WOSB_Questionnaire_Page_Ans_205_N: {Locator: 'xpath', Value: "//label[@for='answers_205_value_no']"}
+WOSB_Questionnaire_Page_Ans_205_Y: {Locator: 'xpath', Value: "//label[@for='answers_205_value_yes']"}
+WOSB_Questionnaire_Page_Ans_206_Y: {Locator: 'xpath', Value: "//label[@for='answers_206_value_yes']"}
+WOSB_Questionnaire_Page_Ans_206_N: {Locator: 'xpath', Value: "//label[@for='answers_206_value_no']"}
+WOSB_Questionnaire_Page_Ans_206_NA: {Locator: 'xpath', Value: "//label[@for='answers_206_value_na']"}
 WOSB_financial_Page_Ans_206_setText: {Locator: 'id', Value: "answers_206_comment"}
-WOSB_Questionnaire_Page_Ans_207_Y: {Locator: 'id', Value: "answers_207_value_yes"}
-WOSB_Questionnaire_Page_Ans_207_N: {Locator: 'id', Value: "answers_207_value_no"}
-WOSB_Questionnaire_Page_Ans_208_Y: {Locator: 'id', Value: "answers_208_value_yes"}
-WOSB_Questionnaire_Page_Ans_208_N: {Locator: 'id', Value: "answers_208_value_no"}
-WOSB_Questionnaire_Page_Ans_209_Y: {Locator: 'id', Value: "answers_209_value_yes"}
-WOSB_Questionnaire_Page_Ans_209_N: {Locator: 'id', Value: "answers_209_value_no"}
-WOSB_Questionnaire_Page_Ans_210_Y: {Locator: 'id', Value: "answers_210_value_yes"}
-WOSB_Questionnaire_Page_Ans_210_N: {Locator: 'id', Value: "answers_210_value_no"}
-WOSB_Questionnaire_Page_Ans_211_Y: {Locator: 'id', Value: "answers_211_value_yes"}
-WOSB_Questionnaire_Page_Ans_211_N: {Locator: 'id', Value: "answers_211_value_no"}
-WOSB_Questionnaire_Page_Ans_212_Y: {Locator: 'id', Value: "answers_212_value_yes"}
-WOSB_Questionnaire_Page_Ans_212_N: {Locator: 'id', Value: "answers_212_value_no"}
+WOSB_Questionnaire_Page_Ans_207_Y: {Locator: 'xpath', Value: "//label[@for='answers_207_value_yes']"}
+WOSB_Questionnaire_Page_Ans_207_N: {Locator: 'xpath', Value: "//label[@for='answers_207_value_no']"}
+WOSB_Questionnaire_Page_Ans_208_Y: {Locator: 'xpath', Value: "//label[@for='answers_208_value_yes']"}
+WOSB_Questionnaire_Page_Ans_208_N: {Locator: 'xpath', Value: "//label[@for='answers_208_value_no']"}
+WOSB_Questionnaire_Page_Ans_209_Y: {Locator: 'xpath', Value: "//label[@for='answers_209_value_yes']"}
+WOSB_Questionnaire_Page_Ans_209_N: {Locator: 'xpath', Value: "//label[@for='answers_209_value_no']"}
+WOSB_Questionnaire_Page_Ans_210_Y: {Locator: 'xpath', Value: "//label[@for='answers_210_value_yes']"}
+WOSB_Questionnaire_Page_Ans_210_N: {Locator: 'xpath', Value: "//label[@for='answers_210_value_no']"}
+WOSB_Questionnaire_Page_Ans_211_Y: {Locator: 'xpath', Value: "//label[@for='answers_211_value_yes']"}
+WOSB_Questionnaire_Page_Ans_211_N: {Locator: 'xpath', Value: "//label[@for='answers_211_value_no']"}
+WOSB_Questionnaire_Page_Ans_212_Y: {Locator: 'xpath', Value: "//label[@for='answers_212_value_yes']"}
+WOSB_Questionnaire_Page_Ans_212_N: {Locator: 'xpath', Value: "//label[@for='answers_212_value_no']"}
 WOSB_financial_Page_Ans_212_setText: {Locator: 'id', Value: "answers_212_comment"}
-WOSB_Questionnaire_Page_Ans_213_Y: {Locator: 'id', Value: "answers_213_value_yes"}
-WOSB_Questionnaire_Page_Ans_213_N: {Locator: 'id', Value: "answers_213_value_no"}
-WOSB_Questionnaire_Page_Ans_247_Yes: {Locator: 'id', Value: "answers_247_value_yes"}
+WOSB_Questionnaire_Page_Ans_213_Y: {Locator: 'xpath', Value: "//label[@for='answers_213_value_yes']"}
+WOSB_Questionnaire_Page_Ans_213_N: {Locator: 'xpath', Value: "//label[@for='answers_213_value_no']"}
+WOSB_Questionnaire_Page_Ans_247_Yes: {Locator: 'xpath', Value: "//label[@for='answers_247_value_yes']"}
 
 
-Generic_Questionnaire_Page_Ans_Y: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@id,'answers_') and contains(@id,'_value_yes') ]"}
-Generic_Questionnaire_Page_Ans_N: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@id,'answers_') and contains(@id,'_value_no') ]"}
+Generic_Questionnaire_Page_Ans_Y: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@for,'answers_') and contains(@for,'_value_yes') ]"}
+Generic_Questionnaire_Page_Ans_N: {Locator: 'xpath', Value: "//input[@type='radio' and contains(@for,'answers_') and contains(@for,'_value_no') ]"}
 #8A_Page_Question_Ans_N_General: {Locator: 'xpath', Value: "//input[ @type='radio' and contains( @id,'_value_no' ) ]"}
 
 #Dashboard
@@ -530,12 +536,12 @@ Main_Page_Help_Page_Link_Edit: {Locator: 'xpath', Value: "//a[@href='/help_pages
 
 Analyst_Review_Determ_Page_Link: {Locator: 'xpath', Value: "//ul[contains(@class, 'sidenav-list')]/li/a[contains(text(),'etermination')]"}
 Analyst_Review_Legal_Business_Name: {Locator: 'xpath', Value: "td/a[contains(text(),'Legal Business Name')]"}
-SBA_Review_Determ_Made:           {Locator: 'id', Value: "review_workflow_state_determination_made"}
+SBA_Review_Determ_Made:           {Locator: 'xpath', Value: "label[@for='review_workflow_state_determination_made']"}
 SBA_Review_Determ_Decision:       {Locator: 'xpath', Value: "//select[@id='determination_decision')]"}
-SBA_Review_Review_Started:        {Locator: 'id', Value: "review_workflow_state_assigned_in_progress"}
-SBA_Review_Return_For_Mod:        {Locator: 'id', Value: "review_workflow_state_returned_for_modification"}
-SBA_Review_Recommend_Eligible:    {Locator: 'id', Value: "review_workflow_state_recommend_eligible"}
-SBA_Review_Recommend_InEligible:  {Locator: 'id', Value: "review_workflow_state_recommend_ineligible"}
+SBA_Review_Review_Started:        {Locator: 'xpath', Value: "//label[@for='review_workflow_state_assigned_in_progress']"}
+SBA_Review_Return_For_Mod:        {Locator: 'xpath', Value: "//label[@for='review_workflow_state_returned_for_modification']"}
+SBA_Review_Recommend_Eligible:    {Locator: 'xpath', Value: "//label[@for='review_workflow_state_recommend_eligible']"}
+SBA_Review_Recommend_InEligible:  {Locator: 'xpath', Value: "//label[@for='review_workflow_state_recommend_ineligible']"}
 Analyst_Review_Determ_Decision:   {Locator: 'id', Value: "determination_decision"}
 
 # My Contracting SBA Program start
@@ -794,12 +800,12 @@ BasicEligibility_determination_Date:      {Locator: "id", Value: "date-362"}
 
 
 # Links Signature Submit Legal 0
-SBA_Sig_Submit_Legal_0: {Locator: 'xpath', Value: "//input[@id='legal_0']"}
-SBA_Sig_Submit_Legal_1: {Locator: 'xpath', Value: "//input[@id='legal_1']"}
-SBA_Sig_Submit_Legal_2: {Locator: 'xpath', Value: "//input[@id='legal_2']"}
-SBA_Sig_Submit_Legal_3: {Locator: 'xpath', Value: "//input[@id='legal_3']"}
-SBA_Sig_Submit_Legal_4: {Locator: 'xpath', Value: "//input[@id='legal_4']"}
-SBA_Sig_Submit_Legal_5: {Locator: 'xpath', Value: "//input[@id='legal_5']"}
+SBA_Sig_Submit_Legal_0: {Locator: 'xpath', Value: "//label[@for='legal_0']"}
+SBA_Sig_Submit_Legal_1: {Locator: 'xpath', Value: "//label[@for='legal_1']"}
+SBA_Sig_Submit_Legal_2: {Locator: 'xpath', Value: "//label[@for='legal_2']"}
+SBA_Sig_Submit_Legal_3: {Locator: 'xpath', Value: "//label[@for='legal_3']"}
+SBA_Sig_Submit_Legal_4: {Locator: 'xpath', Value: "//label[@for='legal_4']"}
+SBA_Sig_Submit_Legal_5: {Locator: 'xpath', Value: "//label[@for='legal_5']"}
 
 # Links for My Certifications
 SBA_Vendor_My_Certifications:              {Locator: 'xpath', Value: "//a[contains(@href,'/vendor_admin/my_certifications') ]"}
@@ -1138,30 +1144,30 @@ Review_Application:               {Locator: "id", Value: "review"}
 #@contributor_8a_spouse_Financial Page  End
 
 #@contributor_8a_DisAdv_Financial Page Start
-8a_DisAdv_Prior_8a_personal bankruptcy_Yes:         {Locator: 'id', Value: "answers_828_value_yes"}
+8a_DisAdv_Prior_8a_personal bankruptcy_Yes:         {Locator: 'xpath', Value: "//label[@for='answers_828_value_yes']"}
 8a_DisAdv_Prior_8a_personal bankruptcy_Attach_All:   {L1:  "//div[@id='answers[828][attachment]']//div[@id='add-req-doc-button']/a",
                                                       L2:  "//div[@id='answers[828][attachment]']//button[@id='doc-lib-button']",
                                                       L3: "//div[@id='answers[828][attachment]']//*[@for='828_truth_0']",
                                                       L4: "//div[@id='answers[828][attachment]']//button[@id='document_library_associate']"}
-8a_DisAdv_Prior_8a_personal bankruptcy_No:          {Locator: 'id', Value: "answers_828_value_no"}
-8a_DisAdv_Prior_8a_Previously_SBA loan_Yes:         {Locator: 'id', Value: "answers_829_value_yes"}
+8a_DisAdv_Prior_8a_personal bankruptcy_No:          {Locator: 'xpath', Value: "//label[@for='answers_828_value_no']"}
+8a_DisAdv_Prior_8a_Previously_SBA loan_Yes:         {Locator: 'xpath', Value: "//label[@for='answers_829_value_yes']"}
 8a_DisAdv_Prior_8a_Previously_SBA loan_Attach_All:   {L1:  "//div[@id='answers[829][attachment]']//div[@id='add-req-doc-button']/a",
                                                       L2:  "//div[@id='answers[829][attachment]']//button[@id='doc-lib-button']",
                                                       L3: "//div[@id='answers[829][attachment]']//*[@for='829_truth_0']",
                                                       L4: "//div[@id='answers[829][attachment]']//button[@id='document_library_associate']"}
-8a_DisAdv_Prior_8a_Previously_SBA loan_No:          {Locator: 'id', Value: "answers_829_value_no"}
-8a_DisAdv_Prior_8a_pending_civil_lawsuit_Yes:       {Locator: 'id', Value: "answers_830_value_yes"}
+8a_DisAdv_Prior_8a_Previously_SBA loan_No:          {Locator: 'xpath', Value: "//label[@for='answers_829_value_no']"}
+8a_DisAdv_Prior_8a_pending_civil_lawsuit_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_830_value_yes']"}
 8a_DisAdv_Prior_8a_pending_civil_lawsuit_Attach_All:   {L1:  "//div[@id='answers[830][attachment]']//div[@id='add-req-doc-button']/a",
                                                       L2:  "//div[@id='answers[830][attachment]']//button[@id='doc-lib-button']",
                                                       L3: "//div[@id='answers[830][attachment]']//*[@for='830_truth_0']",
                                                       L4: "//div[@id='answers[830][attachment]']//button[@id='document_library_associate']"}
-8a_DisAdv_Prior_8a_pending_civil_lawsuit_No:        {Locator: 'id', Value: "answers_830_value_no"}
-8a_DisAdv_Prior_8a_paying_Yes:                      {Locator: 'id', Value: "answers_831_value_yes"}
+8a_DisAdv_Prior_8a_pending_civil_lawsuit_No:        {Locator: 'xpath', Value: "//label[@for='answers_830_value_no']"}
+8a_DisAdv_Prior_8a_paying_Yes:                      {Locator: 'xpath', Value: "//label[@for='answers_831_value_yes']"}
 8a_DisAdv_Prior_8a_paying_Yes_Attach_All:   {L1:  "//div[@id='answers[831][attachment]']//div[@id='add-req-doc-button']/a",
                                                       L2:  "//div[@id='answers[831][attachment]']//button[@id='doc-lib-button']",
                                                       L3: "//div[@id='answers[831][attachment]']//*[@for='831_truth_0']",
                                                       L4: "//div[@id='answers[831][attachment]']//button[@id='document_library_associate']"}
-8a_DisAdv_Prior_8a_paying_No:                       {Locator: 'id', Value: "answers_831_value_no"}
+8a_DisAdv_Prior_8a_paying_No:                       {Locator: 'xpath', Value: "//label[@for='answers_831_value_no']"}
 #@contributor_8a_DisAdv_Financial Page  End
 
 #@contributor_8a_spouse_Criminal history Page Start
@@ -1231,13 +1237,13 @@ Review_Application:               {Locator: "id", Value: "review"}
 #@Contributor_8a_Spouse_Role_Appl_Firm Page End
 
 #@vendor_Admin_8a_Basic_Of_Disadvantage Page Start
-8a_MasterApp_Basic_Of_DisAdv_Sel:                    {Locator: 'xpath', Value: "//label[@for='answers_548_value']"}
-8a_MasterApp_Basic_Of_DisAdv_Text:                   {Locator: 'xpath', Value: "//label[@for='answers_548_comment']"}
+8a_MasterApp_Basic_Of_DisAdv_Sel:                    {Locator: 'id', Value: "answers_548_value"}
+8a_MasterApp_Basic_Of_DisAdv_Text:                   {Locator: 'id', Value: "answers_548_comment"}
 #@vendor_Admin_8a_Basic_Of_Disadvantage Page End
 
 #@contributor_8a_DisAdv_Basic_Of_Disadvantage Page Start
-8a_DisAdv_Basic_Of_DisAdv_Sel:                    {Locator: 'xpath', Value: "//label[@for='answers_839_value']"}
-8a_DisAdv_Basic_Of_DisAdv_Text:                   {Locator: 'xpath', Value: "//label[@for='answers_839_comment']"}
+8a_DisAdv_Basic_Of_DisAdv_Sel:                    {Locator: 'id', Value: "answers_839_value"}
+8a_DisAdv_Basic_Of_DisAdv_Text:                   {Locator: 'id', Value: "answers_839_comment"}
 #@contributor_8a_DisAdv_Federal Employment Page End
 
 
@@ -1246,8 +1252,8 @@ Review_Application:               {Locator: "id", Value: "review"}
 #@8a_Social_Narrative Page  End
 #@8a_ Other _Disadvantage Page Start
 
-8a_DisAdv_Other_DisAdv_Sel:                    {Locator: 'xpath', Value: "//label[@for='answers_841_value']"}
-8a_DisAdv_Other_Text:                          {Locator: 'xpath', Value: "//label[@for='answers_841_comment']"}
+8a_DisAdv_Other_DisAdv_Sel:                    {Locator: 'id', Value: "answers_841_value"}
+8a_DisAdv_Other_Text:                          {Locator: 'id', Value: "answers_841_comment"}
 #@8a_Basic_Of_Disadvantage Page End
 
 
@@ -1462,9 +1468,9 @@ Review_Application:               {Locator: "id", Value: "review"}
 8a_DisAdv_financial_Real_Estate_Jointly_Owned_Yes:      {Locator: 'xpath', Value: "//label[@for='answers_861_1_2_value_yes']"}
 8a_DisAdv_financial_Real_Estate_Jointly_Owned_No:       {Locator: 'xpath', Value: "//label[@for='answers_861_1_2_value_no']"}
 8a_DisAdv_financial_Real_Estate_Percentage_Ownership:   {Locator: 'id', Value: "answers_861_1_3_value"}
-8a_DisAdv_financial_Real_Estate_Percentage_Mortage:     {Locator: 'id', Value: "answers_861_1_4_value"}
-8a_DisAdv_financial_Real_Estate_Name_Mortage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_861_1_5_value_yes']"}
-8a_DisAdv_financial_Real_Estate_Name_Mortage_No:        {Locator: 'xpath', Value: "//label[@for='answers_861_1_5_value_no']"}
+8a_DisAdv_financial_Real_Estate_Percentage_Mortage:     {Locator: 'id', Value: "answers_861_1_5_value"}
+8a_DisAdv_financial_Real_Estate_Name_Mortage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_861_1_4_value_yes']"}
+8a_DisAdv_financial_Real_Estate_Name_Mortage_No:        {Locator: 'xpath', Value: "//label[@for='answers_861_1_4_value_no']"}
 8a_DisAdv_financial_Real_Estate_Current_Residence_Val:  {Locator: 'id', Value: "answers_861_1_6_value"}
 8a_DisAdv_financial_Real_Estate_Mortage_Balance_Val:    {Locator: 'id', Value: "answers_861_1_7_value"}
 8a_DisAdv_financial_Real_Estate_2nd_Mortgage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_861_1_8_value_yes']"}
@@ -1485,9 +1491,9 @@ Review_Application:               {Locator: "id", Value: "review"}
 8a_spouse_financial_Real_Estate_Jointly_Owned_Yes:      {Locator: 'xpath', Value: "//label[@for='answers_694_1_2_value_yes']"}
 8a_spouse_financial_Real_Estate_Jointly_Owned_No:       {Locator: 'xpath', Value: "//label[@for='answers_694_1_2_value_no']"}
 8a_spouse_financial_Real_Estate_Percentage_Ownership:   {Locator: 'id', Value: "answers_694_1_3_value"}
-8a_spouse_financial_Real_Estate_Percentage_Mortage:     {Locator: 'id', Value: "answers_694_1_4_value"}
-8a_spouse_financial_Real_Estate_Name_Mortage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_694_1_5_value_yes']"}
-8a_spouse_financial_Real_Estate_Name_Mortage_No:        {Locator: 'xpath', Value: "//label[@for='answers_694_1_5_value_no']"}
+8a_spouse_financial_Real_Estate_Percentage_Mortage:     {Locator: 'id', Value: "answers_694_1_5_value"}
+8a_spouse_financial_Real_Estate_Name_Mortage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_694_1_4_value_yes']"}
+8a_spouse_financial_Real_Estate_Name_Mortage_No:        {Locator: 'xpath', Value: "//label[@for='answers_694_1_4_value_no']"}
 8a_spouse_financial_Real_Estate_Current_Residence_Val:  {Locator: 'id', Value: "answers_694_1_6_value"}
 8a_spouse_financial_Real_Estate_Mortage_Balance_Val:    {Locator: 'id', Value: "answers_694_1_7_value"}
 8a_spouse_financial_Real_Estate_2nd_Mortgage_Yes:       {Locator: 'xpath', Value: "//label[@for='answers_694_1_8_value_yes']"}
@@ -1643,7 +1649,7 @@ Review_Application:               {Locator: "id", Value: "review"}
 # 8a Master Applciation Basic Eligiblity.
 
 # All_Answers_Yes
-All_Answers_Yes:     { Locator: 'xpath', Value: "//input[ contains( @id , 'value_yes' )]" }
+All_Answers_Yes:     { Locator: 'xpath', Value: "//label[ contains( @for , 'value_yes' )]" }
 
 #@Generic file attach-upload Start
 File_Up1_Add_Req:                             {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button']/a/i"}
@@ -1653,40 +1659,41 @@ File_Up1_Choose_Doc:                          {Locator: 'xpath', Value: "//label
 #File_Up1_Choose_Doc:                          {Locator: 'xpath', Value: "//table[@class= 'display-table']/tbody/tr[td[@id= 'document_library_file_name']]/ul/li"}
 
 File_Up1_Associate_Button:                    {Locator: 'id', Value: "document_library_associate"}
+File_Up1_row_Existance:                       {Locator: 'xpath', Value: "//table[contains(@class,'display-table')]/tbody/tr [contains(@name,'document_library')]"}
 
 #@Generic file attach-upload   End
 
 #@MPP  Questionnaires  Start
-MPP_8a_Yes:                                   {Locator: 'id', Value: "answers_117_value_yes"}
-MPP_8a_No:                                    {Locator: 'id', Value: "answers_117_value_no"}
-MPP_Eligibility_Yes:                          {Locator: 'id', Value: "answers_118_value_yes"}
-MPP_Eligibility_No:                           {Locator: 'id', Value: "answers_118_value_no"}
-MPP_MentorProfit_Yes:                         {Locator: 'id', Value: "answers_119_value_yes"}
-MPP_MentorProfit_No:                          {Locator: 'id', Value: "answers_119_value_no"}
-MPP_Determination_Affiliation_Yes:             {Locator: 'id', Value: "answers_120_value_yes"}
-MPP_Determination_Affiliation_No:              {Locator: 'id', Value: "answers_120_value_no"}
-MPP_Mentor_Equityinterest_Yes:                 {Locator: 'id', Value: "answers_121_value_yes"}
-MPP_Mentor_Equityinterest_No:                  {Locator: 'id', Value: "answers_121_value_no"}
+MPP_8a_Yes:                                    {Locator: 'xpath', Value: "//label[@for='answers_117_value_yes']"}
+MPP_8a_No:                                     {Locator: 'xpath', Value: "//label[@for='answers_117_value_no']"}
+MPP_Eligibility_Yes:                           {Locator: 'xpath', Value: "//label[@for='answers_118_value_yes']"}
+MPP_Eligibility_No:                            {Locator: 'xpath', Value: "//label[@for='answers_118_value_no']"}
+MPP_MentorProfit_Yes:                          {Locator: 'xpath', Value: "//label[@for='answers_119_value_yes']"}
+MPP_MentorProfit_No:                           {Locator: 'xpath', Value: "//label[@for='answers_119_value_no']"}
+MPP_Determination_Affiliation_Yes:             {Locator: 'xpath', Value: "//label[@for='answers_120_value_yes']"}
+MPP_Determination_Affiliation_No:              {Locator: 'xpath', Value: "//label[@for='answers_120_value_no']"}
+MPP_Mentor_Equityinterest_Yes:                 {Locator: 'xpath', Value: "//label[@for='answers_121_value_yes']"}
+MPP_Mentor_Equityinterest_No:                  {Locator: 'xpath', Value: "//label[@for='answers_121_value_no']"}
 MPP_NAICS_Code:                                {Locator: 'xpath', Value: "//select[@id='answers_122_value']"}
-MPP_work_NAICSCode_Yes:                        {Locator: 'id', Value: "answers_123_value_yes"}
-MPP_work_NAICSCode_No:                         {Locator: 'id', Value: "answers_123_value_no"}
+MPP_work_NAICSCode_Yes:                        {Locator: 'xpath', Value: "//label[@for='answers_123_value_yes']"}
+MPP_work_NAICSCode_No:                         {Locator: 'xpath', Value: "//label[@for='answers_123_value_no']"}
 MPP_small_NAICSCode_Error_Message:             {Locator: 'xpath', Value: "//div[@class='error' and contains(text(),'This business does not have a NAICS code associated with it')]"}
-MPP_small_NAICSCode_Yes:                       {Locator: 'id', Value: "answers_124_value_yes"}
-MPP_small_NAICSCode_No:                        {Locator: 'id', Value: "answers_124_value_no"}
-MPP_Size_Determination_Yes:                    {Locator: 'id', Value: "answers_125_value_yes"}
-MPP_Size_Determination_No:                     {Locator: 'id', Value: "answers_125_value_no"}
-MPP_Size_Re_Determination_Yes:                 {Locator: 'id', Value: "answers_126_value_yes"}
-MPP_Size_Re_Determination_No:                  {Locator: 'id', Value: "answers_126_value_no"}
-MPP_sizeredetermination_Up1_Add_Req:            {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button' and @name='127' ]/a/i"}
-MPP_sizeredetermination_Up1_Choose_Doc_Library:     {Locator: 'xpath', Value: "//button[ @id = 'doc-lib-button' and @name='127' ]"}
+MPP_small_NAICSCode_Yes:                       {Locator: 'xpath', Value: "//label[@for='answers_124_value_yes']"}
+MPP_small_NAICSCode_No:                        {Locator: 'xpath', Value: "//label[@for='answers_124_value_no']"}
+MPP_Size_Determination_Yes:                    {Locator: 'xpath', Value: "//label[@for='answers_125_value_yes']"}
+MPP_Size_Determination_No:                     {Locator: 'xpath', Value: "//label[@for='answers_125_value_no']"}
+MPP_Size_Re_Determination_Yes:                 {Locator: 'xpath', Value: "//label[@for='answers_126_value_yes']"}
+MPP_Size_Re_Determination_No:                  {Locator: 'xpath', Value: "//label[@for='answers_126_value_no']"}
+MPP_sizeredetermination_Up1_Add_Req:           {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button' and @name='127' ]/a/i"}
+MPP_sizeredetermination_Up1_Choose_Doc_Library:  {Locator: 'xpath', Value: "//button[ @id = 'doc-lib-button' and @name='127' ]"}
 MPP_sizeredetermination_Up1_Choose_Doc:          {Locator: 'xpath', Value: "//*[@id='document_library_file_name']/ul/li/input"}
 MPP_sizeredetermination_Up1_Associate_Button:    {Locator: 'id', Value: "document_library_associate"}
 MPP_SBA_Area:                                    {Locator: 'xpath', Value: "//select[@id='answers_128_value']"}
 MPP_Determination_Date:                          {Locator: 'name', Value: "answers[129][value]"}
 MPP_Training_Up1_Add_Req:                         {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button' and @name='130' ]/a/i"}
 MPP_Protege_Up1_Add_Req:                         {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button' and @name='131' ]/a/i"}
-MPP_Active_MentorProtege_Agrement_Yes:           {Locator: 'id', Value: "answers_132_value_yes"}
-MPP_Active_MentorProtege_Agrement_No:           {Locator: 'id', Value: "answers_132_value_no"}
+MPP_Active_MentorProtege_Agrement_Yes:           {Locator: 'xpath', Value: "//label[@for='answers_132_value_yes']"}
+MPP_Active_MentorProtege_Agrement_No:           {Locator: 'xpath', Value: "//label[@for='answers_132_value_no']"}
 MPP_Active_Agrement:                            {Locator: 'xpath', Value: "//a[ @id = 'add_item']/span"}
 MPP_Role_Agrement:                               {Locator: 'xpath', Value: "//select[@id='answers_133_1_0_value']"}
 MPP_Agency_Agrement:                             {Locator: 'xpath', Value: "//select[@id='answers_133_1_1_value']"}
@@ -1696,23 +1703,23 @@ MPP_OtherNAICSCode_Agrement:                      {Locator: 'xpath', Value: "//s
 MPP_ActiveAgrement_Up1_Add_Req:                   {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button' and @name='134' ]/a/i"}
 MPP_MPPAgrement_Up1_Add_Req:                      {Locator: 'xpath', Value: "//div[ @id = 'add-req-doc-button' and @name='135' ]/a/i"}
 
-MPP_Management_and_Technical_Yes:                 {Locator: 'id', Value: "answers_136_value_yes"}
-MPP_Management_and_Technical_No:                  {Locator: 'id', Value: "answers_136_value_no"}
+MPP_Management_and_Technical_Yes:                 {Locator: 'xpath', Value: "//label[@for='answers_136_value_yes']"}
+MPP_Management_and_Technical_No:                  {Locator: 'xpath', Value: "//label[@for='answers_136_value_no']"}
 
-MPP_Financial_Assistance_Yes:                  {Locator: 'id', Value: "answers_137_value_yes"}
-MPP_Financial_Assitance_No:                    {Locator: 'id', Value: "answers_137_value_no"}
+MPP_Financial_Assistance_Yes:                  {Locator: 'xpath', Value: "//label[@for='answers_137_value_yes']"}
+MPP_Financial_Assitance_No:                    {Locator: 'xpath', Value: "//label[@for='answers_137_value_no']"}
 
-MPP_Contracting_Assitance_Yes:                 {Locator: 'id', Value: "answers_138_value_yes"}
-MPP_Contracting_Assitance_No:                  {Locator: 'id', Value: "answers_138_value_no"}
+MPP_Contracting_Assitance_Yes:                 {Locator: 'xpath', Value: "//label[@for='answers_138_value_yes']"}
+MPP_Contracting_Assitance_No:                  {Locator: 'xpath', Value: "//label[@for='answers_138_value_no']"}
 
-MPP_International_Trade_Education_Yes:         {Locator: 'id', Value: "answers_139_value_yes"}
-MPP_International_Trade_Education_No:          {Locator: 'id', Value: "answers_139_value_no"}
+MPP_International_Trade_Education_Yes:         {Locator: 'xpath', Value: "//label[@for='answers_139_value_yes']"}
+MPP_International_Trade_Education_No:          {Locator: 'xpath', Value: "//label[@for='answers_139_value_no']"}
 
-MPP_Business_Development_Yes:                 {Locator: 'id', Value: "answers_140_value_yes"}
-MPP_Business_Development_No:                  {Locator: 'id', Value: "answers_140_value_no"}
+MPP_Business_Development_Yes:                 {Locator: 'xpath', Value: "//label[@for='answers_140_value_yes']"}
+MPP_Business_Development_No:                  {Locator: 'xpath', Value: "//label[@for='answers_140_value_no']"}
 
-MPP_General_and_Administrative_Yes:           {Locator: 'id', Value: "answers_141_value_yes"}
-MPP_General_and_Administrative_No:            {Locator: 'id', Value: "answers_141_value_no"}
+MPP_General_and_Administrative_Yes:           {Locator: 'xpath', Value: "//label[@for='answers_141_value_yes']"}
+MPP_General_and_Administrative_No:            {Locator: 'xpath', Value: "//label[@for='answers_141_value_no']"}
 
 MPP_Management_and_Technical_Needs_Textbox1:         {Locator: 'id', Value: "input-type-textarea-142"}
 MPP_Management_and_Technical_Needs_Textbox2:         {Locator: 'id', Value: "input-type-textarea-143"}

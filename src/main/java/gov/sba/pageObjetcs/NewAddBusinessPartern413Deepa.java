@@ -21,9 +21,10 @@ public class NewAddBusinessPartern413Deepa {
     click_Element(webDriver, "EDWOSB_Questionnaire_Page_FinancialPage_Link");
 
     // Validate the Personal Information.
+
     click_Element(webDriver, "EDWOSB_Questionnaire_Page_Add_Person");
     logger.info("the page to Create and Add new Record is Present, PASS");
-    setText_Element(webDriver, "EDWOSB_Questionnaire_Page_FirstName", Firstname);
+        setText_Element(webDriver, "EDWOSB_Questionnaire_Page_FirstName", Firstname);
     setText_Element(webDriver, "EDWOSB_Questionnaire_Page_LastName", lastname);
     setText_Element(webDriver, "EDWOSB_Questionnaire_Page_SSN", Ssn);
     setText_Element(webDriver, "EDWOSB_Questionnaire_Page_Email", Email);

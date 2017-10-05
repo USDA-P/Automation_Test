@@ -153,9 +153,6 @@ public class TestWorkflowMPP02 extends TestCase {
 
       // double_Click_Element(webDriver, "SBA_Question_Determinations_SideNav");
       new Actions(webDriver).doubleClick(find_Element(webDriver, "SBA_Question_Determinations_SideNav")).build().perform();
-      assertTrue(find_Element(webDriver, "SBA_Review_Nav").getText().contains("Status: Active"));
-
-
       navigationBarClick(webDriver, "LOGOUT");
       /* Supervisor Flow - Approve */
       new LoginPageWithReference(webDriver, 56).Login_With_Reference();
@@ -170,6 +167,7 @@ public class TestWorkflowMPP02 extends TestCase {
       new Select(find_Element(webDriver, "Analyst_Review_Determ_Decision")).selectByIndex(1);
       click_Element(webDriver, "Application_Common_Submit_Button");
       assertTrue(find_Element(webDriver, "SBA_Review_Nav").getText().contains("Status: Active"));
+
       if (stop_Exec == 1) {
         return;
       } /* TODO DE APP-1499 exist */
