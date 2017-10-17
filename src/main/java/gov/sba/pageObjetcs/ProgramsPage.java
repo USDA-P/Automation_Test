@@ -159,7 +159,7 @@ public class ProgramsPage {
           break;
       }
       click_Element(webDriver, "JoinNewPgm_Add_Cert");
-      click_Element(webDriver, "Application_Common_Accept_Button");
+      //click_Element(webDriver, "Application_Common_Accept_Button");
     }
 
 

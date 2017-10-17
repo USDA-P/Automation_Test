@@ -134,7 +134,10 @@ Vendor_Admin_Dashboard_More_Details_Id:     {Locator: 'id', Value: "more-details
 DasbNewPgm_Create_App_WOSB:   {Locator: 'xpath', Value: "//a[contains(text(),'WOSB self-certification')]"}
 DasbNewPgm_Create_App_EDWOSB:   {Locator: 'xpath', Value: "//a[contains(text(),'EDWOSB self-certification')]"}
 DasbNewPgm_Create_App_MPP:   {Locator: 'xpath', Value: "//a[contains(text(),'All Small Business Mentor-Protégé agreement')]"}
-DasbNewPgm_Create_App_8A:   {Locator: 'xpath', Value: "  //a[contains(text(),'8(a) Initial Application')]"}
+#DasbNewPgm_Create_App_8A:   {Locator: 'xpath', Value: "  //a[contains(text(),'8(a) Initial Application')]"}
+DasbNewPgm_Create_App_8A:   {Locator: 'xpath', Value: "  //article[contains(@id,'main-content']//[contains(text(),'8(a) Initial Application')]"}
+Contributor_DasbNewPgm_8A:   {Locator: 'xpath', Value: "  //article[contains(@id,'main-content']//[contains(text(),'Start Application')]"}
+
 
 #  @Join_New_Program_Page  Start
 JoinNewPgm_Create_App_EDWOSB:   {Locator: 'xpath', Value: "//label[@for='certificate_type_edwosb']"}

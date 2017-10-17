@@ -60,7 +60,7 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
 
       /* return_All_Applications(webDriver, 11, "165324125");144754156 */
       /* delete_All_Application_Draft(webDriver, email, password, duns_Number); */
-      //delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125");
+      delete_All_Application_Draft(webDriver, get_The_Row_From_Login_Data, "165324125");
       new LoginPageWithReference(webDriver, get_The_Row_From_Login_Data).Login_With_Reference();
       /* Login to Dashboard. */
 
@@ -83,7 +83,7 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
       generic_file_Upld(webDriver);
       accept_Alert(webDriver, 10);
       /* Business_Ownership_Corporations_Page(webDriver); */
-      // click_Element(webDriver, "Application_Common_Submit_Button");
+      click_Element(webDriver, "Application_Common_Submit_Button");
       accept_Alert(webDriver, 10);
       /* Character Page selecting all no */
       masterApp_8a_Page_Click(webDriver, "page_character_link");
@@ -113,6 +113,7 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
       setText_Element(webDriver, "SBA_Login_Pwd", "password");
       click_Element(webDriver, "SBA_Login_Sign_in");
       click_Element(webDriver, "Application_Common_Accept_Button");
+      click_Element(webDriver,"Contributor_DasbNewPgm_8A");
       contributorsubApp_8aDisAdvInd(webDriver);
       navigationMenuClick(webDriver, "LOGOUT");
       /* Contributor Page- 8a Spouse Disadvantaged Sub application */
@@ -127,6 +128,7 @@ public class TestWorkflow8aInitalSelectingNoAllSections extends TestCase {
       setText_Element(webDriver, "SBA_Login_Pwd", "password");
       click_Element(webDriver, "SBA_Login_Sign_in");
       click_Element(webDriver, "Application_Common_Accept_Button");
+      click_Element(webDriver,"Contributor_DasbNewPgm_8A");
       contributorsubApp_8aSpouse(webDriver);
       navigationMenuClick(webDriver, "LOGOUT");
       /* TO Do :: Contributor Page- 8a Spouse Sub application */

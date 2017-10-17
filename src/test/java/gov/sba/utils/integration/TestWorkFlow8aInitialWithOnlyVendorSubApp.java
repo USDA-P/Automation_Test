@@ -129,26 +129,26 @@ public class TestWorkFlow8aInitialWithOnlyVendorSubApp extends TestCase{
       disAdvApp_financial_NotesPayableandOther_Page(webDriver, "Yes");
       disAdvApp_financial_Assessed_Taxes_Page(webDriver, "Yes");
       // Personal summary Report
-      disAdvApp_financial_PersonalSummary_Page(webDriver);
-      disAdvApp_financial_PrivacyStatements_Page(webDriver);
-      disAdvApp_financial_Review_Page(webDriver);
+     // disAdvApp_financial_PersonalSummary_Page(webDriver);
+      //disAdvApp_financial_PrivacyStatements_Page(webDriver);
+      /*disAdvApp_financial_Review_Page(webDriver);
       disAdvApp_Signature_Page(webDriver);
-      /* To complete 8a Master Application. */
+      *//* To complete 8a Master Application. *//*
 
       master8aApp_final_ReviewSign(webDriver);
       navigationMenuClick(webDriver, "DASHBOARD");
       List<WebElement> all_Cells = verify_Row_In_A_Table_And_Return(webDriver,
           new String[] {"8(a) Initial Application", "", "Pending", "", "", "", ""});
-      Assert.assertNotNull(all_Cells);
+      Assert.assertNotNull(all_Cells);*/
       //* For Demo Start - July 6 *//*
      //navigationMenuClick(webDriver, "LOGOUT");
 
-      navigationBarClick(webDriver, "LOGOUT");
-      webDriver.get(TestHelpers.getBaseUrl());
-      click_Element(webDriver, "SBA_Login_Button");
-      setText_Element(webDriver, "SBA_Login_Email", "sba_supervisor_8a_cods_5@mailinator.com");
-      setText_Element(webDriver, "SBA_Login_Pwd", "password");
-      click_Element(webDriver, "SBA_Login_Sign_in");
+     // navigationBarClick(webDriver, "LOGOUT");
+     // webDriver.get(TestHelpers.getBaseUrl());
+     // click_Element(webDriver, "SBA_Login_Button");
+     // setText_Element(webDriver, "SBA_Login_Email", "sba_supervisor_8a_cods_5@mailinator.com");
+     // setText_Element(webDriver, "SBA_Login_Pwd", "password");
+     // click_Element(webDriver, "SBA_Login_Sign_in");
 
       /* For Demo End - July 6 */
 
