@@ -40,8 +40,8 @@ public class ContributorSpouseOfaDisadvantageIndividualPage extends TestCase {
 		String Actual_Text = null;
 		String Expected_Text = null;
 
-		Actual_Text = webDriver.findElement(By.linkText("Contributors")).getText();
-		Expected_Text = "Contributors";
+		Actual_Text = webDriver.findElement(By.linkText("Individual Contributors")).getText();
+		Expected_Text = "Individual Contributors";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
 				.getText();
@@ -51,7 +51,7 @@ public class ContributorSpouseOfaDisadvantageIndividualPage extends TestCase {
 				.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"));
 		HighLight.highLightElement(webDriver, ContributorCompleteStatus);
 		// Click on the link to start eligibility check.
-		WebElement rateElement = webDriver.findElement(By.linkText("Contributors"));
+		WebElement rateElement = webDriver.findElement(By.linkText("Individual Contributors"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);
 		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
 		wait.until(ExpectedConditions

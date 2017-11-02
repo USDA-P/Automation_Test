@@ -43,7 +43,7 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		// Details.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_ownership_percentage']/fieldset/p[3]"))
 				.getText();
-		Expected_Text = "An entity-owned firm is a firm that is owned by an American Indian Tribe, an Alaska Native Corporation, a Community Development Corporation, or a Native Hawaiian Organization. . For example, American Indian Tribe (AIT) means that the firm is owned by a Native American Tribe not an individual who is of Native American descent. If the applicant firm is owned by individual(s) then only fill in the “Individuals” percentage above.";
+		Expected_Text = "An entity-owned firm is a firm that is owned by an American Indian Tribe, an Alaska Native Corporation, a Community Development Corporation, or a Native Hawaiian Organization. For example, American Indian Tribe (AIT) means that the firm is owned by a Native American Tribe not an individual who is of Native American descent. If the applicant firm is owned by individual(s) then only fill in the “Individuals” percentage above.";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_ownership_percentage']/fieldset/p[4]"))
 				.getText();

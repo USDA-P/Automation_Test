@@ -43,7 +43,7 @@ public class ContributorDvDPage extends TestCase {
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement4);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div/div/p")));
 		Actual_Text = webDriver.findElement(By.xpath("//form/div/div/p")).getText();
-		Expected_Text = "The Federal government relies on the information in the forms and any documents or supplemental information submitted to determine whether your business is eligible to participate in the 8(a) Business Development Program. The definition of important terms are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR § 124.3), and also any statutory and regulatory provision referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person providing information may be prosecuted if they have provided false information. The Government may pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
+		Expected_Text = "The Federal government relies on the information in the forms and any documents or supplemental information submitted to determine whether your business is eligible to participate in the 8(a) Business Development Program. The definitions of important terms are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR § 124.3), and also in any statutory and regulatory provisions referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person providing information may be prosecuted for providing false information. The Government may pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
 		assertEquals(Actual_Text, Expected_Text);
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
@@ -155,7 +155,7 @@ public class ContributorDvDPage extends TestCase {
 				"Also is their earth so. Dry female let doesn't void unto kind. Him two days set green us. Darkness from you'll. Him winged winged fifth man heaven won't it first male saw gathered deep. Abundantly herb it own. Darkness from, created great gathering us called deep abundantly. Divide. So replenish rule together beginning fowl seas light gathering air fill, saw darkness divide doesn't greater fly they're all fly. Shall light from given, place itself for were third. Itself second gathered fruit fromAlso is their earth so. Dry female let doesn't void unto kind. Him two days set green us. Darkness from you'll. Him winged winged fifth man heaven won't it first male saw gathered deep. Abundantly herb it own. Darkness from, created great gathering us called deep abundantly. Divide. So replenish rule together beginning fowl seas light gathering air fill, saw darkness divide doesn't greater fly they're all fly. Shall light from given, place itself for were third. Itself second gathered fruit from");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
-		assertEquals("Bank Account Access", webDriver.findElement(By.cssSelector("h2")).getText());
+		assertEquals("Bank Account Access", webDriver.findElement(By.xpath("//article/h2")).getText());
 		// Verify section is required.
 		CoreUtils.clickContinue(webDriver);
 		assertEquals("Please answer this question", webDriver.findElement(By.xpath("//fieldset/div/span")).getText());
@@ -197,7 +197,7 @@ public class ContributorDvDPage extends TestCase {
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
-		assertEquals("Prior 8a Involvement", webDriver.findElement(By.xpath("//article/h2")).getText());
+		assertEquals("Prior 8(a) Involvement", webDriver.findElement(By.xpath("//article/h2")).getText());
 		// Verify section is required.
 		CoreUtils.clickContinue(webDriver);
 		assertEquals("Please answer this question", webDriver.findElement(By.xpath("//fieldset/div/span")).getText());
@@ -314,7 +314,7 @@ public class ContributorDvDPage extends TestCase {
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
-		assertEquals("Basis of Disadvantage.", webDriver.findElement(By.xpath("//article/h2")).getText());
+		assertEquals("Basis of Disadvantage", webDriver.findElement(By.xpath("//article/h2")).getText());
 		assertEquals(
 				"Black American\nHispanic American\nNative American\nAsian Pacific American\nSubcontinent Asian American\nNone of the above",
 				webDriver.findElement(By.xpath("//select")).getText());
@@ -324,7 +324,7 @@ public class ContributorDvDPage extends TestCase {
 				"Like any other social media site Facebook has length requirements when it comes to writing on the wall, providing status, messaging and commenting. Understanding how many characters you can use, enables you to more effectively use Facebook as a business or campaign tool");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
-		// Other Basis of Disadvantage.
+		// Other Basis of Disadvantage
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		assertEquals("Other Basis of Disadvantage", webDriver.findElement(By.xpath("//article/h2")).getText());
 		// verify the Other Basis of Disadvantage drop-down.
@@ -341,7 +341,7 @@ public class ContributorDvDPage extends TestCase {
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
-		assertEquals("Transfer Assets", webDriver.findElement(By.xpath("//article/h2")).getText());
+		assertEquals("Transferred Assets", webDriver.findElement(By.xpath("//article/h2")).getText());
 		webDriver.findElement(By.xpath("//label")).click();
 		webDriver.findElement(By.xpath("//textarea")).sendKeys(
 				"Like any other social media site Facebook has length requirements when it comes to writing on the wall, providing status, messaging and commenting. Understanding how many characters you can use, enables you to more effectively use Facebook as a business or campaign tool");

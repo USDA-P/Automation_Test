@@ -29,6 +29,7 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 
 	@Test
 	public void testApp8aInitialMaterApplication() throws Exception {
+		JavascriptExecutor jse = (JavascriptExecutor) webDriver;
 		String Actual_Text = null;
 		String Expected_Text = null;
 		logger.info("Test for 8a initial master Flow");
@@ -51,8 +52,6 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 		// Complete the basic eligibility section.
 		BasicEligibilityMasterAppPage basicEligibilityMasterApp = new BasicEligibilityMasterAppPage(webDriver);
 		basicEligibilityMasterApp.BasicEligibilityMasterApp();
-		// *[@id="answers_817_value"]
-
 		// Complete the Business Ownership section.
 		BusinessOwnershipSubsectionMasterCcorpPage businessOwnershipSubsectionMaster = new BusinessOwnershipSubsectionMasterCcorpPage(
 				webDriver);
@@ -106,11 +105,13 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 			login_Data11.Login_With_Reference();
 			// Click on the dashboard.
 			webDriver.findElement(By.xpath("//a/span")).click();
+			jse.executeScript("arguments[0].scrollIntoView()",
+					webDriver.findElement(By.linkText("8(a) Initial Application")));
 			WebElement rateElement71 = webDriver.findElement(By.linkText("8(a) Initial Application"));
 			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement71);
-			// Contributors is verify to be completed, but click
-			// on it to add other
-			// contributors.
+			// add
+			// other
+			// *[@id="answers[693][value]-error"]
 			Actual_Text = webDriver.findElement(By.xpath("//div[2]/div/section/div/div[2]/table/tbody/tr/td/span"))
 					.getText();
 			Expected_Text = "Complete";
@@ -144,8 +145,8 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 			logger.info("All Required sections are completed, Ready to Review, Sign and Submit.");
 			WebElement rateElement2 = webDriver.findElement(By.id("profileid"));
 			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement2);
-			WebElement rateElement = webDriver.findElement(By.linkText("Logout"));
-			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement);
+			WebElement rateElement1 = webDriver.findElement(By.linkText("Logout"));
+			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement1);
 		} catch (Exception e) {
 			ScreenShotPage screenShot = new ScreenShotPage(webDriver);
 			screenShot.ScreenShot();

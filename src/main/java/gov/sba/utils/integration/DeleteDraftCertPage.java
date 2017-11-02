@@ -24,7 +24,7 @@ public class DeleteDraftCertPage extends TestCase {
 		WebDriverWait wait = new WebDriverWait(webDriver, 30);
 		// Verify if there is an existing certification on the dashboard and
 		// delete to start a new certification.
-		if (webDriver.getPageSource().contains("Draft")) {
+		if (webDriver.getPageSource().contains("Delete")) {
 			webDriver.navigate().refresh();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
 			// WebElement rateElement =
@@ -36,9 +36,22 @@ public class DeleteDraftCertPage extends TestCase {
 			// act.doubleClick(webDriver.findElement(By.linkText("Delete"))).build().perform();
 			Thread.sleep(2000);
 			webDriver.switchTo().alert().accept();
-		} else {
-			logger.info("No Draft application on the dashboard, all good.");
+			if (webDriver.getPageSource().contains("Delete")) {
+				webDriver.navigate().refresh();
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
+				// WebElement rateElement =
+				// webDriver.findElement(By.linkText("Delete"));
+				JavascriptExecutor jse21 = (JavascriptExecutor) webDriver;
+				jse21.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.linkText("Delete")));
+				webDriver.findElement(By.linkText("Delete")).click();
+				// Actions act = new Actions(webDriver);
+				// act.doubleClick(webDriver.findElement(By.linkText("Delete"))).build().perform();
+				Thread.sleep(2000);
+				webDriver.switchTo().alert().accept();
+
+			} else {
+				logger.info("No Draft application on the dashboard, all good.");
+			}
 		}
 	}
-
 }

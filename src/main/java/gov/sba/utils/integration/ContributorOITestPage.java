@@ -154,8 +154,8 @@ public class ContributorOITestPage extends TestCase {
 		webDriver.findElement(By.xpath("//div/input")).sendKeys("Washington");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
-		assertEquals("U.S. Citizenship", webDriver.findElement(By.cssSelector("h2")).getText());
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
+		assertEquals("U.S. Citizenship", webDriver.findElement(By.xpath("//article/h2")).getText());
 		// Verify section is required.
 		CoreUtils.clickContinue(webDriver);
 		assertEquals("Please answer this question",
@@ -183,8 +183,8 @@ public class ContributorOITestPage extends TestCase {
 		// Click on Resident Alien question and change answer to yes.
 		CoreUtils.clickContinue(webDriver);
 		webDriver.findElement(By.xpath("//li[9]/a")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
-		assertEquals("U.S. Citizenship", webDriver.findElement(By.cssSelector("h2")).getText());
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
+		assertEquals("U.S. Citizenship", webDriver.findElement(By.xpath("//article/h2")).getText());
 		webDriver.findElement(By.xpath("//label")).click();
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));

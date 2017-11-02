@@ -196,7 +196,7 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 		Expected_Text = "If no, the applicant firm may be denied participation in the 8(a) Business Development Program, or a formal size determination may be requested by SBA officials.";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//p[3]")).getText();
-		Expected_Text = "The applicant firm must be small according to SBA’s size standards to participate in the program. Size standards have been established for types of economic activity, or industry, under the North American Industry Classification System (NAICS). To determine the size standard associated with a particular NAICS code, refer to the table of size standards in the Small Business Size Regulations, 13 CFR § 121.201. The applicable size standard is the one corresponding to the applicant firm’s primary NAICS code.";
+		Expected_Text = "The applicant firm must be small according to SBA’s size standards to participate in the program. Size standards have been established for types of economic activity, or industry, under the North American Industry Classification System (NAICS). To determine the size standard associated with a particular NAICS code, refer to the table of size standards in theSmall Business Size Regulations, 13 CFR § 121.201. The applicable size standard is the one corresponding to the applicant firm’s primary NAICS code.";
 		assertEquals(Actual_Text, Expected_Text);
 		// Select Yes.
 		webDriver.findElement(By.xpath("//label")).click();
@@ -495,7 +495,7 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 		Expected_Text = "If no, the applicant firm may be denied participation in the 8(a) Business Development Program, or a formal size determination may be requested by SBA officials.";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//p[3]")).getText();
-		Expected_Text = "The applicant firm must be small according to SBA’s size standards to participate in the program. Size standards have been established for types of economic activity, or industry, under the North American Industry Classification System (NAICS). To determine the size standard associated with a particular NAICS code, refer to the table of size standards in the Small Business Size Regulations, 13 CFR § 121.201. The applicable size standard is the one corresponding to the applicant firm’s primary NAICS code.";
+		Expected_Text = "The applicant firm must be small according to SBA’s size standards to participate in the program. Size standards have been established for types of economic activity, or industry, under the North American Industry Classification System (NAICS). To determine the size standard associated with a particular NAICS code, refer to the table of size standards in theSmall Business Size Regulations, 13 CFR § 121.201. The applicable size standard is the one corresponding to the applicant firm’s primary NAICS code.";
 		assertEquals(Actual_Text, Expected_Text);
 		// Select No and verify the disqualifying warning message.
 		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//label[2]")));

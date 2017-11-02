@@ -169,7 +169,7 @@ public class InvitedContributorsFinancialSectionPage extends TestCase {
 		webDriver.findElement(By.cssSelector("label.yes")).click();
 		// Click on the continue button to veriy section is required.
 		CoreUtils.clickContinue(webDriver);
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//fieldset/div[2]/span")).getText();
 		Expected_Text = "At least one row is required";
 		webDriver.findElement(By.xpath("//div/a/span")).click();
 		logger.info(
@@ -202,7 +202,7 @@ public class InvitedContributorsFinancialSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail Section.
 		Actual_Text = webDriver.findElement(By.cssSelector("fieldset > p")).getText();
-		Expected_Text = "If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from you IRA provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
+		Expected_Text = "If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your IRA provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement RothDetail = webDriver.findElement(By.cssSelector("fieldset > p"));
 		HighLight.highLightElement(webDriver, RothDetail);
@@ -231,7 +231,7 @@ public class InvitedContributorsFinancialSectionPage extends TestCase {
 		// Details.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_other_retirement_accounts > fieldset > p"))
 				.getText();
-		Expected_Text = "Include all other retirement accounts such as traditional IRA, 401K, Self Employed Pension Plan, Thrift Savings Plan, etc. Include retirement accounts that could be held in a trust. If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your retirement account provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
+		Expected_Text = "If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your IRA provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
 		assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")));
@@ -721,23 +721,23 @@ public class InvitedContributorsFinancialSectionPage extends TestCase {
 		contributorsFinancialCalculationOnSummary.ContributorsFinancialCalculationOnSummary();
 		CoreUtils.clickContinue(webDriver);
 		// Verify the Privacy section page.
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2")));
-		Actual_Text = webDriver.findElement(By.xpath("//h2")).getText();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[2]/h2")));
+		Actual_Text = webDriver.findElement(By.xpath("//div[2]/h2")).getText();
 		Expected_Text = "Privacy Statements";
 		assertEquals(Actual_Text, Expected_Text);
 		// Locate and click on the continue button.
 		CoreUtils.clickContinue(webDriver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		// Verify the Review page.
-		Actual_Text = webDriver.findElement(By.xpath("//h2")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//article/h2")).getText();
 		Expected_Text = "Review";
 		assertEquals(Actual_Text, Expected_Text);
 		// Locate and click on the Submit button.
 		CoreUtils.clickContinue(webDriver);
 		// webDriver.switchTo().alert().accept();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/div/h2")));
 		// Verify the Signature page.
-		Actual_Text = webDriver.findElement(By.xpath("//h2")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//article/div/h2")).getText();
 		Expected_Text = "Signature";
 		assertEquals(Actual_Text, Expected_Text);
 		// Click on the signature check boxes.

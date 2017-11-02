@@ -54,7 +54,7 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail section.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_character_16a']/fieldset/p[2]")).getText();
-		Expected_Text = "If yes, upload the details regarding the debarment or suspension, including any related documents. If you have documents showing the debarment has been lifted, please upload. them as well.";
+		Expected_Text = "If yes, upload the details regarding the debarment or suspension, including any related documents. If you have documents showing the debarment has been lifted, please upload them as well.";
 		assertEquals(Actual_Text, Expected_Text);
 		webDriver.findElement(By.xpath("//label[2]")).click();
 		// webDriver.findElement(By.xpath("//input[@name='commit']")).click();
@@ -172,7 +172,7 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail section.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_character_16a']/fieldset/p[2]")).getText();
-		Expected_Text = "If yes, upload the details regarding the debarment or suspension, including any related documents. If you have documents showing the debarment has been lifted, please upload. them as well.";
+		Expected_Text = "If yes, upload the details regarding the debarment or suspension, including any related documents. If you have documents showing the debarment has been lifted, please upload them as well.";
 		assertEquals(Actual_Text, Expected_Text);
 		webDriver.findElement(By.xpath("//label")).click();
 		// Upload a document.

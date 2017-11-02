@@ -179,7 +179,7 @@ public class ControlMasterAppSubsectionPage extends TestCase {
 		// Click on the save and continue button and verify that user is
 		// requested to enter comment.
 		CoreUtils.clickContinue(webDriver);
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//fieldset/div[2]/span")).getText();
 		Expected_Text = "Comment is required";
 		assertEquals(Actual_Text, Expected_Text);
 		// Enter comment.

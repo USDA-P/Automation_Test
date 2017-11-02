@@ -139,7 +139,7 @@ public class ContributorsFinancialSectionPage extends TestCase {
 		HighLight.highLightElement(webDriver, AppEquityOtherFirm);
 		// Click on the continue button to veriy section is required.
 		CoreUtils.clickContinue(webDriver);
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//fieldset/div/div[2]/span")).getText();
 		Expected_Text = "This field is required.";
 		assertEquals(Actual_Text, Expected_Text);
 		webDriver.findElement(By.xpath("//div[2]/input")).sendKeys("70000");
@@ -172,7 +172,7 @@ public class ContributorsFinancialSectionPage extends TestCase {
 		webDriver.findElement(By.cssSelector("label.yes")).click();
 		// Click on the continue button to veriy section is required.
 		CoreUtils.clickContinue(webDriver);
-		Actual_Text = webDriver.findElement(By.xpath("//div[2]/span")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//fieldset/div[2]/span")).getText();
 		Expected_Text = "At least one row is required";
 		webDriver.findElement(By.xpath("//div/a/span")).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("DTE_Field_debtor_name")));
@@ -208,7 +208,7 @@ public class ContributorsFinancialSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail Section.
 		Actual_Text = webDriver.findElement(By.cssSelector("fieldset > p")).getText();
-		Expected_Text = "If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from you IRA provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
+		Expected_Text = "If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your IRA provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement RothDetail = webDriver.findElement(By.cssSelector("fieldset > p"));
 		HighLight.highLightElement(webDriver, RothDetail);
@@ -238,7 +238,7 @@ public class ContributorsFinancialSectionPage extends TestCase {
 		// Details.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_other_retirement_accounts > fieldset > p"))
 				.getText();
-		Expected_Text = "Include all other retirement accounts such as traditional IRA, 401K, Self Employed Pension Plan, Thrift Savings Plan, etc. Include retirement accounts that could be held in a trust. If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your retirement account provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
+		Expected_Text = "If yes, upload information on the terms and restrictions of the account. Supplying the most recent account statement from your IRA provider will suffice in most cases. SBA will not include the funds in calculating your net worth if the statement indicates that the funds are not available until retirement age without a significant penalty.";
 		assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[2]/fieldset/div/input")));

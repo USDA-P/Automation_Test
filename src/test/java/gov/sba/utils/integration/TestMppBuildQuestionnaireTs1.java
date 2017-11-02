@@ -51,28 +51,6 @@ public class TestMppBuildQuestionnaireTs1 extends TestCase {
 		logger.info("The Duns number for this business is " + DunsNumber);
 		// Verify if there is an existing program on the dashboard and
 		// delete to start a new certification.
-		DeleteDraftCertPage deleteDraftCert = new DeleteDraftCertPage(webDriver);
-		deleteDraftCert.DeleteDraftCert();
-		// Verify for active and Draft certification on the dashboard, if draft
-		// delete and start a new one, if active or pending, Return it.
-		ReturnActiveCert2Page returnActiveCert = new ReturnActiveCert2Page(webDriver);
-		returnActiveCert.ReturnActiveCert2();
-		ReturnActiveCert2Page returnActiveCert1 = new ReturnActiveCert2Page(webDriver);
-		returnActiveCert1.ReturnActiveCert2();
-		ReturnPendingCert2Page returnPendingCert = new ReturnPendingCert2Page(webDriver);
-		returnPendingCert.ReturnPendingCert2();
-		ReturnPendingCert2Page returnPendingCert1 = new ReturnPendingCert2Page(webDriver);
-		returnPendingCert1.ReturnPendingCert2();
-		// Verify if there is an existing certification on the dashboard and
-		// TestWorkFlowxx8aInProgress to start a new certification.
-		DeleteDraftCertPage deleteDraftCert11 = new DeleteDraftCertPage(webDriver);
-		deleteDraftCert11.DeleteDraftCert();
-		// Delete second draft if any.
-		DeleteDraftCertPage deleteDraftCert111 = new DeleteDraftCertPage(webDriver);
-		deleteDraftCert111.DeleteDraftCert();
-		// Delete second draft if any.
-		DeleteDraftCertPage deleteDraftCert1111 = new DeleteDraftCertPage(webDriver);
-		deleteDraftCert1111.DeleteDraftCert();
 		// Delete second draft if any.
 		DeleteDraftCertPage deleteDraftCert11111 = new DeleteDraftCertPage(webDriver);
 		deleteDraftCert11111.DeleteDraftCert();
@@ -111,7 +89,7 @@ public class TestMppBuildQuestionnaireTs1 extends TestCase {
 		webDriver.switchTo().alert().accept();
 		CoreUtils.clickContinue(webDriver);
 		// Review page.
-		Actual_Text = webDriver.findElement(By.cssSelector("h2")).getText();
+		Actual_Text = webDriver.findElement(By.xpath("//article/h2")).getText();
 		Expected_Text = "Review";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.cssSelector("h1")).getText();
