@@ -69,7 +69,7 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 		// Complete the Individual section.
 		IndividualApplicationSectionPage individualApplicationSection = new IndividualApplicationSectionPage(webDriver);
 		individualApplicationSection.IndividualApplicationSection();
-		try {
+        //try {
 			// Complete the DvD section.
 			ContributorDisadvantageIndividualQuetionPage contributorDisadvantageIndividualQuetion = new ContributorDisadvantageIndividualQuetionPage(
 					webDriver);
@@ -147,11 +147,11 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement2);
 			WebElement rateElement1 = webDriver.findElement(By.linkText("Logout"));
 			((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement1);
-		} catch (Exception e) {
-			ScreenShotPage screenShot = new ScreenShotPage(webDriver);
-			screenShot.ScreenShot();
-			logger.info("Upload will not run on headless " + e.getMessage());
-		}
+		//} catch (Exception e) {
+			//ScreenShotPage screenShot = new ScreenShotPage(webDriver);
+			//screenShot.ScreenShot();
+			//logger.info("Upload will not run on headless " + e.getMessage());
+		//}
 		logger.info("Success");
 	}
 

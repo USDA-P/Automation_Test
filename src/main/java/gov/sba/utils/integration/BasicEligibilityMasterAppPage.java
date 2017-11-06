@@ -47,9 +47,12 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 			}
 		}
 		// Verify new introduction page.
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div/div/h2")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div/div/p")));
 		Actual_Text = webDriver.findElement(By.xpath("//form/div/div/p")).getText();
-		Expected_Text = "The Federal government relies on the information in the forms and any documents or supplemental information submitted to determine whether your business is eligible to participate in the 8(a) Business Development Program. The definition of important terms are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR § 124.3), and also any statutory and regulatory provision referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person providing information may be prosecuted if they have provided false information. The Government may pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
+		Expected_Text = "Applying to the 8(a) Program\nThe questions in the eligibility section will determine your firm's basic eligibility for the 8(a) program. We will let you know if one of your responses may disqualify you from participating.";
+		assertEquals(Actual_Text, Expected_Text);
+		Actual_Text = webDriver.findElement(By.xpath("//p[2]")).getText();
+		Expected_Text = "Terms and Conditions\nThe Federal government relies on the information in the forms and any documents or supplemental information submitted to determine whether your business is eligible to participate in the 8(a) Business Development Program. The definitions of important terms are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR § 124.3), and also in any statutory and regulatory provisions referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person providing information may be prosecuted for providing false information. The Government may pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
 		assertEquals(Actual_Text, Expected_Text);
 		webDriver.findElement(By.xpath("//input[@name='commit']")).click();
 		// ===>Section 1: Eligibility Screening, Subsection 1.1: Screen.
@@ -324,9 +327,12 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 				}
 			}
 		}
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div/div/h2")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div/div/p")));
 		Actual_Text = webDriver.findElement(By.xpath("//form/div/div/p")).getText();
-		Expected_Text = "The Federal government relies on the information in the forms and any documents or supplemental information submitted to determine whether your business is eligible to participate in the 8(a) Business Development Program. The definition of important terms are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR § 124.3), and also any statutory and regulatory provision referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person providing information may be prosecuted if they have provided false information. The Government may pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
+		Expected_Text = "Applying to the 8(a) Program\nThe questions in the eligibility section will determine your firm's basic eligibility for the 8(a) program. We will let you know if one of your responses may disqualify you from participating.";
+		assertEquals(Actual_Text, Expected_Text);
+		Actual_Text = webDriver.findElement(By.xpath("//p[2]")).getText();
+		Expected_Text = "Terms and Conditions\nThe Federal government relies on the information in the forms and any documents or supplemental information submitted to determine whether your business is eligible to participate in the 8(a) Business Development Program. The definitions of important terms are set forth in the Small Business Act, U.S. Small Business Administration (SBA) regulations (13 CFR § 124.3), and also in any statutory and regulatory provisions referenced in those authorities. In addition, please note that the SBA may request further clarification or supporting documentation in order to assist in the verification of any of the information provided and that each person providing information may be prosecuted for providing false information. The Government may pursue criminal, civil or administrative remedies for incorrect or incomplete information given, even if correct information has been included in other materials submitted to SBA.";
 		assertEquals(Actual_Text, Expected_Text);
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h4")));

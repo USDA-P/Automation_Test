@@ -54,10 +54,10 @@ public class UploadDocumentContributorsPage {
 		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='attach']")));
-		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//button[@id='attach']")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("attach")));
+		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.id("attach")));
 		Actions act1 = new Actions(webDriver);
-		act1.doubleClick(webDriver.findElement(By.xpath("//button[@id='attach']"))).build().perform();
+		act1.doubleClick(webDriver.findElement(By.id("attach"))).build().perform();
 		Thread.sleep(2000);
 	}
 

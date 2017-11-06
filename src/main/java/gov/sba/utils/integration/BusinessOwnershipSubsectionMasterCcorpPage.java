@@ -68,11 +68,11 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		// Details.
 		Actual_Text = webDriver
 				.findElement(By.xpath("//div[@id='answers_51_percent_owned_other_entity']/fieldset/p[2]")).getText();
-		Expected_Text = "If yes, identify which type of entity and upload the corresponding 1010 form described below. An entity-owned firm is a firm that is owned by, or a wholly owned subsidiary of, an American Indian Tribe, an Alaska Native Corporation, a Community Development Corporation, or a Native Hawaiian Organization.";
+		Expected_Text = "If yes, identify which type of entity and upload the corresponding 1010 form described below. An entity-owned firm is a firm that is owned by, or a wholly owned subsidiary of, an American Indian Tribe, an Alaska Native Corporation, a Community Development Corporation, or a Native Hawaiian Organization.13 C.F.R. § 124.3";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver
 				.findElement(By.xpath("//div[@id='answers_51_percent_owned_other_entity']/fieldset/p[3]")).getText();
-		Expected_Text = "American Indian Tribe (AIT) means any Indian tribe, band, nation, or other organized group or community of Indians, which is recognized as eligible for the special programs and services provided by the United States to Indians because of their status as Indians, or is recognized as such by the State in which the tribe, band, nation, group, or community resides. Upload the 1010-AIT. Reference: 13 C.F.R. § 124.3";
+		Expected_Text = "American Indian Tribe (AIT) means any Indian tribe, band, nation, or other organized group or community of Indians, which is recognized as eligible for the special programs and services provided by the United States to Indians because of their status as Indians, or is recognized as such by the State in which the tribe, band, nation, group, or community resides. Upload the1010-AIT.";
 		assertEquals(Actual_Text, Expected_Text);
 		// Verify link.
 		logger.info("Before switching title is =" + webDriver.getWindowHandle());
@@ -88,7 +88,7 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		logger.info("Back to main window = " + webDriver.getCurrentUrl());
 		Actual_Text = webDriver
 				.findElement(By.xpath("//div[@id='answers_51_percent_owned_other_entity']/fieldset/p[4]")).getText();
-		Expected_Text = "An Alaska Native Corporation (ANC) means any Regional Corporation, Village Corporation, Urban Corporation, or Group Corporation organized under the laws of the State of Alaska in accordance with the Alaska Native Claims Settlement Act, as amended 43 U.S.C. 1601, et seq. Upload the 1010-ANC. Reference: 13 C.F.R. § 124.3";
+		Expected_Text = "An Alaska Native Corporation (ANC) means any Regional Corporation, Village Corporation, Urban Corporation, or Group Corporation organized under the laws of the State of Alaska in accordance with the Alaska Native Claims Settlement Act, as amended 43 U.S.C. 1601, et seq. Upload the 1010-ANC.";
 		assertEquals(Actual_Text, Expected_Text);
 		// verify link.
 		logger.info("Before switching title is =" + webDriver.getWindowHandle());
@@ -103,7 +103,7 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		logger.info("Back to main window = " + webDriver.getCurrentUrl());
 		Actual_Text = webDriver
 				.findElement(By.xpath("//div[@id='answers_51_percent_owned_other_entity']/fieldset/p[5]")).getText();
-		Expected_Text = "A Community Development Corporation (CDC) means a nonprofit organization responsible to residents of the area it serves which has received financial assistance under 42 U.S.C. 9805, et seq. Upload the 1010-CDC. Reference: 13 C.F.R. § 124.3";
+		Expected_Text = "A Community Development Corporation (CDC) means a nonprofit organization responsible to residents of the area it serves which has received financial assistance under 42 U.S.C. 9805, et seq. Upload the1010-CDC.";
 		assertEquals(Actual_Text, Expected_Text);
 		// verify link.
 		logger.info("Before switching title is =" + webDriver.getWindowHandle());
@@ -118,7 +118,7 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		logger.info("Back to main window = " + webDriver.getCurrentUrl());
 		Actual_Text = webDriver
 				.findElement(By.xpath("//div[@id='answers_51_percent_owned_other_entity']/fieldset/p[6]")).getText();
-		Expected_Text = "An Native Hawaiian Organization (NHO) means any community service organization serving Native Hawaiians in the State of Hawaii which is a non-profit corporation that has filed articles of incorporation with the Director (or the designee thereof) of the Hawaii Department of Commerce and Consumer Affairs, or any successor agency, is controlled by Native Hawaiians, and whose business activities will principally benefit such Native Hawaiians. Upload the 1010-NHO. Reference: 13 CFR § 124.3";
+		Expected_Text = "An Native Hawaiian Organization (NHO) means any community service organization serving Native Hawaiians in the State of Hawaii which is a non-profit corporation that has filed articles of incorporation with the Director (or the designee thereof) of the Hawaii Department of Commerce and Consumer Affairs, or any successor agency, is controlled by Native Hawaiians, and whose business activities will principally benefit such Native Hawaiians. Upload the 1010-NHO.";
 		assertEquals(Actual_Text, Expected_Text);
 		// verify link.
 		logger.info("Before switching title is =" + webDriver.getWindowHandle());
