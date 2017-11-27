@@ -231,12 +231,13 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 		// Verify and Select area office.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_sba_area_office']/fieldset/div/div[2]/select"))
 				.getText();
-		Expected_Text = "SBA Area Office 1\nSBA Area Office 2\nSBA Area Office 3\nSBA Area Office 4\nSBA Area Office 5\nSBA Area Office 6\nSBA Headquarters";
+		Expected_Text = "please select\nSBA Area Office 1\nSBA Area Office 2\nSBA Area Office 3\nSBA Area Office 4\nSBA Area Office 5\nSBA Area Office 6\nSBA Headquarters";
 		assertEquals(Actual_Text, Expected_Text);
 		WebElement rateElement11 = webDriver.findElement(By.xpath("//select"));
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", rateElement11);
-		Actions act = new Actions(webDriver);
-		act.doubleClick(webDriver.findElement(By.xpath("//option[3]"))).build().perform();
+		//Actions act = new Actions(webDriver);
+		//act.doubleClick(webDriver.findElement(By.xpath("//option[5]"))).build().perform();
+		webDriver.findElement(By.xpath("//option[5]")).click();
 		// Q1.4.1.c.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_redetermination_date > fieldset > h4")).getText();
 		Expected_Text = "What is the determination date stated in the most recent letter?";
@@ -248,7 +249,7 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1")));
 		// ===>Review section.
 		Actual_Text = webDriver.findElement(By.cssSelector("h1")).getText();
-		Expected_Text = "8(A) Eligibility Summary";
+		Expected_Text = "8(a) Eligibility Summary";
 		assertEquals(Actual_Text, Expected_Text);
 		// Verify the section.
 		Actual_Text = webDriver.findElement(By.cssSelector("div.review_questions.question-separator > h3")).getText();
@@ -295,7 +296,7 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1")));
 		Actual_Text = webDriver.findElement(By.cssSelector("h1")).getText();
-		Expected_Text = "8(A) Eligibility Summary";
+		Expected_Text = "8(a) Eligibility Summary";
 		assertEquals(Actual_Text, Expected_Text);
 		CoreUtils.clickContinue(webDriver);
 		// Verify status.
@@ -529,7 +530,7 @@ public class BasicEligibilityMasterAppPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// ===>Review section.
 		Actual_Text = webDriver.findElement(By.cssSelector("h1")).getText();
-		Expected_Text = "8(A) Eligibility Summary";
+		Expected_Text = "8(a) Eligibility Summary";
 		assertEquals(Actual_Text, Expected_Text);
 		// Verify the review warning question for the Screening section.
 		Actual_Text = webDriver.findElement(By.cssSelector("p.usa-alert-text")).getText();

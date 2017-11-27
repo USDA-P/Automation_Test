@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import gov.sba.automation.CoreUtils;
@@ -119,14 +120,21 @@ public class IndividualApplicationSectionPage extends TestCase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		assertEquals("Date and Place of Birth", webDriver.findElement(By.xpath("//article/h2")).getText());
 		webDriver.findElement(By.xpath("//input[5]")).sendKeys("04/23/1978");
-		webDriver.findElement(By.xpath("//div/input")).sendKeys("Washington");
+		webDriver.findElement(By.xpath("//div/input")).sendKeys("TestDataForPlace");
+		Select dropdown = new Select(webDriver.findElement(By.xpath("//select")));
+		dropdown.selectByVisibleText("United States");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		assertEquals("U.S. Citizenship", webDriver.findElement(By.xpath("//article/h2")).getText());
 		// Verify section is required.
 		CoreUtils.clickContinue(webDriver);
+		assertEquals("Please answer this question", webDriver.findElement(By.xpath("//fieldset/div/span")).getText());
 		webDriver.findElement(By.xpath("//label")).click();
+		// Upload a document.
+		String file_path_abs = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
+		MontanaUploadDocumentPage MontanaUploadDocument1 = new MontanaUploadDocumentPage(webDriver);
+		MontanaUploadDocument1.MontanaUploadDocument(file_path_abs);
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
@@ -135,9 +143,9 @@ public class IndividualApplicationSectionPage extends TestCase {
 		CoreUtils.clickContinue(webDriver);
 		assertEquals("Attachment is required", webDriver.findElement(By.xpath("//fieldset/div/div/span")).getText());
 		// Upload a document.
-		String file_path_abs = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
+		String file_path_abs09 = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
 		MontanaUploadDocumentPage MontanaUploadDocument0 = new MontanaUploadDocumentPage(webDriver);
-		MontanaUploadDocument0.MontanaUploadDocument(file_path_abs);
+		MontanaUploadDocument0.MontanaUploadDocument(file_path_abs09);
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
@@ -166,8 +174,8 @@ public class IndividualApplicationSectionPage extends TestCase {
 		webDriver.findElement(By.xpath("//label")).click();
 		// Upload a document.
 		file_path_abs = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
-		MontanaUploadDocumentPage MontanaUploadDocument1 = new MontanaUploadDocumentPage(webDriver);
-		MontanaUploadDocument1.MontanaUploadDocument(file_path_abs);
+		MontanaUploadDocumentPage MontanaUploadDocument11 = new MontanaUploadDocumentPage(webDriver);
+		MontanaUploadDocument11.MontanaUploadDocument(file_path_abs);
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
@@ -218,8 +226,8 @@ public class IndividualApplicationSectionPage extends TestCase {
 		webDriver.findElement(By.xpath("//label")).click();
 		// Upload a document.
 		file_path_abs = FixtureUtils.fixturesDir() + "MainTestUploadDoc.pdf";
-		MontanaUploadDocumentPage MontanaUploadDocument11 = new MontanaUploadDocumentPage(webDriver);
-		MontanaUploadDocument11.MontanaUploadDocument(file_path_abs);
+		MontanaUploadDocumentPage MontanaUploadDocument111 = new MontanaUploadDocumentPage(webDriver);
+		MontanaUploadDocument111.MontanaUploadDocument(file_path_abs);
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
@@ -306,11 +314,10 @@ public class IndividualApplicationSectionPage extends TestCase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		assertEquals("Basis of Disadvantage", webDriver.findElement(By.xpath("//article/h2")).getText());
 		assertEquals(
-				"Black American\nHispanic American\nNative American\nAsian Pacific American\nSubcontinent Asian American\nNone of the above",
+				"please select\nBlack American\nHispanic American\nNative American\nAsian Pacific American\nSubcontinent Asian American\nNone of the above",
 				webDriver.findElement(By.xpath("//select")).getText());
-		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//select")));
-		webDriver.findElement(By.xpath("//select")).click();
-		webDriver.findElement(By.xpath("//option[3]")).click();
+		Select dropdown1 = new Select(webDriver.findElement(By.xpath("//select")));
+		dropdown1.selectByVisibleText("Native American");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));

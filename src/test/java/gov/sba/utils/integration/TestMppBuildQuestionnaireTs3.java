@@ -56,32 +56,6 @@ public class TestMppBuildQuestionnaireTs3 extends TestCase {
 			// TestWorkFlowxx8aInProgress to start a new certification.
 			DeleteDraftCertPage deleteDraftCert = new DeleteDraftCertPage(webDriver);
 			deleteDraftCert.DeleteDraftCert();
-			DeleteDraftCertPage deleteDraftCert1 = new DeleteDraftCertPage(webDriver);
-			deleteDraftCert1.DeleteDraftCert();
-			// Verify for active and Draft certification on the dashboard, if
-			// draft
-			// delete and start a new one, if active or pending, Return it.
-			ReturnActiveCert4Page returnActiveCert = new ReturnActiveCert4Page(webDriver);
-			returnActiveCert.ReturnActiveCert4();
-			ReturnActiveCert4Page returnActiveCert1 = new ReturnActiveCert4Page(webDriver);
-			returnActiveCert1.ReturnActiveCert4();
-			ReturnPendingCert4Page ReturnPendingCert4 = new ReturnPendingCert4Page(webDriver);
-			ReturnPendingCert4.ReturnPendingCert4();
-			ReturnPendingCert4Page ReturnPendingCert41 = new ReturnPendingCert4Page(webDriver);
-			ReturnPendingCert41.ReturnPendingCert4();
-			// Verify if there is an existing certification on the dashboard and
-			// TestWorkFlowxx8aInProgress to start a new certification.
-			DeleteDraftCertPage deleteDraftCert11 = new DeleteDraftCertPage(webDriver);
-			deleteDraftCert11.DeleteDraftCert();
-			// Delete second draft if any.
-			DeleteDraftCertPage deleteDraftCert111 = new DeleteDraftCertPage(webDriver);
-			deleteDraftCert111.DeleteDraftCert();
-			// Delete second draft if any.
-			DeleteDraftCertPage deleteDraftCert1111 = new DeleteDraftCertPage(webDriver);
-			deleteDraftCert1111.DeleteDraftCert();
-			// Delete second draft if any.
-			DeleteDraftCertPage deleteDraftCert11111 = new DeleteDraftCertPage(webDriver);
-			deleteDraftCert11111.DeleteDraftCert();
 			// Start the application.
 			AddOrStartNewMppProgramPage addOrStartNewMppProgram = new AddOrStartNewMppProgramPage(webDriver);
 			addOrStartNewMppProgram.AddOrStartNewMppProgram();
@@ -91,7 +65,7 @@ public class TestMppBuildQuestionnaireTs3 extends TestCase {
 			Expected_Text = "Are you an existing 8(a) firm in your final 6 months of the program, wishing to transfer your Mentor-Protégé relationship to the All Small Mentor-Protégé Program?";
 			assertEquals(Actual_Text, Expected_Text);
 			// Verifying detail meaning for question.
-			Actual_Text = webDriver.findElement(By.xpath("//p[2]")).getText();
+			Actual_Text = webDriver.findElement(By.xpath("//fieldset/p[2]")).getText();
 			Expected_Text = "If yes, please upload your dated 8(a) Mentor-Protégé Approval Letter and your current 8(a) Mentor-Protégé Agreement. You are eligible for the All Small Mentor-Protégé Program and you will skip forward to the “Review” section of this application.";
 			assertEquals(Actual_Text, Expected_Text);
 			// Select No and commit.

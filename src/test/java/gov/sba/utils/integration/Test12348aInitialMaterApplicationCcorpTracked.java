@@ -46,7 +46,7 @@ public class Test12348aInitialMaterApplicationCcorpTracked extends TestCase {
 		// Check if user already has pending app.
 		InitialCcorpUsersPage Verifyaccount = new InitialCcorpUsersPage(webDriver);
 		Verifyaccount.InitialCcorpUsers();
-		// delete second draft if any.
+ 		// delete second draft if any.
 		DeleteDraftCertPage deleteDraftCert11 = new DeleteDraftCertPage(webDriver);
 		deleteDraftCert11.DeleteDraftCert();
 		// Complete the basic eligibility section.

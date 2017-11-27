@@ -209,7 +209,7 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Drop-down.
 		Actual_Text = webDriver.findElement(By.xpath("//select")).getText();
-		Expected_Text = "Started the applicant firm\nBought the applicant firm\nAcquired the applicant firm as a gift, an inheritance, or a transfer\nAcquired the applicant firm through a merger or consolidation";
+		Expected_Text = "please select\nStarted the applicant firm\nBought the applicant firm\nAcquired the applicant firm as a gift, an inheritance, or a transfer\nAcquired the applicant firm through a merger or consolidation";
 		assertEquals(Actual_Text, Expected_Text);
 		// 2nd question.
 		Actual_Text = webDriver.findElement(By.xpath("//div[2]/fieldset/h4")).getText();
@@ -242,7 +242,7 @@ public class BusinessOwnershipSubsectionMasterCcorpPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Details.
 		Actual_Text = webDriver.findElement(By.xpath("//div[5]/fieldset/p[2]")).getText();
-		Expected_Text = "If the firm is entity-owned, select ‘Not applicable’; this information is requested elsewhere. If yes, attach the following information for each firm:";
+		Expected_Text = "If the applicant firm is entity-owned, select ‘N/A’ (Not Applicable) since this information is requested elsewhere. If yes, upload a document with the following information for each firm:";
 		assertEquals(Actual_Text, Expected_Text);
 		// Select all NO and continue.
 		webDriver.findElement(By.xpath("//select")).click();

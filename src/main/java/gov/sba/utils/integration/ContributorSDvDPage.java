@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import gov.sba.automation.CoreUtils;
 import gov.sba.automation.FixtureUtils;
@@ -98,10 +100,11 @@ public class ContributorSDvDPage extends TestCase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		assertEquals("Role in Applicant Firm", webDriver.findElement(By.xpath("//article/h2")).getText());
 		// Verify section is required.
-		//CoreUtils.clickContinue(webDriver);
-		//Actual_Text = webDriver.findElement(By.xpath("//fieldset/div/span")).getText();
-		//Expected_Text = "Please answer this question";
-		//assertEquals(Actual_Text, Expected_Text);
+		// CoreUtils.clickContinue(webDriver);
+		// Actual_Text =
+		// webDriver.findElement(By.xpath("//fieldset/div/span")).getText();
+		// Expected_Text = "Please answer this question";
+		// assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()", webDriver.findElement(By.xpath("//label")));
 		webDriver.findElement(By.xpath("//label")).click();
 		// click on continue.
@@ -114,10 +117,12 @@ public class ContributorSDvDPage extends TestCase {
 		webDriver.findElement(By.xpath("//label")).click();
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
-		assertEquals("Date and Place of Birth", webDriver.findElement(By.xpath("//article/h2")).getText());
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
+		assertEquals("Date and Place of Birth", webDriver.findElement(By.cssSelector("h2")).getText());
 		webDriver.findElement(By.xpath("//input[5]")).sendKeys("04/23/1978");
-		webDriver.findElement(By.xpath("//div/input")).sendKeys("Washington");
+		webDriver.findElement(By.xpath("//div/input")).sendKeys("TestDataForPlace");
+		Select dropdown = new Select(webDriver.findElement(By.xpath("//select")));
+		dropdown.selectByVisibleText("United States");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));

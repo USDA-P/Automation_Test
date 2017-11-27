@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import gov.sba.automation.CoreUtils;
 import junit.framework.TestCase;
@@ -151,7 +153,9 @@ public class ContributorOITestPage extends TestCase {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));
 		assertEquals("Date and Place of Birth", webDriver.findElement(By.xpath("//article/h2")).getText());
 		webDriver.findElement(By.xpath("//input[5]")).sendKeys("04/23/1978");
-		webDriver.findElement(By.xpath("//div/input")).sendKeys("Washington");
+		webDriver.findElement(By.xpath("//div/input")).sendKeys("TestDataForPlace");
+		Select dropdown = new Select(webDriver.findElement(By.xpath("//select")));
+		dropdown.selectByVisibleText("United States");
 		// click on continue.
 		CoreUtils.clickContinue(webDriver);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article/h2")));

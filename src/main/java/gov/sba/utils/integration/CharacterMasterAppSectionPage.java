@@ -72,21 +72,21 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		// Verify question and detail section and Select Yes and upload a
 		// document.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_character_16b > fieldset > h4")).getText();
-		Expected_Text = "Does the applicant firm have any outstanding delinquent Federal, state or local financial obligations or liens filed against it?";
+		Expected_Text = "Does the applicant firm have any outstanding delinquent federal, state or local financial obligations or liens filed against it?";
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail section.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_character_16b']/fieldset/p[2]")).getText();
-		Expected_Text = "Report any obligations including delinquent tax returns and delinquent SBA loans. If yes, provide any of the following that may apply:";
+		Expected_Text = "Report any obligations, including delinquent tax returns and delinquent SBA loans. If yes, provide all of the following that apply:";
 		assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[@id='answers[170][value]']/label[2]")));
 		webDriver.findElement(By.xpath("//div[2]/fieldset/div/label[2]")).click();
 		// Click on the on the Save and continue button and verify that user is
 		// prompted to answer the question.
-		CoreUtils.clickContinue(webDriver);
-		Actual_Text = webDriver.findElement(By.id("answers[171][value]-error")).getText();
-		Expected_Text = "Please answer this question";
-		assertEquals(Actual_Text, Expected_Text);
+		//CoreUtils.clickContinue(webDriver);
+		//Actual_Text = webDriver.findElement(By.id ("answers[169][value]-error")).getText();
+		//Expected_Text = "Please answer this question";
+		//assertEquals(Actual_Text, Expected_Text);
 		// Verify question and detail section and Select Yes and upload a
 		// document.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_character_16c > fieldset > h4")).getText();
@@ -94,17 +94,11 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail section.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_character_16c']/fieldset/p[2]")).getText();
-		Expected_Text = "If yes, summarize its interest in the suit, the claims, the current status, and provide a copy of the complaint, answer, and/or counterclaim filed in the suit.";
+		Expected_Text = "If yes, please upload the following:";
 		assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[@id='answers[171][value]']/label[2]")));
 		webDriver.findElement(By.xpath("//div[3]/fieldset/div/label[2]")).click();
-		// Click on the on the Save and continue button and verify that user is
-		// prompted to answer the question.
-		CoreUtils.clickContinue(webDriver);
-		Actual_Text = webDriver.findElement(By.id("answers[172][value]-error")).getText();
-		Expected_Text = "Please answer this question";
-		assertEquals(Actual_Text, Expected_Text);
 		// Verify question and detail section and Select Yes and upload a
 		// document.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_character_16d > fieldset > h4")).getText();
@@ -130,7 +124,7 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		Actual_Text = webDriver
 				.findElement(By.cssSelector("#character_16b > div.usa-grid-full > div.usa-width-three-fourths > p"))
 				.getText();
-		Expected_Text = "Does the applicant firm have any outstanding delinquent Federal, state or local financial obligations or liens filed against it?";
+		Expected_Text = "Does the applicant firm have any outstanding delinquent federal, state or local financial obligations or liens filed against it?";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='character_16c']/div/div/p")).getText();
 		Expected_Text = "Is the applicant firm a defendant in any pending lawsuit?";
@@ -182,11 +176,11 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		// Verify question and detail section and Select Yes and upload a
 		// document.
 		Actual_Text = webDriver.findElement(By.cssSelector("#answers_character_16b > fieldset > h4")).getText();
-		Expected_Text = "Does the applicant firm have any outstanding delinquent Federal, state or local financial obligations or liens filed against it?";
+		Expected_Text = "Does the applicant firm have any outstanding delinquent federal, state or local financial obligations or liens filed against it?";
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail section.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_character_16b']/fieldset/p[2]")).getText();
-		Expected_Text = "Report any obligations including delinquent tax returns and delinquent SBA loans. If yes, provide any of the following that may apply:";
+		Expected_Text = "Report any obligations, including delinquent tax returns and delinquent SBA loans. If yes, provide all of the following that apply:";
 		assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[2]/fieldset/div/label")));
@@ -203,7 +197,7 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		assertEquals(Actual_Text, Expected_Text);
 		// Detail section.
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='answers_character_16c']/fieldset/p[2]")).getText();
-		Expected_Text = "If yes, summarize its interest in the suit, the claims, the current status, and provide a copy of the complaint, answer, and/or counterclaim filed in the suit.";
+		Expected_Text = "If yes, please upload the following:";
 		assertEquals(Actual_Text, Expected_Text);
 		jse.executeScript("arguments[0].scrollIntoView()",
 				webDriver.findElement(By.xpath("//div[3]/fieldset/div/label")));
@@ -242,7 +236,7 @@ public class CharacterMasterAppSectionPage extends TestCase {
 		Actual_Text = webDriver
 				.findElement(By.cssSelector("#character_16b > div.usa-grid-full > div.usa-width-three-fourths > p"))
 				.getText();
-		Expected_Text = "Does the applicant firm have any outstanding delinquent Federal, state or local financial obligations or liens filed against it?";
+		Expected_Text = "Does the applicant firm have any outstanding delinquent federal, state or local financial obligations or liens filed against it?";
 		assertEquals(Actual_Text, Expected_Text);
 		Actual_Text = webDriver.findElement(By.xpath("//div[@id='character_16c']/div/div/p")).getText();
 		Expected_Text = "Is the applicant firm a defendant in any pending lawsuit?";

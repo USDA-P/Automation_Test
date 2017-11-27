@@ -451,7 +451,7 @@ public class TestMppBuildQuestionnaireTs12p extends TestCase {
 		// Verify list of agencies.
 		logger.info(webDriver.findElement(By.name("answers[133][1][1][value]")).getText());
 		Actual_Text = webDriver.findElement(By.name("answers[133][1][1][value]")).getText();
-		Expected_Text = "Department of Defense\nDepartment of Energy\nDepartment of Homeland Security\nDepartment of Transportation\nDepartment of Treasury\nDepartment of Veterans Affairs\nGeneral Services Administration\nNational Aeronautics and Space Administration\nSmall Business Administration\nU.S. Agency for International Development";
+		Expected_Text = "please select\nDepartment of Defense\nDepartment of Energy\nDepartment of Homeland Security\nDepartment of Transportation\nDepartment of Treasury\nDepartment of Veterans Affairs\nGeneral Services Administration\nNational Aeronautics and Space Administration\nSmall Business Administration\nU.S. Agency for International Development";
 		assertEquals(Actual_Text, Expected_Text);
 		webDriver.findElement(By.xpath("//option[@value='National Aeronautics and Space Administration']")).click();
 		// Effective date

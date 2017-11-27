@@ -122,7 +122,7 @@ public class Test1234US801AmIEligibleTs6 extends TestCase {
 		// Locate the 5th question and select NO and verify the More Detail
 		// meaning of the question.
 		String actual_Text12 = webDriver.findElement(By.xpath("//div[@id='us_business']/div/div/p")).getText();
-		String expected_Text12 = "Does the firm have a place of business in the U.S. and operate primarily within the United States, or makes a significant contribution to the U.S. economy through payment of taxes or use of American products, materials or labors?";
+		String expected_Text12 = "Does the firm have a place of business in the U.S. and operate primarily within the United States, or make a significant contribution to the U.S. economy through payment of taxes or use of American products, materials or labors?";
 		assertEquals(actual_Text12, expected_Text12);
 		logger.info("5th question was validated");
 		String actual_Text13 = webDriver.findElement(By.xpath("//div[@id='us_business']/div/div[2]/p[2]")).getText();
